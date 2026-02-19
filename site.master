@@ -1,0 +1,176 @@
+<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">ORIC - Office of Research, Innovation & Commercialization</asp:ContentPlaceHolder></title>
+    
+    <!-- Tailwind CSS -->
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    
+    <!-- Custom Styles -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        /* Navbar Styling */
+        header {
+            background-color: #1B5E20; /* UAF Green */
+            color: #FFFFFF; /* White Text */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            color: #FFFFFF; /* White Links */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FFA000; /* Gold Hover */
+        }
+
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+
+        .group-hover\:block {
+            display: none;
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            background-color: #1B5E20; /* UAF Green */
+            color: #FFFFFF; /* White Text */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #mobile-menu a {
+            display: block;
+            padding: 10px 15px;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #mobile-menu a:hover {
+            background-color: #2E7D32; /* Darker Green */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <form id="form1" runat="server">
+        <!-- Header/Navbar -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="~/assets/img/Logo.png" alt="ORIC Logo" class="h-16" />
+                    <div>
+                        <h1 class="text-2xl font-bold text-green-900">ORIC</h1>
+                        <p class="text-sm text-gray-600">Office of Research, Innovation & Commercialization</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex space-x-6">
+                    <a href="~/Default.aspx" class="nav-link">Home</a>
+                    <div class="relative group">
+                        <button class="nav-link">About ▾</button>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                            <a href="~/about/Organogram.aspx" class="block px-4 py-2 hover:bg-gray-100">Organogram</a>
+                            <a href="~/about/Director.aspx" class="block px-4 py-2 hover:bg-gray-100">Director Message</a>
+                            <a href="~/about/Staff.aspx" class="block px-4 py-2 hover:bg-gray-100">Staff</a>
+                            <a href="~/about/Activities.aspx" class="block px-4 py-2 hover:bg-gray-100">Activities</a>
+                            <a href="~/about/Milestones.aspx" class="block px-4 py-2 hover:bg-gray-100">Milestones</a>
+                            <a href="~/about/IRAB.aspx" class="block px-4 py-2 hover:bg-gray-100">IRAB</a>
+                            <a href="~/about/OSC.aspx" class="block px-4 py-2 hover:bg-gray-100">OSC</a>
+                            <a href="~/about/IFGSJ.aspx" class="block px-4 py-2 hover:bg-gray-100">IFGSJ</a>
+                        </div>
+                    </div>
+                    <a href="~/research/Funding_Agencies.aspx" class="nav-link">Research</a>
+                    <a href="~/outreach/Outreach.aspx" class="nav-link">Outreach</a>
+                    <a href="~/media/News.aspx" class="nav-link">Media</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg">
+                <a href="~/Default.aspx" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                <a href="~/about/Organogram.aspx" class="block px-4 py-2 hover:bg-gray-100">About</a>
+                <a href="~/research/Funding_Agencies.aspx" class="block px-4 py-2 hover:bg-gray-100">Research</a>
+                <a href="~/outreach/Outreach.aspx" class="block px-4 py-2 hover:bg-gray-100">Outreach</a>
+                <a href="~/media/News.aspx" class="block px-4 py-2 hover:bg-gray-100">Media</a>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white mt-16">
+            <div class="container mx-auto px-4 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- About Column -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">About ORIC</h3>
+                        <p class="text-gray-400">Office of Research, Innovation & Commercialization promoting excellence in research and innovation.</p>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="~/about/Director.aspx" class="hover:text-white">Director Message</a></li>
+                            <li><a href="~/research/Funding_Agencies.aspx" class="hover:text-white">Funding Agencies</a></li>
+                            <li><a href="~/media/Publications.aspx" class="hover:text-white">Publications</a></li>
+                            <li><a href="~/Calls.aspx" class="hover:text-white">Calls</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Research -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Research</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="~/research/IBC.aspx" class="hover:text-white">IBC</a></li>
+                            <li><a href="~/research/BEC.aspx" class="hover:text-white">BEC</a></li>
+                            <li><a href="~/research/Services.aspx" class="hover:text-white">Services</a></li>
+                            <li><a href="~/research/Research_Journals.aspx" class="hover:text-white">Research Journals</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>Email: oric@university.edu.pk</li>
+                            <li>Phone: +92 XXX XXXXXXX</li>
+                            <li>Address: University Campus</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; <%= DateTime.Now.Year %> ORIC. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    
+    <!-- JavaScript -->
+    <script src="~/assets/js/carousel.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="CphSlider" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

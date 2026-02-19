@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="./_includes/Site.master" AutoEventWireup="true" %>
+<%@ Page Language="C#" MasterPageFile="~/_includes/Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     ORIC - Home

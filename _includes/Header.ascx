@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-4">
-                <img src="../assets/img/Logo.png" alt="ORIC Logo" class="h-16" />
+                <img src="<%= ResolveUrl("~/public/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-16" />
                 <div>
                     <h1 class="text-2xl font-bold text-blue-900">ORIC</h1>
                     <p class="text-sm text-gray-600">Office of Research, Innovation & Commercialization</p>
@@ -14,19 +14,19 @@
             
             <!-- Navigation Links -->
             <div class="hidden lg:flex space-x-6">
-                <a href="../Default.aspx" class="nav-link">Home</a>
+                <a href="<%= ResolveUrl("~/public/Default.aspx") %>" class="nav-link">Home</a>
                 <div class="relative group">
-                    <button class="nav-link">About ▾</button>
-                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
-                        <a href="../about/Organogram.aspx" class="block px-4 py-2 hover:bg-gray-100">Organogram</a>
-                        <a href="../about/Director.aspx" class="block px-4 py-2 hover:bg-gray-100">Director Message</a>
-                        <a href="../about/Staff.aspx" class="block px-4 py-2 hover:bg-gray-100">Staff</a>
+                    <button type="button" class="nav-link">About &#9662;</button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 z-50">
+                        <a href="<%= ResolveUrl("~/public/about/Organogram.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Organogram</a>
+                        <a href="<%= ResolveUrl("~/public/about/Director.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Director Message</a>
+                        <a href="<%= ResolveUrl("~/public/about/Staff.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Staff</a>
                     </div>
                 </div>
-                <a href="../research/Funding_Agencies.aspx" class="nav-link">Research</a>
-                <a href="../outreach/Outreach.aspx" class="nav-link">Outreach</a>
-                <a href="../commercialization/Technologies.aspx" class="nav-link">Commercialization</a>
-                <a href="../media/News.aspx" class="nav-link">Media</a>
+                <a href="<%= ResolveUrl("~/public/research/Funding_Agencies.aspx") %>" class="nav-link">Research</a>
+                <a href="<%= ResolveUrl("~/public/outreach/Outreach.aspx") %>" class="nav-link">Outreach</a>
+                <a href="<%= ResolveUrl("~/public/commercialization/Technologies.aspx") %>" class="nav-link">Commercialization</a>
+                <a href="<%= ResolveUrl("~/public/media/News.aspx") %>" class="nav-link">Media</a>
             </div>
         </div>
     </nav>

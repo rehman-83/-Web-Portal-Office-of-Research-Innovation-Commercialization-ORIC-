@@ -13,9 +13,9 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-gray-400">
-                    <li><a href="../about/Director.aspx" class="hover:text-white">Director Message</a></li>
-                    <li><a href="../research/Funding_Agencies.aspx" class="hover:text-white">Funding Agencies</a></li>
-                    <li><a href="../media/Publications.aspx" class="hover:text-white">Publications</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/about/Director.aspx") %>" class="hover:text-white">Director Message</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/research/Funding_Agencies.aspx") %>" class="hover:text-white">Funding Agencies</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/media/Publications.aspx") %>" class="hover:text-white">Publications</a></li>
                 </ul>
             </div>
             
@@ -23,9 +23,9 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Research</h3>
                 <ul class="space-y-2 text-gray-400">
-                    <li><a href="../research/IBC.aspx" class="hover:text-white">IBC</a></li>
-                    <li><a href="../research/BEC.aspx" class="hover:text-white">BEC</a></li>
-                    <li><a href="../research/Services.aspx" class="hover:text-white">Services</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/research/IBC.aspx") %>" class="hover:text-white">IBC</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/research/BEC.aspx") %>" class="hover:text-white">BEC</a></li>
+                    <li><a href="<%= ResolveUrl("~/public/research/Services.aspx") %>" class="hover:text-white">Services</a></li>
                 </ul>
             </div>
             
@@ -41,7 +41,7 @@
         </div>
         
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 ORIC. All rights reserved.</p>
+            <p>&copy; <%= DateTime.Now.Year %> ORIC. All rights reserved.</p>
         </div>
     </div>
 </footer>

@@ -6,7 +6,7 @@
 <meta name="keywords" content="research, innovation, commercialization, university">
 
 <!-- Tailwind CSS -->
-<link href="../assets/css/site.css" rel="stylesheet" />
+<link href="<%= ResolveUrl("~/public/assets/css/site.css") %>" rel="stylesheet" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="../assets/img/Logo.png">
+<link rel="icon" type="image/png" href="<%= ResolveUrl("~/public/assets/img/Logo.png") %>">

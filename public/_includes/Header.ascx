@@ -6,10 +6,7 @@
             <!-- Logo -->
             <div class="flex items-center space-x-4">
                 <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-16" />
-                <div>
-                    <h1 class="text-2xl font-bold text-blue-900">ORIC</h1>
-                    <p class="text-sm text-gray-600">Office of Research, Innovation & Commercialization</p>
-                </div>
+                
             </div>
             
             <!-- Navigation Links -->

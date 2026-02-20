@@ -3,186 +3,770 @@
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">ORIC - Office of Research, Innovation & Commercialization</asp:ContentPlaceHolder></title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">ORIC - Office of Research, Innovation &amp; Commercialization</asp:ContentPlaceHolder></title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+
     <!-- Tailwind CSS -->
-    <link href="~/assets/css/site.css" rel="stylesheet" />
-    
-    <!-- Custom Styles -->
+    <link href="<%= ResolveUrl("~/assets/css/site.css") %>" rel="stylesheet" />
+
+    <!-- Page-specific head content -->
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
     <style>
-        /* Navbar Styling */
+        /* ── CSS VARIABLES ─────────────────────────────── */
+        :root {
+            --gov-navy:   #1a3a5c;
+            --gov-blue:   #1e5799;
+            --gov-accent: #c8102e;
+            --gov-gold:   #f0a500;
+            --gov-light:  #f4f7fb;
+            --gov-border: #dce4ef;
+            --gov-text:   #1a2733;
+            --gov-muted:  #5a6e82;
+            --white:      #ffffff;
+            --shadow:     0 2px 16px rgba(26,58,92,0.13);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; }
+
+        /* ── TOP UTILITY STRIP ─────────────────────────── */
+        .top-strip {
+            background: var(--gov-navy);
+            color: #b8cfea;
+            font-size: 12px;
+            padding: 6px 0;
+        }
+        .top-strip .ts-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .top-strip a { color: #b8cfea; text-decoration: none; transition: color .2s; }
+        .top-strip a:hover { color: var(--gov-gold); }
+        .ts-links { display: flex; gap: 14px; align-items: center; }
+        .ts-links span { color: #4a6a8a; }
+
+        /* ── BRAND BAR ─────────────────────────────────── */
+        .brand-bar {
+            background: var(--white);
+            border-bottom: 3px solid var(--gov-accent);
+            box-shadow: var(--shadow);
+        }
+        .brand-bar .bb-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .brand-logo { height: 68px; width: auto; display: block; }
+        .brand-text { flex: 1; min-width: 0; }
+        .brand-text h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(15px, 2vw, 20px);
+            color: var(--gov-navy);
+            line-height: 1.25;
+        }
+        .brand-text p {
+            font-size: 13px;
+            color: var(--gov-muted);
+            margin-top: 3px;
+        }
+        .brand-badges { display: flex; gap: 8px; flex-shrink: 0; }
+        .badge {
+            font-size: 11px; font-weight: 700; letter-spacing: .6px;
+            padding: 4px 10px; border-radius: 3px; text-transform: uppercase;
+        }
+        .badge-hec { background: #003087; color: #fff; }
+        .badge-pk  { background: var(--gov-accent); color: #fff; }
+
+        /* ── STICKY NAV ────────────────────────────────── */
+        .main-nav {
+            background: var(--gov-blue);
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.22);
+        }
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        /* Desktop nav items */
+        .desktop-nav { display: flex; align-items: stretch; }
+        .nav-item { position: relative; }
+
         .nav-link {
-            color: #1e3a5f;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: inherit;
-        }
-        .nav-link:hover {
-            color: #2563eb;
-        }
-        .group:hover .group-hover\:block {
-            display: block;
-        }
-        .group-hover\:block {
-            display: none;
-        }
-        .card {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #2563eb;
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 16px;
+            height: 50px;
+            color: rgba(255,255,255,.92);
+            font-size: 13.5px;
             font-weight: 600;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            white-space: nowrap;
+            letter-spacing: .3px;
+            transition: background .2s, color .2s;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
         }
-        .btn-primary:hover {
-            background-color: #1d4ed8;
+        .nav-link:hover,
+        .nav-item:hover > .nav-link { background: rgba(255,255,255,.12); color: #fff; }
+        .nav-link.active { background: var(--gov-accent); color: #fff; }
+
+        .nav-link .caret {
+            width: 10px; height: 10px;
+            transition: transform .25s; flex-shrink: 0;
+        }
+        .nav-item:hover > .nav-link .caret { transform: rotate(180deg); }
+
+        /* Dropdown */
+        .dropdown {
+            position: absolute;
+            top: 100%; left: 0;
+            min-width: 230px;
+            background: var(--white);
+            border-top: 3px solid var(--gov-accent);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            border-radius: 0 0 6px 6px;
+            display: none;
+            z-index: 600;
+            animation: dropIn .18s ease;
+        }
+        @keyframes dropIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .nav-item:hover .dropdown { display: block; }
+
+        .dd-section { padding: 6px 0; border-bottom: 1px solid var(--gov-border); }
+        .dd-section:last-child { border-bottom: none; }
+
+        .dd-label {
+            display: block;
+            padding: 6px 16px 3px;
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--gov-muted);
+        }
+        .dropdown a {
+            display: flex; align-items: center; gap: 8px;
+            padding: 9px 16px;
+            font-size: 13.5px; color: var(--gov-text);
+            text-decoration: none;
+            transition: background .15s, padding-left .15s, color .15s;
+        }
+        .dropdown a:hover {
+            background: var(--gov-light);
+            color: var(--gov-blue);
+            padding-left: 22px;
+        }
+
+        /* Search button */
+        .nav-search-btn {
+            margin-left: auto;
+            display: flex; align-items: center;
+            height: 50px; padding: 0 16px;
+            background: none; border: none;
+            color: rgba(255,255,255,.75);
+            cursor: pointer; transition: color .2s;
+        }
+        .nav-search-btn:hover { color: #fff; }
+        .nav-search-btn svg { width: 18px; height: 18px; }
+
+        /* Mobile toggle */
+        .mobile-toggle {
+            display: none;
+            margin-left: auto;
+            align-items: center;
+            height: 50px; padding: 0 16px;
+            background: none; border: none;
+            color: #fff; cursor: pointer;
+        }
+        .mobile-toggle svg { width: 24px; height: 24px; }
+
+        /* ── MOBILE MENU ────────────────────────────────── */
+        .mobile-nav {
+            display: none;
+            background: var(--gov-navy);
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height .35s ease;
+        }
+        .mobile-nav.open { max-height: 100vh; }
+        .mobile-nav-inner { padding: 8px 0 16px; }
+
+        .m-link {
+            display: flex; align-items: center;
+            justify-content: space-between;
+            width: 100%; padding: 13px 24px;
+            color: rgba(255,255,255,.9);
+            font-size: 14px; font-weight: 600;
+            text-decoration: none;
+            background: none; border: none;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            font-family: inherit; text-align: left;
+            cursor: pointer; transition: background .15s;
+        }
+        .m-link:hover { background: rgba(255,255,255,.08); }
+        .m-link svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform .2s; }
+        .m-link.expanded svg { transform: rotate(180deg); }
+
+        .m-sub { display: none; background: rgba(0,0,0,.25); }
+        .m-sub.open { display: block; }
+
+        .m-sub-label {
+            display: block; padding: 8px 24px 3px 38px;
+            font-size: 10px; letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.35); font-weight: 700;
+        }
+        .m-sub a {
+            display: block; padding: 10px 24px 10px 38px;
+            color: rgba(255,255,255,.78); font-size: 13.5px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.04);
+            transition: background .15s, color .15s;
+        }
+        .m-sub a:hover { color: #fff; background: rgba(255,255,255,.07); }
+
+        /* ── FOOTER ─────────────────────────────────────── */
+        .site-footer { background: #111827; color: #fff; margin-top: 64px; }
+        .footer-inner {
+            max-width: 1280px; margin: 0 auto;
+            padding: 56px 24px 32px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        .footer-col h3 {
+            font-size: 15px; font-weight: 700;
+            letter-spacing: .4px; margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gov-accent);
+            display: inline-block;
+        }
+        .footer-col p, .footer-col li {
+            font-size: 13.5px; color: #9ca3af; line-height: 1.7;
+        }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 6px; }
+        .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color .2s; }
+        .footer-col ul li a:hover { color: var(--gov-gold); }
+        .footer-col .contact-item {
+            display: flex; gap: 8px; align-items: flex-start;
+            margin-bottom: 8px; color: #9ca3af; font-size: 13.5px;
+        }
+        .footer-divider {
+            border: none; border-top: 1px solid #1f2937;
+            margin: 32px 0 24px;
+        }
+        .footer-bottom {
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 12px;
+            font-size: 13px; color: #6b7280;
+        }
+        .footer-bottom a { color: #6b7280; text-decoration: none; transition: color .2s; }
+        .footer-bottom a:hover { color: var(--gov-gold); }
+
+        /* ── RESPONSIVE ─────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .desktop-nav    { display: none; }
+            .mobile-toggle  { display: flex; }
+            .nav-search-btn { display: none; }
+            .mobile-nav     { display: block; }
+            .brand-badges   { display: none; }
+            .footer-grid    { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .brand-text h1   { font-size: 14px; }
+            .brand-text p    { font-size: 12px; }
+            .ts-links        { display: none; }
+            .footer-grid     { grid-template-columns: 1fr; }
+            .footer-bottom   { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex flex-col">
-    <form id="form1" runat="server">
-        <!-- Header/Navbar -->
-        <header class="bg-white shadow-md sticky top-0 z-50">
-            <nav class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <div class="flex items-center space-x-4">
-                        <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-16" />
-                        <div>
-                            <h1 class="text-2xl font-bold text-blue-900">ORIC</h1>
-                            <p class="text-sm text-gray-600">Office of Research, Innovation & Commercialization</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation Links -->
-                    <div class="hidden lg:flex space-x-6">
-                        <a href="<%= ResolveUrl("~/Default.aspx") %>" class="nav-link">Home</a>
-                        <div class="relative group">
-                            <button type="button" class="nav-link">About &#9662;</button>
-                            <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 z-50">
-                                <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Organogram</a>
-                                <a href="<%= ResolveUrl("~/about/Director.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Director Message</a>
-                                <a href="<%= ResolveUrl("~/about/Staff.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Staff</a>
-                                <a href="<%= ResolveUrl("~/about/Activities.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Activities</a>
-                                <a href="<%= ResolveUrl("~/about/Milestones.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Milestones</a>
-                                <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">IRAB</a>
-                                <a href="<%= ResolveUrl("~/about/OSC.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">OSC</a>
-                                <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">IFGSJ</a>
-                            </div>
-                        </div>
-                        <div class="relative group">
-                            <button type="button" class="nav-link">Research &#9662;</button>
-                            <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-56 z-50">
-                                <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Funding Agencies</a>
-                                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">IBC</a>
-                                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">BEC</a>
-                                <a href="<%= ResolveUrl("~/research/Services.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Services</a>
-                                <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Approved Supervisors</a>
-                                <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Professional Trainings</a>
-                            </div>
-                        </div>
-                        <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>" class="nav-link">Outreach</a>
-                        <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>" class="nav-link">Commercialization</a>
-                        <a href="<%= ResolveUrl("~/media/News.aspx") %>" class="nav-link">Media</a>
-                        <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="nav-link">BIC</a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button type="button" id="mobile-menu-button" class="lg:hidden text-gray-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+<form id="form1" runat="server">
+
+    <!-- ══ TOP UTILITY STRIP ══════════════════════════════ -->
+    <div class="top-strip">
+        <div class="ts-inner">
+            <span>Government of Pakistan &nbsp;|&nbsp; Higher Education Commission</span>
+            <div class="ts-links">
+                <a href="<%= ResolveUrl("~/contact.aspx") %>">Contact</a>
+                <span>|</span>
+                <a href="<%= ResolveUrl("~/sitemap.aspx") %>">Sitemap</a>
+                <span>|</span>
+                <a href="#">Accessibility</a>
+                <span>|</span>
+                <a href="#">&#1575;&#1585;&#1583;&#1608;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ BRAND BAR ═══════════════════════════════════════ -->
+    <div class="brand-bar">
+        <div class="bb-inner">
+            <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="brand-logo" />
+            <div class="brand-text">
+                <h1>Office of Research, Innovation &amp; Commercialization</h1>
+                <p>University of Agriculture Faisalabad &mdash; HEC Recognized ORIC</p>
+            </div>
+            <div class="brand-badges">
+                <span class="badge badge-hec">HEC</span>
+                <span class="badge badge-pk">Pakistan</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ MAIN NAV ════════════════════════════════════════ -->
+    <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-inner">
+
+            <!-- DESKTOP NAV -->
+            <div class="desktop-nav">
+
+                <!-- Home -->
+                <div class="nav-item">
+                    <a href="<%= ResolveUrl("~/Default.aspx") %>" class="nav-link active">Home</a>
+                </div>
+
+                <!-- About -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        About
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                </div>
-                
-                <!-- Mobile Menu -->
-                <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
-                    <a href="<%= ResolveUrl("~/Default.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-                    <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">About</a>
-                    <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Research</a>
-                    <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Outreach</a>
-                    <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Commercialization</a>
-                    <a href="<%= ResolveUrl("~/media/News.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Media</a>
-                    <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">BIC</a>
-                </div>
-            </nav>
-        </header>
-        
-        <!-- Main Content -->
-        <main class="flex-grow">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
-        </main>
-        
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white mt-16">
-            <div class="container mx-auto px-4 py-12">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- About Column -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">About ORIC</h3>
-                        <p class="text-gray-400">Office of Research, Innovation & Commercialization promoting excellence in research and innovation.</p>
-                    </div>
-                    
-                    <!-- Quick Links -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="<%= ResolveUrl("~/about/Director.aspx") %>" class="hover:text-white">Director Message</a></li>
-                            <li><a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>" class="hover:text-white">Funding Agencies</a></li>
-                            <li><a href="<%= ResolveUrl("~/media/Publications.aspx") %>" class="hover:text-white">Publications</a></li>
-                            <li><a href="<%= ResolveUrl("~/Calls.aspx") %>" class="hover:text-white">Calls</a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Research -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Research</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>" class="hover:text-white">IBC</a></li>
-                            <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>" class="hover:text-white">BEC</a></li>
-                            <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>" class="hover:text-white">Services</a></li>
-                            <li><a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>" class="hover:text-white">Research Journals</a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Contact -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Contact</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li>Email: oric@university.edu.pk</li>
-                            <li>Phone: +92 XXX XXXXXXX</li>
-                            <li>Address: University Campus</li>
-                        </ul>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <span class="dd-label">Organization</span>
+                            <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>">Organogram</a>
+                            <a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a>
+                            <a href="<%= ResolveUrl("~/about/Staff.aspx") %>">Staff</a>
+                        </div>
+                        <div class="dd-section">
+                            <span class="dd-label">Governance</span>
+                            <a href="<%= ResolveUrl("~/about/Activities.aspx") %>">Activities</a>
+                            <a href="<%= ResolveUrl("~/about/Milestones.aspx") %>">Milestones</a>
+                            <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>">IRAB</a>
+                            <a href="<%= ResolveUrl("~/about/OSC.aspx") %>">OSC</a>
+                            <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>">IFGSJ</a>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; <%= DateTime.Now.Year %> ORIC. All rights reserved.</p>
+
+                <!-- Research -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Research
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <span class="dd-label">Funding &amp; Committees</span>
+                            <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a>
+                            <a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a>
+                            <a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a>
+                        </div>
+                        <div class="dd-section">
+                            <span class="dd-label">Resources</span>
+                            <a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a>
+                            <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a>
+                            <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a>
+                            <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a>
+                            <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a>
+                            <a href="<%= ResolveUrl("~/research/OP.aspx") %>">OP</a>
+                            <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>">Reimbursements</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outreach -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Outreach
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>">Outreach Programs</a>
+                            <a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a>
+                            <a href="<%= ResolveUrl("~/outreach/Seminars.aspx") %>">Seminars</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercialization -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Commercialization
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a>
+                            <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>">Collaboration</a>
+                            <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>">TISC</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Media
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <a href="<%= ResolveUrl("~/media/News.aspx") %>">News</a>
+                            <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>">Gallery</a>
+                            <a href="<%= ResolveUrl("~/media/Events.aspx") %>">Events</a>
+                            <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>">Documentaries</a>
+                            <a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a>
+                            <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>">Downloads</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hi-Tech -->
+                <div class="nav-item">
+                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Hi-Tech
+                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown" role="menu">
+                        <div class="dd-section">
+                            <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>">Diagnostic</a>
+                            <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>">Training</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIC -->
+                <div class="nav-item">
+                    <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="nav-link">BIC</a>
+                </div>
+
+            </div><!-- /desktop-nav -->
+
+            <!-- Search (desktop) -->
+            <button type="button" class="nav-search-btn" aria-label="Search" onclick="document.getElementById('searchOverlay').classList.toggle('hidden')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+            </button>
+
+            <!-- Hamburger (mobile) -->
+            <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+                <svg id="iconMenu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+        </div><!-- /nav-inner -->
+    </nav>
+
+    <!-- ══ MOBILE NAV ══════════════════════════════════════ -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <div class="mobile-nav-inner">
+
+            <a href="<%= ResolveUrl("~/Default.aspx") %>" class="m-link">Home</a>
+
+            <!-- About mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-about', this)" aria-expanded="false">
+                About
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-about" aria-hidden="true">
+                <span class="m-sub-label">Organization</span>
+                <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>">Organogram</a>
+                <a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a>
+                <a href="<%= ResolveUrl("~/about/Staff.aspx") %>">Staff</a>
+                <span class="m-sub-label">Governance</span>
+                <a href="<%= ResolveUrl("~/about/Activities.aspx") %>">Activities</a>
+                <a href="<%= ResolveUrl("~/about/Milestones.aspx") %>">Milestones</a>
+                <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>">IRAB</a>
+                <a href="<%= ResolveUrl("~/about/OSC.aspx") %>">OSC</a>
+                <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>">IFGSJ</a>
+            </div>
+
+            <!-- Research mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-research', this)" aria-expanded="false">
+                Research
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-research" aria-hidden="true">
+                <span class="m-sub-label">Funding &amp; Committees</span>
+                <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a>
+                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a>
+                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a>
+                <span class="m-sub-label">Resources</span>
+                <a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a>
+                <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a>
+                <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a>
+                <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a>
+                <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a>
+                <a href="<%= ResolveUrl("~/research/OP.aspx") %>">OP</a>
+                <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>">Reimbursements</a>
+            </div>
+
+            <!-- Outreach mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-outreach', this)" aria-expanded="false">
+                Outreach
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-outreach" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>">Outreach Programs</a>
+                <a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a>
+                <a href="<%= ResolveUrl("~/outreach/Seminars.aspx") %>">Seminars</a>
+            </div>
+
+            <!-- Commercialization mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-comm', this)" aria-expanded="false">
+                Commercialization
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-comm" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a>
+                <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>">Collaboration</a>
+                <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>">TISC</a>
+            </div>
+
+            <!-- Media mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-media', this)" aria-expanded="false">
+                Media
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-media" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/media/News.aspx") %>">News</a>
+                <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>">Gallery</a>
+                <a href="<%= ResolveUrl("~/media/Events.aspx") %>">Events</a>
+                <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>">Documentaries</a>
+                <a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a>
+                <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>">Downloads</a>
+            </div>
+
+            <!-- Hi-Tech mobile -->
+            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-hitech', this)" aria-expanded="false">
+                Hi-Tech
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="m-sub" id="mSub-hitech" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>">Diagnostic</a>
+                <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>">Training</a>
+            </div>
+
+            <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="m-link">BIC</a>
+
+        </div>
+    </div><!-- /mobile-nav -->
+
+    <!-- ══ MAIN CONTENT ════════════════════════════════════ -->
+    <main class="flex-grow" id="mainContent" role="main">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    </main>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-grid">
+
+                <!-- About -->
+                <div class="footer-col">
+                    <h3>About ORIC</h3>
+                    <p>Office of Research, Innovation &amp; Commercialization promoting excellence in research, innovation, and technology transfer at University of Agriculture Faisalabad.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a></li>
+                        <li><a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a></li>
+                        <li><a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a></li>
+                        <li><a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Research -->
+                <div class="footer-col">
+                    <h3>Research</h3>
+                    <ul>
+                        <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>oric@uaf.edu.pk</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+                        </svg>
+                        <span>+92 41 9200161</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>UAF Main Campus, Faisalabad, Pakistan</span>
+                    </div>
+                </div>
+
+            </div><!-- /footer-grid -->
+
+            <hr class="footer-divider" />
+
+            <div class="footer-bottom">
+                <span>&copy; <%= DateTime.Now.Year %> ORIC &mdash; University of Agriculture Faisalabad. All rights reserved.</span>
+                <div style="display:flex;gap:20px;">
+                    <a href="<%= ResolveUrl("~/privacy.aspx") %>">Privacy Policy</a>
+                    <a href="<%= ResolveUrl("~/disclaimer.aspx") %>">Disclaimer</a>
+                    <a href="<%= ResolveUrl("~/sitemap.aspx") %>">Sitemap</a>
                 </div>
             </div>
-        </footer>
-    </form>
-    
-    <!-- JavaScript -->
-    <script src="<%= ResolveUrl("~/assets/js/carousel.js") %>"></script>
-    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+
+        </div>
+    </footer>
+
+</form><!-- /form1 -->
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════ -->
+<script src="<%= ResolveUrl("~/assets/js/carousel.js") %>"></script>
+
+<script>
+    // ── Mobile menu toggle ─────────────────────────────────
+    function toggleMobileMenu() {
+        var nav  = document.getElementById('mobileNav');
+        var isOpen = nav.classList.contains('open');
+        nav.classList.toggle('open');
+        nav.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    // ── Mobile sub-menu accordion ──────────────────────────
+    function toggleMobileSub(id, btn) {
+        var sub    = document.getElementById(id);
+        var isOpen = sub.classList.contains('open');
+
+        // Close all subs first
+        document.querySelectorAll('.m-sub').forEach(function(s) {
+            s.classList.remove('open');
+            s.setAttribute('aria-hidden', 'true');
+        });
+        document.querySelectorAll('.m-link[aria-expanded]').forEach(function(b) {
+            b.classList.remove('expanded');
+            b.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+            sub.classList.add('open');
+            sub.setAttribute('aria-hidden', 'false');
+            btn.classList.add('expanded');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    // ── Close mobile menu on resize to desktop ─────────────
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 1024) {
+            var nav = document.getElementById('mobileNav');
+            nav.classList.remove('open');
+            nav.setAttribute('aria-hidden', 'true');
+        }
+    });
+
+    // ── Close dropdowns when clicking outside ──────────────
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.main-nav') && !e.target.closest('.mobile-nav')) {
+            var nav = document.getElementById('mobileNav');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                nav.setAttribute('aria-hidden', 'true');
+            }
+        }
+    });
+
+    // ── Mark active nav link based on current URL ──────────
+    (function() {
+        var path = window.location.pathname.toLowerCase();
+        document.querySelectorAll('.desktop-nav .nav-link').forEach(function(link) {
+            link.classList.remove('active');
+        });
+        // Home
+        if (path === '/' || path.indexOf('default.aspx') !== -1) {
+            var homeLink = document.querySelector('.desktop-nav a[href*="Default.aspx"], .desktop-nav a[href*="default.aspx"]');
+            if (homeLink) homeLink.classList.add('active');
+            return;
+        }
+        // Match section
+        var sections = ['about','research','outreach','commercialization','media','hi-tech','bic'];
+        sections.forEach(function(sec) {
+            if (path.indexOf('/' + sec + '/') !== -1 || path.indexOf(sec + '.aspx') !== -1) {
+                document.querySelectorAll('.desktop-nav .nav-item').forEach(function(item) {
+                    var btn = item.querySelector('.nav-link');
+                    if (btn && btn.textContent.trim().toLowerCase().replace(/\s+/g,'') === sec.replace('-','')) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+    })();
+</script>
+
+<asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+
 </body>
 </html>

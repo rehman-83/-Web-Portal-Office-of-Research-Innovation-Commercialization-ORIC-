@@ -5,316 +5,368 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="bg-gradient-to-r from-green-600 to-emerald-700 text-white py-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-4">Hi-Tech Training Programs</h1>
-            <p class="text-xl">Advanced Technical Skills & Equipment Training</p>
-        </div>
-    </section>
+   
+<main class="container mx-auto py-8 px-4">
+
+  <!-- Page Header -->
+  <div class="text-center mb-8 md:mb-12">
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] bg-clip-text text-transparent mb-4 px-2">
+      Trainings
+    </h1>
+    <div class="h-1 w-24 sm:w-32 mx-auto bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] rounded-full"></div>
+    <p class="mt-4 md:mt-6 text-gray-600 max-w-3xl mx-auto text-base md:text-lg px-4">
+      One Week Hands-On Training Programs at Central Hi-Tech Laboratory
+    </p>
+  </div>
+
+  <!-- Training Advertisement Images -->
+  <div class="mb-8 md:mb-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#1a4d7c] mb-6 md:mb-8 px-4">Training Program Details</h2>
     
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Training Programs</h2>
-                <p class="text-lg text-gray-700 mb-4">
-                    The Hi-Tech Center offers specialized training programs on advanced diagnostic equipment, 
-                    laboratory techniques, and quality assurance procedures. Our hands-on training prepares 
-                    students and professionals for careers in medical laboratories and research facilities.
-                </p>
-            </div>
-            
-            <!-- Training Categories -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Training Programs</h3>
-                
-                <div class="space-y-6">
-                    <div class="card border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <h4 class="text-xl font-bold text-gray-900">Clinical Laboratory Technician Training</h4>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Certification Program</span>
-                                </div>
-                                <p class="text-gray-700 mb-4">
-                                    Comprehensive 6-month program covering all aspects of clinical laboratory work 
-                                    including hematology, biochemistry, microbiology, and quality control. Theory 
-                                    classes combined with extensive hands-on practice.
-                                </p>
-                                <div class="grid md:grid-cols-4 gap-4 text-sm">
-                                    <div>
-                                        <strong>Duration:</strong> 6 months
-                                    </div>
-                                    <div>
-                                        <strong>Schedule:</strong> Mon-Fri, 9 AM - 2 PM
-                                    </div>
-                                    <div>
-                                        <strong>Fee:</strong> PKR 50,000
-                                    </div>
-                                    <div>
-                                        <strong>Next Batch:</strong> April 2026
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary text-sm">Apply Now</a>
-                    </div>
-                    
-                    <div class="card border-l-4 border-green-600 hover:shadow-xl transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <h4 class="text-xl font-bold text-gray-900">Molecular Diagnostics Training</h4>
-                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Advanced Program</span>
-                                </div>
-                                <p class="text-gray-700 mb-4">
-                                    Specialized training in molecular diagnostic techniques including PCR, DNA/RNA 
-                                    extraction, gel electrophoresis, and sequencing. Ideal for researchers and 
-                                    advanced technicians.
-                                </p>
-                                <div class="grid md:grid-cols-4 gap-4 text-sm">
-                                    <div>
-                                        <strong>Duration:</strong> 3 months
-                                    </div>
-                                    <div>
-                                        <strong>Schedule:</strong> Weekend batches
-                                    </div>
-                                    <div>
-                                        <strong>Fee:</strong> PKR 40,000
-                                    </div>
-                                    <div>
-                                        <strong>Next Batch:</strong> March 2026
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary text-sm">Apply Now</a>
-                    </div>
-                    
-                    <div class="card border-l-4 border-purple-600 hover:shadow-xl transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <h4 class="text-xl font-bold text-gray-900">Medical Laboratory Quality Management</h4>
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Professional Development</span>
-                                </div>
-                                <p class="text-gray-700 mb-4">
-                                    Training on ISO 15189 standards, quality control procedures, equipment 
-                                    calibration, and laboratory accreditation requirements. Essential for lab 
-                                    managers and quality officers.
-                                </p>
-                                <div class="grid md:grid-cols-4 gap-4 text-sm">
-                                    <div>
-                                        <strong>Duration:</strong> 1 month
-                                    </div>
-                                    <div>
-                                        <strong>Schedule:</strong> Flexible
-                                    </div>
-                                    <div>
-                                        <strong>Fee:</strong> PKR 25,000
-                                    </div>
-                                    <div>
-                                        <strong>Next Batch:</strong> March 2026
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary text-sm">Apply Now</a>
-                    </div>
-                    
-                    <div class="card border-l-4 border-orange-600 hover:shadow-xl transition-shadow">
-                        <div class="flex justify-between items-start mb-4">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-3">
-                                    <h4 class="text-xl font-bold text-gray-900">Phlebotomy & Sample Collection</h4>
-                                    <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Short Course</span>
-                                </div>
-                                <p class="text-gray-700 mb-4">
-                                    Intensive training in venipuncture techniques, sample collection procedures, 
-                                    safety protocols, and patient interaction. Includes practical assessment and 
-                                    certification.
-                                </p>
-                                <div class="grid md:grid-cols-4 gap-4 text-sm">
-                                    <div>
-                                        <strong>Duration:</strong> 6 weeks
-                                    </div>
-                                    <div>
-                                        <strong>Schedule:</strong> Evening batches
-                                    </div>
-                                    <div>
-                                        <strong>Fee:</strong> PKR 15,000
-                                    </div>
-                                    <div>
-                                        <strong>Next Batch:</strong> April 2026
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn-primary text-sm">Apply Now</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Equipment Training -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Equipment-Specific Training</h3>
-                <p class="text-gray-700 mb-6">
-                    Short-duration training courses on operation and maintenance of specific laboratory equipment
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">Hematology Analyzer Operation</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Complete training on automated hematology analyzers including calibration, 
-                            troubleshooting, and quality control
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 3 days</div>
-                            <div>💰 Fee: PKR 5,000</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">Real-Time PCR Training</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Hands-on training on qPCR machines including protocol optimization, 
-                            data analysis, and validation
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 5 days</div>
-                            <div>💰 Fee: PKR 8,000</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">HPLC System Training</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Advanced training on HPLC operation, method development, maintenance, 
-                            and troubleshooting
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 1 week</div>
-                            <div>💰 Fee: PKR 10,000</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">Microscopy Techniques</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Training in brightfield, darkfield, and fluorescence microscopy with 
-                            emphasis on diagnostic applications
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 2 weeks</div>
-                            <div>💰 Fee: PKR 6,000</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">Electrolyte Analyzer</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Operation and maintenance of electrolyte analyzers including calibration 
-                            and quality assurance
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 2 days</div>
-                            <div>💰 Fee: PKR 4,000</div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <h4 class="font-bold text-gray-900 mb-2">Immunoassay Systems</h4>
-                        <p class="text-sm text-gray-700 mb-3">
-                            Training on ELISA and chemiluminescence immunoassay systems for hormone 
-                            and biomarker analysis
-                        </p>
-                        <div class="text-xs text-gray-600 space-y-1">
-                            <div>⏱️ Duration: 4 days</div>
-                            <div>💰 Fee: PKR 7,000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Training Features -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Train With Us?</h3>
-                
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="card text-center">
-                        <div class="text-4xl mb-3">🎓</div>
-                        <h4 class="font-bold text-gray-900 mb-2">Expert Instructors</h4>
-                        <p class="text-sm text-gray-700">
-                            Learn from experienced professionals and certified trainers
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-3">🔬</div>
-                        <h4 class="font-bold text-gray-900 mb-2">Hands-On Practice</h4>
-                        <p class="text-sm text-gray-700">
-                            Extensive practical sessions with real equipment
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-3">📜</div>
-                        <h4 class="font-bold text-gray-900 mb-2">Certification</h4>
-                        <p class="text-sm text-gray-700">
-                            Industry-recognized certificates upon completion
-                        </p>
-                    </div>
-                    <div class="card text-center">
-                        <div class="text-4xl mb-3">💼</div>
-                        <h4 class="font-bold text-gray-900 mb-2">Job Placement</h4>
-                        <p class="text-sm text-gray-700">
-                            Career guidance and placement assistance
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Admission Requirements -->
-            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
-                <h3 class="text-xl font-bold text-yellow-900 mb-4">Admission Requirements</h3>
-                <div class="grid md:grid-cols-2 gap-6 text-gray-700">
-                    <div>
-                        <h4 class="font-bold mb-2">General Requirements:</h4>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Minimum qualification varies by program</li>
-                            <li>• Copy of educational certificates</li>
-                            <li>• CNIC/Passport copy</li>
-                            <li>• Recent passport-size photographs</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-2">For Advanced Programs:</h4>
-                        <ul class="space-y-1 text-sm">
-                            <li>• Bachelor's degree in relevant field</li>
-                            <li>• Basic laboratory experience (preferred)</li>
-                            <li>• English proficiency</li>
-                            <li>• Interview/entrance test may apply</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contact -->
-            <div class="text-center bg-gradient-to-r from-green-600 to-emerald-700 text-white p-12 rounded-lg">
-                <h3 class="text-3xl font-bold mb-4">Start Your Technical Training Journey</h3>
-                <p class="text-xl mb-6">
-                    Enroll in our programs and advance your career in medical diagnostics
-                </p>
-                <div class="flex flex-col md:flex-row justify-center gap-4">
-                    <a href="#" class="bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 inline-block">
-                        Download Brochure
-                    </a>
-                    <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-green-600 transition inline-block">
-                        Apply Online
-                    </a>
-                </div>
-                <p class="mt-6 text-green-100">
-                    📞 +92 (XX) XXXX-XXXX | 📧 training@hitechcenter.edu
-                </p>
-            </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <!-- Advertisement Image 1 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+        <img src="../assets/img/high-tech/One-Week Hands on Training_page-0001.jpg" 
+             alt="Training Program Page 1" 
+             class="w-full h-auto object-contain">
+      </div>
+
+      <!-- Advertisement Image 2 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+        <img src="../assets/img/high-tech/One-Week Hands on Training_page-0002.jpg" 
+             alt="Training Program Page 2" 
+             class="w-full h-auto object-contain">
+      </div>
+    </div>
+  </div>
+
+  <!-- Training Rate List Section -->
+  <div class="bg-white rounded-xl md:rounded-2xl shadow-xl p-4 sm:p-6 md:p-10 mb-8 md:mb-12 border border-gray-200">
+    <div class="flex items-center mb-6 md:mb-8">
+      <div class="bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] p-2 md:p-3 rounded-lg mr-3 md:mr-4">
+        <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+        </svg>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-[#1a4d7c]">CHTL Training Rate List</h2>
+    </div>
+
+    <p class="text-sm sm:text-base text-gray-700 mb-6 md:mb-8 leading-relaxed">
+      CHTL rate list for one week customized hands-on/general operational training is given below:
+    </p>
+
+    <!-- Desktop Table -->
+    <div class="hidden md:block overflow-x-auto">
+      <table class="w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white">
+            <th class="px-4 py-3 text-left text-sm font-semibold">Sr#</th>
+            <th class="px-4 py-3 text-left text-sm font-semibold">Training</th>
+            <th class="px-4 py-3 text-center text-sm font-semibold">Duration</th>
+            <th class="px-4 py-3 text-center text-sm font-semibold">UAF Students (Rs.)</th>
+            <th class="px-4 py-3 text-center text-sm font-semibold">UAF Faculty (Rs.)</th>
+            <th class="px-4 py-3 text-center text-sm font-semibold">Other Organizations (Rs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">1.</td>
+            <td class="px-4 py-3 text-sm font-medium">High Performance Liquid Chromatography (HPLC)</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">2.</td>
+            <td class="px-4 py-3 text-sm font-medium">Atomic Absorption Spectrophotometer (AAS)</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">3.</td>
+            <td class="px-4 py-3 text-sm font-medium">Scanning Electron Microscope (SEM)</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">4.</td>
+            <td class="px-4 py-3 text-sm font-medium">Proximate Analysis</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">5.</td>
+            <td class="px-4 py-3 text-sm font-medium">Gas Chromatography (GC)</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-sm">6.</td>
+            <td class="px-4 py-3 text-sm font-medium">General Laboratory Equipment (Spectrophotometer, Flame Photometer, Ultra Centrifuge, pH, EC DO meters etc.)</td>
+            <td class="px-4 py-3 text-sm text-center">1 week</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">2,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">5,000</td>
+            <td class="px-4 py-3 text-sm text-center font-semibold text-[#1a4d7c]">7,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Cards -->
+    <div class="md:hidden space-y-4">
+      <!-- Card 1 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 1</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
         </div>
-    </section>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">High Performance Liquid Chromatography (HPLC)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 2</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
+        </div>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">Atomic Absorption Spectrophotometer (AAS)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 3</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
+        </div>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">Scanning Electron Microscope (SEM)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 4</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
+        </div>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">Proximate Analysis</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 5</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
+        </div>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">Gas Chromatography (GC)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-xs font-semibold text-gray-500">Sr# 6</span>
+          <span class="bg-[#1a4d7c] text-white text-xs px-2 py-1 rounded">1 week</span>
+        </div>
+        <h3 class="text-base font-bold text-[#1a4d7c] mb-3">General Laboratory Equipment</h3>
+        <p class="text-xs text-gray-600 mb-3">(Spectrophotometer, Flame Photometer, Ultra Centrifuge, pH, EC DO meters etc.)</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Students:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 2,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">UAF Faculty:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 5,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Other Organizations:</span>
+            <span class="font-semibold text-[#1a4d7c]">Rs. 7,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apply for Training Section -->
+  <div class="bg-gradient-to-br from-[#1a4d7c] to-[#3674B5] rounded-xl md:rounded-2xl shadow-2xl overflow-hidden mb-8 md:mb-12 text-white">
+    <div class="p-6 sm:p-8 md:p-12 text-center">
+      <div class="mb-6">
+        <svg class="w-16 h-16 md:w-20 md:h-20 mx-auto text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Apply for Training</h2>
+      <p class="text-lg md:text-xl text-white/90 mb-2">Coming Soon...</p>
+      <p class="text-sm md:text-base text-white/70">Online application system will be available shortly</p>
+    </div>
+  </div>
+
+  <!-- Download Section -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 md:mb-12">
+    
+    <!-- Download Training Proforma -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+      <div class="bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] p-6 text-white">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold mb-2">Training Proforma</h3>
+            <p class="text-sm text-white/80">Download Application Form</p>
+          </div>
+          <svg class="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="p-6">
+        <p class="text-sm text-gray-600 mb-6">Download the training application form and submit it to apply for the training program.</p>
+        <a href="../assets/files/Hi-Tech/Training_Proforma.pdf" 
+           target="_blank"
+           class="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          Download Proforma
+        </a>
+      </div>
+    </div>
+
+    <!-- Training Record -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+      <div class="bg-gradient-to-r from-[#2c5282] to-[#1a4d7c] p-6 text-white">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold mb-2">Training Record</h3>
+            <p class="text-sm text-white/80">One Week Hands-On Training</p>
+          </div>
+          <svg class="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="p-6">
+        <p class="text-sm text-gray-600 mb-6">View or download the one week hands-on training record document for reference.</p>
+        <a href="../assets/files/Hi-Tech/One Week Hands-On Training Record.pdf" 
+           target="_blank"
+           class="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#2c5282] to-[#1a4d7c] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg>
+          View Training Record
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<style>
+  /* Smooth animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .bg-white,
+  .bg-gradient-to-br {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  /* Table hover effects */
+  tbody tr {
+    transition: background-color 0.2s ease;
+  }
+</style>
+
+
+
 </asp:Content>

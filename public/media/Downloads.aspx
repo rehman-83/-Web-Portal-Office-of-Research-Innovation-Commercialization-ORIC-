@@ -5,375 +5,169 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="bg-gradient-to-r from-slate-600 to-gray-700 text-white py-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-4">Downloads Center</h1>
-            <p class="text-xl">Forms, Templates, Guidelines & Resources</p>
+   <?php
+$pageTitle = "Downloads";
+?>
+
+<main class="container mx-auto py-8 px-4">
+  
+  <!-- Page Header -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] bg-clip-text text-transparent mb-4">
+      Downloads
+    </h1>
+    <div class="h-1 w-32 mx-auto bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] rounded-full"></div>
+    <p class="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+      Access important documents, proformas, and resources for faculty and research students.
+    </p>
+  </div>
+
+  <!-- Downloads Content -->
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-200">
+      <ol class="space-y-6 text-gray-700 text-lg">
+        
+        <!-- Item 1 -->
+        <li class="flex items-start">
+          <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white rounded-full font-bold mr-4 mt-1">1</span>
+          <div class="flex-1">
+            <a href="../assets/files/Proforma/Reimbursement of Printing Charges.pdf" 
+               class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+               target="_blank">
+              <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
+              Reimbursement of IF Publication For Faculty
+            </a>
+          </div>
+        </li>
+
+        <!-- Item 2 -->
+        <li class="flex items-start">
+          <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white rounded-full font-bold mr-4 mt-1">2</span>
+          <div class="flex-1">
+            <strong class="text-gray-800 text-lg block mb-3">Proformas:</strong>
+            <ul class="ml-6 space-y-3">
+              <li class="flex items-start">
+                <span class="text-[#3674B5] mr-3 mt-1">•</span>
+                <a href="../assets/files/Proforma/PERFORMA for PARB 25-02-2022.pdf" 
+                   class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+                   target="_blank">
+                  <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                  Project Honorarium 2022
+                </a>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3674B5] mr-3 mt-1">•</span>
+                <a href="../assets/files/Proforma/Honorarium Performa revised.pdf" 
+                   class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+                   target="_blank">
+                  <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                  </svg>
+                  Project Honorarium 2023
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Item 3 -->
+        <li class="flex items-start">
+          <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white rounded-full font-bold mr-4 mt-1">3</span>
+          <div class="flex-1">
+            <a href="../assets/files/Proforma/Research Associate.docx" 
+               class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+               target="_blank">
+              <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Advertisement of Post of Res. Officer/Res. Associates/Res. Fellow
+            </a>
+          </div>
+        </li>
+
+        <!-- Item 4 -->
+        <li class="flex items-start">
+          <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white rounded-full font-bold mr-4 mt-1">4</span>
+          <div class="flex-1">
+            <a href="../assets/files/Proforma/SCORE CARD.docx" 
+               class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+               target="_blank">
+              <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Recruitment of Staff in Res. Projects
+            </a>
+          </div>
+        </li>
+
+        <!-- Item 5 -->
+        <li class="flex items-start">
+          <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white rounded-full font-bold mr-4 mt-1">5</span>
+          <div class="flex-1">
+            <a href="../assets/files/Proforma/Partial Support Proforma.docx" 
+               class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
+               target="_blank">
+              <svg class="w-5 h-5 mr-2 text-[#3674B5] group-hover:text-[#1a4d7c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Partial Research Support To Postgraduate Students
+            </a>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+    <!-- Info Card -->
+    <!-- <div class="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 md:p-8 border-l-4 border-[#3674B5]">
+      <div class="flex items-start">
+        <svg class="w-6 h-6 text-[#3674B5] mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-[#1a4d7c] mb-2">Need Help?</h3>
+          <p class="text-gray-700">If you have any questions or need assistance with these documents, please contact ORIC at <a href="mailto:oric@uaf.edu.pk" class="text-[#3674B5] hover:underline font-semibold">oric@uaf.edu.pk</a></p>
         </div>
-    </section>
-    
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="mb-12">
-                <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
-                    <h3 class="font-bold text-blue-900 mb-2">📥 Quick Access</h3>
-                    <p class="text-gray-700">
-                        All forms and documents are available in PDF format. Most forms are fillable. 
-                        For assistance, contact ORIC at support@oric.edu
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Application Forms -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Application Forms</h3>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-red-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">IMERP Grant Application Form</h4>
-                                <p class="text-sm text-gray-600">Internal research funding application</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-green-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">IRB Application Form</h4>
-                                <p class="text-sm text-gray-600">Institutional Review Board ethics approval</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-purple-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">IBC Application Form</h4>
-                                <p class="text-sm text-gray-600">Institutional Biosafety Committee approval</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-orange-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">PhD Supervisor Application</h4>
-                                <p class="text-sm text-gray-600">Apply for PhD supervision approval</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-blue-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Research Internship Application</h4>
-                                <p class="text-sm text-gray-600">Student internship program application</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-teal-100 p-3 rounded">
-                                <span class="text-2xl">📄</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Patent Application Assistance Request</h4>
-                                <p class="text-sm text-gray-600">TISC patent filing support</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Reimbursement Forms -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Reimbursement Forms</h3>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-yellow-100 p-3 rounded">
-                                <span class="text-2xl">💰</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">General Reimbursement Claim Form</h4>
-                                <p class="text-sm text-gray-600">For all research-related expenses</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded">
-                                <span class="text-2xl">✈️</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Conference Travel Reimbursement</h4>
-                                <p class="text-sm text-gray-600">International conference expense claims</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-indigo-100 p-3 rounded">
-                                <span class="text-2xl">📝</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Publication Fee Reimbursement</h4>
-                                <p class="text-sm text-gray-600">Article processing charges</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-lime-100 p-3 rounded">
-                                <span class="text-2xl">🎯</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Pre-Approval Request Form</h4>
-                                <p class="text-sm text-gray-600">For expenses over PKR 50,000</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Templates -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Research Templates</h3>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-cyan-100 p-3 rounded">
-                                <span class="text-2xl">📊</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Research Proposal Template</h4>
-                                <p class="text-sm text-gray-600">Standard format for grant applications</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-rose-100 p-3 rounded">
-                                <span class="text-2xl">📋</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Progress Report Template</h4>
-                                <p class="text-sm text-gray-600">Quarterly/Annual project reporting</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-amber-100 p-3 rounded">
-                                <span class="text-2xl">📑</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Thesis Format Template</h4>
-                                <p class="text-sm text-gray-600">University thesis formatting guidelines</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-emerald-100 p-3 rounded">
-                                <span class="text-2xl">🎓</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Research Poster Template</h4>
-                                <p class="text-sm text-gray-600">Conference poster design template</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Guidelines & Manuals -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Guidelines & Manuals</h3>
-                
-                <div class="space-y-3">
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-violet-100 p-3 rounded">
-                                <span class="text-2xl">📘</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Research Ethics Guidelines</h4>
-                                <p class="text-sm text-gray-600">Complete guide on ethical research conduct | 45 pages | PDF</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-fuchsia-100 p-3 rounded">
-                                <span class="text-2xl">📗</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Grant Writing Manual</h4>
-                                <p class="text-sm text-gray-600">Step-by-step guide to writing winning proposals | 68 pages | PDF</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-sky-100 p-3 rounded">
-                                <span class="text-2xl">📙</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">IP Protection Handbook</h4>
-                                <p class="text-sm text-gray-600">Intellectual property rights and patent filing | 52 pages | PDF</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-orange-100 p-3 rounded">
-                                <span class="text-2xl">📕</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Laboratory Safety Manual</h4>
-                                <p class="text-sm text-gray-600">Safety protocols and emergency procedures | 38 pages | PDF</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Logos & Branding -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Logos & Branding</h3>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-gray-100 p-3 rounded">
-                                <span class="text-2xl">🎨</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">ORIC Logo Package</h4>
-                                <p class="text-sm text-gray-600">High-resolution logos (PNG, SVG, EPS)</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                    
-                    <div class="card flex items-center justify-between hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-gray-100 p-3 rounded">
-                                <span class="text-2xl">🖼️</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Presentation Template</h4>
-                                <p class="text-sm text-gray-600">PowerPoint template with branding</p>
-                            </div>
-                        </div>
-                        <a href="#" class="text-blue-600 hover:text-blue-800">
-                            <span class="text-2xl">⬇️</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Need Help -->
-            <div class="bg-gray-100 p-8 rounded-lg text-center">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Can't Find What You're Looking For?</h3>
-                <p class="text-gray-700 mb-6">
-                    Contact ORIC support team for assistance with forms and documents
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="#" class="bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700">
-                        Contact Support
-                    </a>
-                    <a href="#" class="border-2 border-slate-600 text-slate-600 px-6 py-3 rounded-lg font-semibold hover:bg-slate-50">
-                        Request Document
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div> -->
+
+</main>
+
+<style>
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  ol li > div a {
+    font-size: 0.95rem;
+  }
+  
+  .flex-shrink-0 {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-white {
+  animation: fadeInUp 0.6s ease-out;
+}
+</style>
+
+
 </asp:Content>

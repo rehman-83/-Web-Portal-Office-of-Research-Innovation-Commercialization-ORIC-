@@ -5,190 +5,295 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="bg-gradient-to-r from-red-600 to-rose-700 text-white py-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-4">News & Announcements</h1>
-            <p class="text-xl">Latest Updates from ORIC</p>
+
+<style>
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: linear-gradient(to right, #1a4d7c, #3674B5, #2c5282);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 116, 181, 0.4);
+}
+
+.pdf-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    border-color: #3674B5;
+    box-shadow: 0 10px 30px rgba(54, 116, 181, 0.3);
+}
+
+.pdf-thumbnail {
+    background: linear-gradient(135deg, #1a4d7c 0%, #3674B5 50%, #2c5282 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3674B5;
+    box-shadow: 0 0 0 3px rgba(54, 116, 181, 0.1);
+}
+</style>
+
+<main class="container mx-auto py-8 px-4">
+  
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] bg-clip-text text-transparent mb-4">
+            ORIC Newsletter
+        </h1>
+        <div class="h-1 w-32 mx-auto bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] rounded-full"></div>
+        <p class="mt-4 text-gray-600 text-lg">Stay updated with our latest research and innovation activities</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mb-8">
+        <div class="relative">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search newsletters..." 
+                class="search-input w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-full transition-all duration-300"
+            />
+            <svg class="absolute right-6 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
         </div>
-    </section>
+    </div>
+
+    <!-- Year Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn active px-6 md:px-8 py-3 rounded-full font-bold text-base md:text-lg border-2 border-[#3674B5] text-[#1a4d7c] hover:bg-[#3674B5] hover:text-white" data-year="all">
+            All Years
+        </button>
+        <button class="filter-btn px-6 md:px-8 py-3 rounded-full font-bold text-base md:text-lg border-2 border-[#3674B5] text-[#1a4d7c] hover:bg-[#3674B5] hover:text-white" data-year="2025">
+            2025
+        </button>
+        <button class="filter-btn px-6 md:px-8 py-3 rounded-full font-bold text-base md:text-lg border-2 border-[#3674B5] text-[#1a4d7c] hover:bg-[#3674B5] hover:text-white" data-year="2024">
+            2024
+        </button>
+        <button class="filter-btn px-6 md:px-8 py-3 rounded-full font-bold text-base md:text-lg border-2 border-[#3674B5] text-[#1a4d7c] hover:bg-[#3674B5] hover:text-white" data-year="2023">
+            2023
+        </button>
+    </div>
+
+    <!-- Newsletters Grid -->
+    <div id="newslettersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Dynamic content loaded by JavaScript -->
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="hidden text-center py-12">
+        <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        <p class="text-xl text-gray-500">No newsletters found</p>
+    </div>
+
+    <!-- Archive Section Divider -->
+    <div id="archiveSection" class="mt-16 mb-8">
+        <div class="flex items-center justify-center">
+            <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#3674B5] to-transparent"></div>
+            <h2 class="mx-4 md:mx-6 text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#1a4d7c] via-[#3674B5] to-[#2c5282] bg-clip-text text-transparent text-center">
+                Archive Collection
+            </h2>
+            <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[#3674B5] to-transparent"></div>
+        </div>
+        <p class="text-center text-gray-600 mt-4">Historical newsletters and volumes</p>
+    </div>
+
+    <!-- Archive Newsletters Grid -->
+    <div id="volNewslettersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Dynamic content loaded by JavaScript -->
+    </div>
+
+</main>
+
+<script>
+// Newsletter data from PHP
+const newsletters = <?= $newslettersJson ?>;
+const volNewsletters = <?= $volNewslettersJson ?>;
+const thumbnailImage = 'assets/files/ORIC Newsletter/ORIC_Newsletter.jpg';
+let currentFilter = 'all';
+let currentSearch = '';
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    renderNewsletters();
+    renderVolNewsletters();
+    setupFilters();
+    setupSearch();
+});
+
+// Render newsletters
+function renderNewsletters() {
+    const grid = document.getElementById('newslettersGrid');
+    const noResults = document.getElementById('noResults');
     
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <!-- Featured News -->
-            <div class="mb-12">
-                <div class="card border-l-4 border-red-600 bg-red-50">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Featured</span>
-                        <span class="text-sm text-gray-600">February 15, 2026</span>
-                    </div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-3">
-                        University Secures PKR 50 Million Research Grant from HEC
-                    </h2>
-                    <p class="text-gray-700 mb-4">
-                        In a major achievement, the university has been awarded PKR 50 million through HEC's 
-                        National Research Program for Excellence (NRPE). The grant will support cutting-edge 
-                        research in artificial intelligence applications for healthcare diagnostics. Principal 
-                        Investigator Dr. Ahmed Khan will lead a team of 15 researchers on this 3-year project.
-                    </p>
-                    <a href="#" class="text-red-600 font-semibold hover:underline">Read Full Story →</a>
-                </div>
+    let filtered = newsletters.filter(newsletter => {
+        const matchesYear = currentFilter === 'all' || newsletter.year === currentFilter;
+        const matchesSearch = currentSearch === '' || 
+            newsletter.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+            newsletter.year.includes(currentSearch);
+        return matchesYear && matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+        grid.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+    }
+
+    grid.classList.remove('hidden');
+    noResults.classList.add('hidden');
+
+    grid.innerHTML = filtered.map(newsletter => `
+        <div class="pdf-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <!-- PDF Thumbnail -->
+            <div class="pdf-thumbnail aspect-[3/4] relative">
+                <img src="${thumbnailImage}" alt="Newsletter Thumbnail" />
+                <span class="absolute top-2 right-2 bg-white text-[#1a4d7c] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    ${newsletter.year}
+                </span>
             </div>
             
-            <!-- Latest News -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Recent News</h3>
+            <!-- PDF Info -->
+            <div class="p-4">
+                <h3 class="font-bold text-sm mb-3 text-gray-800 line-clamp-2 min-h-[2.5rem]">
+                    ${escapeHtml(newsletter.name)}
+                </h3>
                 
-                <div class="space-y-6">
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Research</span>
-                            <span class="text-sm text-gray-600">February 12, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            Faculty Member Publishes in Nature Communications
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            Dr. Nadia Iqbal's groundbreaking research on antibiotic-resistant bacteria has been 
-                            published in Nature Communications (Impact Factor: 16.6). The study identifies novel 
-                            mechanisms that could lead to new treatment strategies.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Award</span>
-                            <span class="text-sm text-gray-600">February 10, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            Student Wins Best Paper Award at IEEE Conference
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            PhD student Sarah Ahmed received the Best Paper Award at the International IEEE 
-                            Conference on Machine Learning Applications. Her research on deep learning for 
-                            medical image analysis impressed international experts.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Partnership</span>
-                            <span class="text-sm text-gray-600">February 8, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            MoU Signed with Leading Tech Company for Joint Research
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            ORIC facilitated signing of a Memorandum of Understanding between the university and 
-                            TechCorp International for collaborative research on IoT solutions. The partnership 
-                            includes PKR 10M investment and 20 internship positions.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Event</span>
-                            <span class="text-sm text-gray-600">February 5, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            Annual Research Symposium Showcases 100+ Projects
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            The 10th Annual Research Symposium concluded successfully with participation from 
-                            over 500 researchers. The three-day event featured keynote speeches, poster 
-                            presentations, and networking opportunities.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full">Achievement</span>
-                            <span class="text-sm text-gray-600">February 1, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            University Ranks Among Top 5 in National Research Output
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            According to HEC's latest research productivity report, the university has been 
-                            ranked 4th nationally in research publications with 450+ papers in 2025. This 
-                            represents a 35% increase from previous year.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
-                    
-                    <div class="card hover:shadow-lg transition-shadow">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Announcement</span>
-                            <span class="text-sm text-gray-600">January 28, 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">
-                            Call for Proposals: IMERP Spring 2026 Round
-                        </h4>
-                        <p class="text-gray-700 mb-3">
-                            ORIC announces the Spring 2026 call for Internal Monetary Endowment Research Program 
-                            proposals. Faculty members can apply for up to PKR 500,000 per project. Deadline: 
-                            April 30, 2026.
-                        </p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                    </div>
+                <!-- Action Buttons -->
+                <div class="flex gap-2">
+                    <a href="${newsletter.path}" target="_blank" 
+                       class="flex-1 bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-semibold hover:shadow-lg transition-all duration-300 text-center">
+                        <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        View
+                    </a>
+                    <a href="${newsletter.path}" download 
+                       class="flex-1 bg-gradient-to-r from-[#2c5282] to-[#1a4d7c] text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-semibold hover:shadow-lg transition-all duration-300 text-center">
+                        <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Download
+                    </a>
                 </div>
-            </div>
-            
-            <!-- Announcements -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Important Announcements</h3>
-                
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-4">
-                    <div class="flex items-start">
-                        <div class="text-2xl mr-3">📢</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">Research Ethics Training - Mandatory for All Researchers</h4>
-                            <p class="text-gray-700 text-sm">
-                                All faculty and PhD students must complete online research ethics training by March 31, 2026. 
-                                Certificate required for grant applications and IRB approvals.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-4">
-                    <div class="flex items-start">
-                        <div class="text-2xl mr-3">📅</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">Upcoming Conference Travel Approval Deadline</h4>
-                            <p class="text-gray-700 text-sm">
-                                Faculty planning to attend international conferences in Q2 2026 must submit pre-approval 
-                                requests by March 15, 2026 for reimbursement eligibility.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-green-50 border-l-4 border-green-500 p-6">
-                    <div class="flex items-start">
-                        <div class="text-2xl mr-3">🎯</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-2">New Laboratory Equipment Available for Booking</h4>
-                            <p class="text-gray-700 text-sm">
-                                ORIC has acquired advanced research equipment including HPLC, PCR machines, and 
-                                spectrophotometers. Book online through the equipment portal.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Pagination -->
-            <div class="flex justify-center gap-2">
-                <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Previous</button>
-                <button class="px-4 py-2 bg-red-600 text-white rounded">1</button>
-                <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">2</button>
-                <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">3</button>
-                <button class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next</button>
             </div>
         </div>
-    </section>
+    `).join('');
+}
+
+// Render archive/vol newsletters
+function renderVolNewsletters() {
+    const grid = document.getElementById('volNewslettersGrid');
+    const archiveSection = document.getElementById('archiveSection');
+    
+    let filtered = volNewsletters.filter(newsletter => {
+        const matchesSearch = currentSearch === '' || 
+            newsletter.name.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesSearch;
+    });
+
+    if (filtered.length === 0) {
+        grid.classList.add('hidden');
+        archiveSection.classList.add('hidden');
+        return;
+    }
+
+    grid.classList.remove('hidden');
+    archiveSection.classList.remove('hidden');
+
+    grid.innerHTML = filtered.map(newsletter => `
+        <div class="pdf-card bg-white rounded-xl shadow-lg overflow-hidden">
+            <!-- PDF Thumbnail -->
+            <div class="pdf-thumbnail aspect-[3/4] relative">
+                <img src="${thumbnailImage}" alt="Newsletter Thumbnail" />
+                <span class="absolute top-2 right-2 bg-white text-[#1a4d7c] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    Archive
+                </span>
+            </div>
+            
+            <!-- PDF Info -->
+            <div class="p-4">
+                <h3 class="font-bold text-sm mb-3 text-gray-800 line-clamp-2 min-h-[2.5rem]">
+                    ${escapeHtml(newsletter.name)}
+                </h3>
+                
+                <!-- Action Buttons -->
+                <div class="flex gap-2">
+                    <a href="${newsletter.path}" target="_blank" 
+                       class="flex-1 bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-semibold hover:shadow-lg transition-all duration-300 text-center">
+                        <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        View
+                    </a>
+                    <a href="${newsletter.path}" download 
+                       class="flex-1 bg-gradient-to-r from-[#2c5282] to-[#1a4d7c] text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-semibold hover:shadow-lg transition-all duration-300 text-center">
+                        <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Setup filter buttons
+function setupFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            // Update filter
+            currentFilter = this.dataset.year;
+            renderNewsletters();
+        });
+    });
+}
+
+// Setup search
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function(e) {
+        currentSearch = e.target.value;
+        renderNewsletters();
+        renderVolNewsletters();
+    });
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+}
+</script>
 </asp:Content>

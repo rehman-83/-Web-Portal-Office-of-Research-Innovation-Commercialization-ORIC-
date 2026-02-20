@@ -5,110 +5,105 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-4">Board of Ethical Committee (BEC)</h1>
-            <p class="text-xl">Upholding Research Ethics Standards</p>
+ 
+<main class="container mx-auto px-4 py-8 md:py-12">
+  <!-- Page Header -->
+  <div class="text-center mb-8 md:mb-12 animate-fade-in-up">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a4d7c] mb-4">
+      Constitution of Institutional BioEthics Committee
+    </h1>
+    <div class="w-24 h-1 bg-gradient-to-r from-[#3674B5] to-[#A1E3F9] mx-auto rounded-full"></div>
+  </div>
+
+  <!-- PDF Viewer Section -->
+  <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 animate-slide-in">
+    <div class="bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] px-6 py-4">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-file-pdf text-white text-2xl"></i>
+          <h2 class="text-white font-semibold text-lg md:text-xl">Committee Constitution Document</h2>
         </div>
-    </section>
-    
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">About BEC</h2>
-                <p class="text-lg text-gray-700 mb-4">
-                    The Board of Ethical Committee (BEC) reviews all research involving human participants, animals, 
-                    or sensitive data to ensure compliance with national and international ethical standards. The 
-                    committee protects the rights, welfare, and dignity of research subjects.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <div class="card">
-                    <h3 class="text-xl font-bold text-blue-600 mb-3">Core Principles</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>• Respect for persons and autonomy</li>
-                        <li>• Beneficence and non-maleficence</li>
-                        <li>• Justice and fairness</li>
-                        <li>• Informed consent</li>
-                        <li>• Confidentiality and privacy</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3 class="text-xl font-bold text-blue-600 mb-3">Review Timeline</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>• Submit application 4 weeks before start</li>
-                        <li>• Initial screening within 1 week</li>
-                        <li>• Committee review monthly</li>
-                        <li>• Decision within 2-3 weeks</li>
-                        <li>• Continuing review annually</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Research Requiring BEC Approval</h3>
-                <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
-                    <p class="text-gray-800 font-semibold mb-2">📋 BEC approval is mandatory for:</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <div>
-                            <p class="font-semibold text-gray-900 mb-2">Human Research:</p>
-                            <ul class="space-y-1 text-gray-700">
-                                <li>• Clinical trials and drug studies</li>
-                                <li>• Surveys and questionnaires</li>
-                                <li>• Interviews and focus groups</li>
-                                <li>• Behavioral and psychological research</li>
-                                <li>• Use of human biological samples</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <p class="font-semibold text-gray-900 mb-2">Animal Research:</p>
-                            <ul class="space-y-1 text-gray-700">
-                                <li>• Vertebrate animal studies</li>
-                                <li>• Surgical procedures on animals</li>
-                                <li>• Animal behavior studies</li>
-                                <li>• Field studies involving wildlife</li>
-                                <li>• Use of animal tissues</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Application Forms & Guidelines</h3>
-                <div class="space-y-3">
-                    <a href="../assets/files/downloads/bec-human-research-form.pdf" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <span class="font-semibold text-gray-900">Human Research Application Form</span>
-                        <span class="text-blue-600">Download PDF →</span>
-                    </a>
-                    
-                    <a href="../assets/files/downloads/bec-animal-research-form.pdf" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <span class="font-semibold text-gray-900">Animal Research Application Form</span>
-                        <span class="text-blue-600">Download PDF →</span>
-                    </a>
-                    
-                    <a href="../assets/files/downloads/bec-informed-consent-template.pdf" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <span class="font-semibold text-gray-900">Informed Consent Template</span>
-                        <span class="text-blue-600">Download PDF →</span>
-                    </a>
-                    
-                    <a href="../assets/files/downloads/bec-guidelines.pdf" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <span class="font-semibold text-gray-900">Ethical Review Guidelines</span>
-                        <span class="text-blue-600">Download PDF →</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="bg-blue-50 rounded-lg p-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Contact BEC</h3>
-                <p class="text-gray-700 mb-4">For ethical review submissions or inquiries:</p>
-                <p class="text-gray-800 font-semibold">Email: bec@university.edu.pk</p>
-                <p class="text-gray-800 font-semibold">Phone: +92 XXX XXXXXXX</p>
-                <p class="text-gray-700 mt-4">Committee meets on the first Monday of each month</p>
-            </div>
+        <a href="assets/files/research&outreach/Constitution of Institutional BioEthic Committee.pdf" 
+           target="_blank" 
+           class="bg-white text-[#1a4d7c] px-4 py-2 rounded-lg hover:bg-[#D1F8EF] transition-all duration-300 flex items-center space-x-2 text-sm md:text-base">
+          <i class="fas fa-download"></i>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </div>
+    <div class="p-2 md:p-4">
+      <iframe 
+        src="assets/files/research&outreach/Constitution of Institutional BioEthic Committee.pdf" 
+        class="w-full h-[500px] md:h-[700px] lg:h-[800px] border-0 rounded-lg"
+        title="Institutional BioEthics Committee Constitution">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Info Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 md:mt-12">
+    <div class="bg-gradient-to-br from-[#3674B5] to-[#578FCA] rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+      <div class="flex items-center space-x-4 mb-4">
+        <div class="bg-white/20 p-3 rounded-lg">
+          <i class="fas fa-gavel text-3xl"></i>
         </div>
-    </section>
+        <h3 class="text-xl font-bold">Ethical Review</h3>
+      </div>
+      <p class="text-white/90">Ensures research compliance with ethical standards and regulations</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-[#578FCA] to-[#A1E3F9] rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+      <div class="flex items-center space-x-4 mb-4">
+        <div class="bg-white/20 p-3 rounded-lg">
+          <i class="fas fa-shield-alt text-3xl"></i>
+        </div>
+        <h3 class="text-xl font-bold">Protection</h3>
+      </div>
+      <p class="text-white/90">Protects rights and welfare of research participants</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-[#1a4d7c] to-[#3674B5] rounded-xl p-6 text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+      <div class="flex items-center space-x-4 mb-4">
+        <div class="bg-white/20 p-3 rounded-lg">
+          <i class="fas fa-balance-scale text-3xl"></i>
+        </div>
+        <h3 class="text-xl font-bold">Compliance</h3>
+      </div>
+      <p class="text-white/90">Maintains institutional research integrity and guidelines</p>
+    </div>
+  </div>
+</main>
+
+<style>
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out;
+}
+</style>
+
 </asp:Content>

@@ -12,493 +12,257 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Tailwind CSS -->
-    <link href="<%= ResolveUrl("~/assets/css/site.css") %>" rel="stylesheet" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gov-navy':   '#1a3a5c',
+                        'gov-blue':   '#1e5799',
+                        'gov-accent': '#c8102e',
+                        'gov-gold':   '#f0a500',
+                        'gov-light':  '#f4f7fb',
+                        'gov-border': '#dce4ef',
+                        'gov-text':   '#1a2733',
+                        'gov-muted':  '#5a6e82',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans 3', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    boxShadow: {
+                        'nav': '0 3px 10px rgba(0,0,0,0.22)',
+                        'card': '0 2px 16px rgba(26,58,92,0.13)',
+                        'dropdown': '0 8px 30px rgba(0,0,0,0.18)',
+                    },
+                    keyframes: {
+                        dropIn: {
+                            '0%':   { opacity: '0', transform: 'translateY(-6px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'drop-in': 'dropIn 0.18s ease',
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Page-specific head content -->
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 
     <style>
-        /* ── CSS VARIABLES ─────────────────────────────── */
-        :root {
-            --gov-navy:   #1a3a5c;
-            --gov-blue:   #1e5799;
-            --gov-accent: #c8102e;
-            --gov-gold:   #f0a500;
-            --gov-light:  #f4f7fb;
-            --gov-border: #dce4ef;
-            --gov-text:   #1a2733;
-            --gov-muted:  #5a6e82;
-            --white:      #ffffff;
-            --shadow:     0 2px 16px rgba(26,58,92,0.13);
-        }
+        /* Dropdown hover trigger — Tailwind doesn't support group-hover for arbitrary parent hover */
+        .nav-item:hover .dropdown     { display: block; }
+        .nav-item:hover .nav-btn .caret { transform: rotate(180deg); }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        body { font-family: 'Source Sans 3', sans-serif; }
-
-        /* ── TOP UTILITY STRIP ─────────────────────────── */
-        .top-strip {
-            background: var(--gov-navy);
-            color: #b8cfea;
-            font-size: 12px;
-            padding: 6px 0;
-        }
-        .top-strip .ts-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .top-strip a { color: #b8cfea; text-decoration: none; transition: color .2s; }
-        .top-strip a:hover { color: var(--gov-gold); }
-        .ts-links { display: flex; gap: 14px; align-items: center; }
-        .ts-links span { color: #4a6a8a; }
-
-        /* ── BRAND BAR ─────────────────────────────────── */
-        .brand-bar {
-            background: var(--white);
-            border-bottom: 3px solid var(--gov-accent);
-            box-shadow: var(--shadow);
-        }
-        .brand-bar .bb-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 12px 24px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .brand-logo { height: 68px; width: auto; display: block; }
-        .brand-text { flex: 1; min-width: 0; }
-        .brand-text h1 {
-            font-family: 'Merriweather', serif;
-            font-size: clamp(15px, 2vw, 20px);
-            color: var(--gov-navy);
-            line-height: 1.25;
-        }
-        .brand-text p {
-            font-size: 13px;
-            color: var(--gov-muted);
-            margin-top: 3px;
-        }
-        .brand-badges { display: flex; gap: 8px; flex-shrink: 0; }
-        .badge {
-            font-size: 11px; font-weight: 700; letter-spacing: .6px;
-            padding: 4px 10px; border-radius: 3px; text-transform: uppercase;
-        }
-        .badge-hec { background: #003087; color: #fff; }
-        .badge-pk  { background: var(--gov-accent); color: #fff; }
-
-        /* ── STICKY NAV ────────────────────────────────── */
-        .main-nav {
-            background: var(--gov-blue);
-            position: sticky;
-            top: 0;
-            z-index: 500;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.22);
-        }
-        .nav-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: stretch;
-        }
-
-        /* Desktop nav items */
-        .desktop-nav { display: flex; align-items: stretch; }
-        .nav-item { position: relative; }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 0 16px;
-            height: 50px;
-            color: rgba(255,255,255,.92);
-            font-size: 13.5px;
-            font-weight: 600;
-            text-decoration: none;
-            white-space: nowrap;
-            letter-spacing: .3px;
-            transition: background .2s, color .2s;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: inherit;
-        }
-        .nav-link:hover,
-        .nav-item:hover > .nav-link { background: rgba(255,255,255,.12); color: #fff; }
-        .nav-link.active { background: var(--gov-accent); color: #fff; }
-
-        .nav-link .caret {
-            width: 10px; height: 10px;
-            transition: transform .25s; flex-shrink: 0;
-        }
-        .nav-item:hover > .nav-link .caret { transform: rotate(180deg); }
-
-        /* Dropdown */
         .dropdown {
-            position: absolute;
-            top: 100%; left: 0;
-            min-width: 230px;
-            background: var(--white);
-            border-top: 3px solid var(--gov-accent);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-            border-radius: 0 0 6px 6px;
-            display: none;
-            z-index: 600;
             animation: dropIn .18s ease;
         }
         @keyframes dropIn {
             from { opacity: 0; transform: translateY(-6px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-        .nav-item:hover .dropdown { display: block; }
 
-        .dd-section { padding: 6px 0; border-bottom: 1px solid var(--gov-border); }
-        .dd-section:last-child { border-bottom: none; }
-
-        .dd-label {
-            display: block;
-            padding: 6px 16px 3px;
-            font-size: 10px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-            color: var(--gov-muted);
-        }
-        .dropdown a {
-            display: flex; align-items: center; gap: 8px;
-            padding: 9px 16px;
-            font-size: 13.5px; color: var(--gov-text);
-            text-decoration: none;
-            transition: background .15s, padding-left .15s, color .15s;
-        }
-        .dropdown a:hover {
-            background: var(--gov-light);
-            color: var(--gov-blue);
-            padding-left: 22px;
-        }
-
-        /* Search button */
-        .nav-search-btn {
-            margin-left: auto;
-            display: flex; align-items: center;
-            height: 50px; padding: 0 16px;
-            background: none; border: none;
-            color: rgba(255,255,255,.75);
-            cursor: pointer; transition: color .2s;
-        }
-        .nav-search-btn:hover { color: #fff; }
-        .nav-search-btn svg { width: 18px; height: 18px; }
-
-        /* Mobile toggle */
-        .mobile-toggle {
-            display: none;
-            margin-left: auto;
-            align-items: center;
-            height: 50px; padding: 0 16px;
-            background: none; border: none;
-            color: #fff; cursor: pointer;
-        }
-        .mobile-toggle svg { width: 24px; height: 24px; }
-
-        /* ── MOBILE MENU ────────────────────────────────── */
-        .mobile-nav {
-            display: none;
-            background: var(--gov-navy);
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height .35s ease;
-        }
-        .mobile-nav.open { max-height: 100vh; }
-        .mobile-nav-inner { padding: 8px 0 16px; }
-
-        .m-link {
-            display: flex; align-items: center;
-            justify-content: space-between;
-            width: 100%; padding: 13px 24px;
-            color: rgba(255,255,255,.9);
-            font-size: 14px; font-weight: 600;
-            text-decoration: none;
-            background: none; border: none;
-            border-bottom: 1px solid rgba(255,255,255,.06);
-            font-family: inherit; text-align: left;
-            cursor: pointer; transition: background .15s;
-        }
-        .m-link:hover { background: rgba(255,255,255,.08); }
-        .m-link svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform .2s; }
-        .m-link.expanded svg { transform: rotate(180deg); }
-
-        .m-sub { display: none; background: rgba(0,0,0,.25); }
+        /* Smooth mobile sub-menu */
+        .m-sub { display: none; }
         .m-sub.open { display: block; }
 
-        .m-sub-label {
-            display: block; padding: 8px 24px 3px 38px;
-            font-size: 10px; letter-spacing: 1px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,.35); font-weight: 700;
-        }
-        .m-sub a {
-            display: block; padding: 10px 24px 10px 38px;
-            color: rgba(255,255,255,.78); font-size: 13.5px;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,.04);
-            transition: background .15s, color .15s;
-        }
-        .m-sub a:hover { color: #fff; background: rgba(255,255,255,.07); }
+        /* Mobile nav max-height transition */
+        #mobileNav { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+        #mobileNav.open { max-height: 100vh; }
 
-        /* ── FOOTER ─────────────────────────────────────── */
-        .site-footer { background: #111827; color: #fff; margin-top: 64px; }
-        .footer-inner {
-            max-width: 1280px; margin: 0 auto;
-            padding: 56px 24px 32px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-        .footer-col h3 {
-            font-size: 15px; font-weight: 700;
-            letter-spacing: .4px; margin-bottom: 16px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--gov-accent);
-            display: inline-block;
-        }
-        .footer-col p, .footer-col li {
-            font-size: 13.5px; color: #9ca3af; line-height: 1.7;
-        }
-        .footer-col ul { list-style: none; padding: 0; margin: 0; }
-        .footer-col ul li { margin-bottom: 6px; }
-        .footer-col ul li a { color: #9ca3af; text-decoration: none; transition: color .2s; }
-        .footer-col ul li a:hover { color: var(--gov-gold); }
-        .footer-col .contact-item {
-            display: flex; gap: 8px; align-items: flex-start;
-            margin-bottom: 8px; color: #9ca3af; font-size: 13.5px;
-        }
-        .footer-divider {
-            border: none; border-top: 1px solid #1f2937;
-            margin: 32px 0 24px;
-        }
-        .footer-bottom {
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 12px;
-            font-size: 13px; color: #6b7280;
-        }
-        .footer-bottom a { color: #6b7280; text-decoration: none; transition: color .2s; }
-        .footer-bottom a:hover { color: var(--gov-gold); }
-
-        /* ── RESPONSIVE ─────────────────────────────────── */
-        @media (max-width: 1024px) {
-            .desktop-nav    { display: none; }
-            .mobile-toggle  { display: flex; }
-            .nav-search-btn { display: none; }
-            .mobile-nav     { display: block; }
-            .brand-badges   { display: none; }
-            .footer-grid    { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .brand-text h1   { font-size: 14px; }
-            .brand-text p    { font-size: 12px; }
-            .ts-links        { display: none; }
-            .footer-grid     { grid-template-columns: 1fr; }
-            .footer-bottom   { flex-direction: column; text-align: center; }
-        }
+        /* Caret rotation */
+        .caret { transition: transform .25s; }
+        .nav-item:hover .caret { transform: rotate(180deg); }
+        .m-link.expanded .m-caret { transform: rotate(180deg); }
+        .m-caret { transition: transform .2s; }
     </style>
 </head>
 
-<body class="bg-gray-50 min-h-screen flex flex-col">
+<body class="bg-gray-50 min-h-screen flex flex-col font-sans text-gov-text">
 <form id="form1" runat="server">
 
-    <!-- ══ TOP UTILITY STRIP ══════════════════════════════ -->
-    <div class="top-strip">
-        <div class="ts-inner">
-            <span>Government of Pakistan &nbsp;|&nbsp; Higher Education Commission</span>
-            <div class="ts-links">
-                <a href="<%= ResolveUrl("~/contact.aspx") %>">Contact</a>
-                <span>|</span>
-                <a href="<%= ResolveUrl("~/sitemap.aspx") %>">Sitemap</a>
-                <span>|</span>
-                <a href="#">Accessibility</a>
-                <span>|</span>
-                <a href="#">&#1575;&#1585;&#1583;&#1608;</a>
+    <!-- ══ TOP UTILITY STRIP ══════════════════════════════════ -->
+    <div class="bg-gov-navy text-blue-200 text-xs py-1.5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-2">
+            <span class="text-blue-300">Government of Pakistan &nbsp;|&nbsp; Higher Education Commission</span>
+            <div class="hidden sm:flex items-center gap-3.5">
+                <a href="<%= ResolveUrl("~/contact.aspx") %>"   class="hover:text-gov-gold transition-colors">Contact</a>
+                <span class="text-blue-700">|</span>
+                <a href="https://web.uaf.edu.pk"   class="hover:text-gov-gold transition-colors">UAF</a>
+                <span class="text-blue-700">|</span>
+                <a href="https://web.uaf.edu.pk/FacultyProfile/Department?id=55"                                       class="hover:text-gov-gold transition-colors">Staff</a>
+                <span class="text-blue-700">|</span>
+                <a href="#" class="hover:text-gov-gold transition-colors">&#1575;&#1585;&#1583;&#1608;</a>
             </div>
         </div>
     </div>
 
-    <!-- ══ BRAND BAR ═══════════════════════════════════════ -->
-    <div class="brand-bar">
-        <div class="bb-inner">
-            <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="brand-logo" />
-            <div class="brand-text">
-                <h1>Office of Research, Innovation &amp; Commercialization</h1>
-                <p>University of Agriculture Faisalabad &mdash; HEC Recognized ORIC</p>
-            </div>
-            <div class="brand-badges">
-                <span class="badge badge-hec">HEC</span>
-                <span class="badge badge-pk">Pakistan</span>
-            </div>
-        </div>
-    </div>
+    <!-- ══ STICKY MAIN NAV ════════════════════════════════════ -->
+    <nav class="bg-gov-blue sticky top-0 z-50 shadow-nav" role="navigation" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-6 flex items-stretch">
 
-    <!-- ══ MAIN NAV ════════════════════════════════════════ -->
-    <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-        <div class="nav-inner">
+            <!-- Logo -->
+            <div class="flex items-center pr-4 flex-shrink-0">
+                <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-9 w-auto" />
+            </div>
 
-            <!-- DESKTOP NAV -->
-            <div class="desktop-nav">
+            <!-- ── DESKTOP NAV ────────────────────────────────── -->
+            <div class="hidden lg:flex items-stretch flex-1">
 
                 <!-- Home -->
-                <div class="nav-item">
-                    <a href="<%= ResolveUrl("~/Default.aspx") %>" class="nav-link active">Home</a>
+                <div class="nav-item relative flex items-stretch">
+                    <a href="<%= ResolveUrl("~/Default.aspx") %>"
+                       class="nav-link flex items-center px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                              hover:bg-white/10 transition-colors duration-200 active-nav">
+                        Home
+                    </a>
                 </div>
 
                 <!-- About -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-item relative flex items-stretch group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                            class="nav-btn flex items-center gap-1.5 px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                                   hover:bg-white/10 transition-colors duration-200 bg-transparent border-0 font-sans cursor-pointer">
                         About
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <svg class="caret w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <span class="dd-label">Organization</span>
-                            <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>">Organogram</a>
-                            <a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a>
-                            <a href="<%= ResolveUrl("~/about/Staff.aspx") %>">Staff</a>
-                        </div>
-                        <div class="dd-section">
-                            <span class="dd-label">Governance</span>
-                            <a href="<%= ResolveUrl("~/about/Activities.aspx") %>">Activities</a>
-                            <a href="<%= ResolveUrl("~/about/Milestones.aspx") %>">Milestones</a>
-                            <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>">IRAB</a>
-                            <a href="<%= ResolveUrl("~/about/OSC.aspx") %>">OSC</a>
-                            <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>">IFGSJ</a>
+                    <div class="dropdown hidden absolute top-full left-0 min-w-[230px] bg-white border-t-[3px] border-gov-accent
+                                shadow-dropdown rounded-b-md z-[600]">
+                        
+                        <div class="py-1.5">
+                            <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>"        class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Institutional Review Board</a>
+                            <a href="<%= ResolveUrl("~/about/OSC.aspx") %>"         class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">ORIC Steering Committee</a>
+                            <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>"       class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Impact Factor of Global Science Journals</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Research -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
-                        Research
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <!-- Research & Development -->
+                <div class="nav-item relative flex items-stretch group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                            class="nav-btn flex items-center gap-1.5 px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                                   hover:bg-white/10 transition-colors duration-200 bg-transparent border-0 font-sans cursor-pointer">
+                        Research &amp; Development
+                        <svg class="caret w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <span class="dd-label">Funding &amp; Committees</span>
-                            <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a>
-                            <a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a>
-                            <a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a>
+                    <div class="dropdown hidden absolute top-full left-0 min-w-[230px] bg-white border-t-[3px] border-gov-accent
+                                shadow-dropdown rounded-b-md z-[600]">
+                        <div class="py-1.5 border-b border-gov-border">
+                            <span class="block px-4 pt-1.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-gov-muted">Funding &amp; Committees</span>
+                            <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>"    class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Funding Agencies</a>
+                            <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">IBC</a>
+                            <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">BEC</a>
                         </div>
-                        <div class="dd-section">
-                            <span class="dd-label">Resources</span>
-                            <a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a>
-                            <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a>
-                            <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a>
-                            <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a>
-                            <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a>
-                            <a href="<%= ResolveUrl("~/research/OP.aspx") %>">OP</a>
-                            <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>">Reimbursements</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outreach -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
-                        Outreach
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>">Outreach Programs</a>
-                            <a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a>
-                            <a href="<%= ResolveUrl("~/outreach/Seminars.aspx") %>">Seminars</a>
+                        <div class="py-1.5">
+                            <span class="block px-4 pt-1.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-gov-muted">Resources</span>
+                            <a href="<%= ResolveUrl("~/research/Services.aspx") %>"            class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Services</a>
+                            <a href="<%= ResolveUrl("~/research/Internships.aspx") %>"         class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Internships</a>
+                            <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Approved Supervisors</a>
+                            <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Professional Trainings</a>
+                            <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"               class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">IMERP</a>
+                            <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"   class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Research Journals</a>
+                            <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                  class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">OP</a>
+                            <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>"      class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Reimbursements</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Commercialization -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-item relative flex items-stretch group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                            class="nav-btn flex items-center gap-1.5 px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                                   hover:bg-white/10 transition-colors duration-200 bg-transparent border-0 font-sans cursor-pointer">
                         Commercialization
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <svg class="caret w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a>
-                            <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>">Collaboration</a>
-                            <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>">TISC</a>
+                    <div class="dropdown hidden absolute top-full left-0 min-w-[230px] bg-white border-t-[3px] border-gov-accent
+                                shadow-dropdown rounded-b-md z-[600]">
+                        <div class="py-1.5">
+                            <a href="<%= ResolveUrl("~/commercialization/AgriTech_Park.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">AgriTech Park</a>
+                            <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Commercialized Technologies</a>
+                            <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Academia-Industry Linkages</a>
+                            <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>"          class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Technology and Innovation Support Center</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Media -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-item relative flex items-stretch group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                            class="nav-btn flex items-center gap-1.5 px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                                   hover:bg-white/10 transition-colors duration-200 bg-transparent border-0 font-sans cursor-pointer">
                         Media
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <svg class="caret w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <a href="<%= ResolveUrl("~/media/News.aspx") %>">News</a>
-                            <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>">Gallery</a>
-                            <a href="<%= ResolveUrl("~/media/Events.aspx") %>">Events</a>
-                            <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>">Documentaries</a>
-                            <a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a>
-                            <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>">Downloads</a>
+                    <div class="dropdown hidden absolute top-full left-0 min-w-[230px] bg-white border-t-[3px] border-gov-accent
+                                shadow-dropdown rounded-b-md z-[600]">
+                        <div class="py-1.5">
+                            <a href="<%= ResolveUrl("~/media/News.aspx") %>"          class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">ORIC Newsletter</a>
+                            <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>"       class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Gallery</a>
+                            <a href="<%= ResolveUrl("~/media/Events.aspx") %>"        class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Events</a>
+                            <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Documentaries</a>
+                            <a href="<%= ResolveUrl("~/media/Publications.aspx") %>"  class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Publications</a>
+                            <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>"     class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Downloads</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Hi-Tech -->
-                <div class="nav-item">
-                    <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-item relative flex items-stretch group">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                            class="nav-btn flex items-center gap-1.5 px-4 h-[50px] text-white/90 text-[13.5px] font-semibold tracking-wide whitespace-nowrap
+                                   hover:bg-white/10 transition-colors duration-200 bg-transparent border-0 font-sans cursor-pointer">
                         Hi-Tech
-                        <svg class="caret" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                        <svg class="caret w-2.5 h-2.5 flex-shrink-0" viewBox="0 0 10 10" fill="none" aria-hidden="true">
                             <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="dropdown" role="menu">
-                        <div class="dd-section">
-                            <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>">Diagnostic</a>
-                            <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>">Training</a>
+                    <div class="dropdown hidden absolute top-full left-0 min-w-[200px] bg-white border-t-[3px] border-gov-accent
+                                shadow-dropdown rounded-b-md z-[600]">
+                        <div class="py-1.5">
+                            <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Diagnostic Facilities</a>
+                            <a href="<%= ResolveUrl("~/Hi-Tech/Analytical_Facilities.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Analytical Facilities  </a>
+                            <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>"   class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Training</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- BIC -->
-                <div class="nav-item">
-                    <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="nav-link">BIC</a>
-                </div>
+            </div><!-- /desktop nav items -->
 
-            </div><!-- /desktop-nav -->
-
-            <!-- Search (desktop) -->
-            <button type="button" class="nav-search-btn" aria-label="Search" onclick="document.getElementById('searchOverlay').classList.toggle('hidden')">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <!-- Search button (desktop) -->
+            <button type="button"
+                    class="hidden lg:flex items-center ml-auto h-[50px] px-4 bg-transparent border-0 text-white/75 hover:text-white cursor-pointer transition-colors"
+                    aria-label="Search"
+                    onclick="document.getElementById('searchOverlay').classList.toggle('hidden')">
+                <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                 </svg>
             </button>
 
             <!-- Hamburger (mobile) -->
-            <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
-                <svg id="iconMenu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <button type="button"
+                    class="lg:hidden flex items-center ml-auto h-[50px] px-4 bg-transparent border-0 text-white cursor-pointer"
+                    id="mobileToggle"
+                    aria-label="Toggle navigation menu"
+                    onclick="toggleMobileMenu()">
+                <svg id="iconMenu" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
@@ -506,160 +270,200 @@
         </div><!-- /nav-inner -->
     </nav>
 
-    <!-- ══ MOBILE NAV ══════════════════════════════════════ -->
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-        <div class="mobile-nav-inner">
+    <!-- ══ MOBILE NAV ═══════════════════════════════════════ -->
+    <div class="lg:hidden bg-[#0f2942]" id="mobileNav" aria-hidden="true">
+        <div class="py-2 pb-4">
 
-            <a href="<%= ResolveUrl("~/Default.aspx") %>" class="m-link">Home</a>
+            <a href="<%= ResolveUrl("~/Default.aspx") %>"
+               class="flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                      border-b border-blue-800/30 hover:bg-gov-blue hover:border-l-4 hover:border-l-gov-gold hover:pl-[20px] 
+                      transition-all duration-200 text-left no-underline">
+                Home
+            </a>
 
             <!-- About mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-about', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-about', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 About
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-about" aria-hidden="true">
-                <span class="m-sub-label">Organization</span>
-                <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>">Organogram</a>
-                <a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a>
-                <a href="<%= ResolveUrl("~/about/Staff.aspx") %>">Staff</a>
-                <span class="m-sub-label">Governance</span>
-                <a href="<%= ResolveUrl("~/about/Activities.aspx") %>">Activities</a>
-                <a href="<%= ResolveUrl("~/about/Milestones.aspx") %>">Milestones</a>
-                <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>">IRAB</a>
-                <a href="<%= ResolveUrl("~/about/OSC.aspx") %>">OSC</a>
-                <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>">IFGSJ</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-about" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/about/IRAB.aspx") %>"       class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Institutional Review & Advisory Board</a>
+                <a href="<%= ResolveUrl("~/about/OSC.aspx") %>"        class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">ORIC Steering Committee</a>
+                <a href="<%= ResolveUrl("~/about/IFGSJ.aspx") %>"      class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">IFGSJ</a>
             </div>
 
             <!-- Research mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-research', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-research', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 Research
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-research" aria-hidden="true">
-                <span class="m-sub-label">Funding &amp; Committees</span>
-                <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a>
-                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a>
-                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a>
-                <span class="m-sub-label">Resources</span>
-                <a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a>
-                <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a>
-                <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a>
-                <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a>
-                <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a>
-                <a href="<%= ResolveUrl("~/research/OP.aspx") %>">OP</a>
-                <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>">Reimbursements</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-research" aria-hidden="true">
+                <span class="block px-6 pl-9 pt-3 pb-1.5 text-[10px] uppercase tracking-widest text-gov-gold font-bold">Funding &amp; Committees</span>
+                <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>"      class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Funding Agencies</a>
+                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">IBC</a>
+                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">BEC</a>
+                <span class="block px-6 pl-9 pt-3 pb-1.5 text-[10px] uppercase tracking-widest text-gov-gold font-bold">Resources</span>
+                <a href="<%= ResolveUrl("~/research/Services.aspx") %>"              class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Services</a>
+                <a href="<%= ResolveUrl("~/research/Internships.aspx") %>"           class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Internships</a>
+                <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>"  class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Approved Supervisors</a>
+                <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Professional Trainings</a>
+                <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"                 class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">IMERP</a>
+                <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"     class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Research Journals</a>
+                <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                    class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">OP</a>
+                <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>"        class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Reimbursements</a>
             </div>
 
             <!-- Outreach mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-outreach', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-outreach', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 Outreach
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-outreach" aria-hidden="true">
-                <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>">Outreach Programs</a>
-                <a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a>
-                <a href="<%= ResolveUrl("~/outreach/Seminars.aspx") %>">Seminars</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-outreach" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/outreach/Outreach.aspx") %>"    class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Outreach Programs</a>
+                <a href="<%= ResolveUrl("~/research/Internships.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Internships</a>
+                <a href="<%= ResolveUrl("~/outreach/Seminars.aspx") %>"    class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Seminars</a>
             </div>
 
             <!-- Commercialization mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-comm', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-comm', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 Commercialization
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-comm" aria-hidden="true">
-                <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a>
-                <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>">Collaboration</a>
-                <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>">TISC</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-comm" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/commercialization/AgriTech_Park.aspx") %>"  class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">AgriTech Park</a>
+                <a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>"  class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Commercialized Technologies</a>
+                <a href="<%= ResolveUrl("~/commercialization/Collaboration.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Academia-Industry Linkages</a>
+                <a href="<%= ResolveUrl("~/commercialization/TISC.aspx") %>"          class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Technology and Innovation Support Center</a>
             </div>
 
             <!-- Media mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-media', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-media', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 Media
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-media" aria-hidden="true">
-                <a href="<%= ResolveUrl("~/media/News.aspx") %>">News</a>
-                <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>">Gallery</a>
-                <a href="<%= ResolveUrl("~/media/Events.aspx") %>">Events</a>
-                <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>">Documentaries</a>
-                <a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a>
-                <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>">Downloads</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-media" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/media/News.aspx") %>"          class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">ORIC Newsletter</a>
+                <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>"       class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Gallery</a>
+                <a href="<%= ResolveUrl("~/media/Events.aspx") %>"        class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Events</a>
+                <a href="<%= ResolveUrl("~/media/Documentaries.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Documentaries</a>
+                <a href="<%= ResolveUrl("~/media/Publications.aspx") %>"  class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Publications</a>
+                <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>"     class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Downloads</a>
             </div>
 
             <!-- Hi-Tech mobile -->
-            <button type="button" class="m-link" onclick="toggleMobileSub('mSub-hitech', this)" aria-expanded="false">
+            <button type="button" onclick="toggleMobileSub('mSub-hitech', this)" aria-expanded="false"
+                    class="m-link flex items-center justify-between w-full px-6 py-3.5 text-white text-[13.5px] font-semibold
+                           border-b border-blue-800/30 hover:bg-gov-blue transition-all duration-200 text-left bg-transparent font-sans cursor-pointer">
                 Hi-Tech
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <svg class="m-caret w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="m-sub" id="mSub-hitech" aria-hidden="true">
-                <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>">Diagnostic</a>
-                <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>">Training</a>
+            <div class="m-sub bg-[#0a1f33]" id="mSub-hitech" aria-hidden="true">
+                <a href="<%= ResolveUrl("~/Hi-Tech/Diagnostic.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Diagnostic</a>
+                <a href="<%= ResolveUrl("~/Hi-Tech/Analytical_Facilities.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Analytical_Facilities</a>
+                <a href="<%= ResolveUrl("~/Hi-Tech/Training.aspx") %>"   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Training</a>
             </div>
-
-            <a href="<%= ResolveUrl("~/BIC.aspx") %>" class="m-link">BIC</a>
 
         </div>
     </div><!-- /mobile-nav -->
 
-    <!-- ══ MAIN CONTENT ════════════════════════════════════ -->
+    <!-- ══ MAIN CONTENT ══════════════════════════════════════ -->
     <main class="flex-grow" id="mainContent" role="main">
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
     </main>
 
-    <!-- ══ FOOTER ══════════════════════════════════════════ -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="footer-inner">
-            <div class="footer-grid">
+    <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+    <footer class="bg-gray-900 text-white mt-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-6 pt-14 pb-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <!-- About -->
-                <div class="footer-col">
-                    <h3>About ORIC</h3>
-                    <p>Office of Research, Innovation &amp; Commercialization promoting excellence in research, innovation, and technology transfer at University of Agriculture Faisalabad.</p>
+                <div>
+                    <h3 class="text-[15px] font-bold tracking-[0.4px] mb-4 pb-2.5
+                               border-b-2 border-gov-accent inline-block">About ORIC</h3>
+                    <p class="text-[13.5px] text-gray-400 leading-[1.7]">
+                        Office of Research, Innovation &amp; Commercialization promoting excellence in research,
+                        innovation, and technology transfer at University of Agriculture Faisalabad.
+                    </p>
+                     <div class="flex space-x-4 pt-6 justify-start">
+                    <a href="#" class="bg-white/10 hover:bg-[#1DA1F2] hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/oricuaf" target="_blank"
+                        class="bg-white/10 hover:bg-[#E1306C] hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/oricuaf" target="_blank"
+                        class="bg-white/10 hover:bg-[#1877F2] hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-white/10 hover:bg-[#0A66C2] hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://youtube.com/@oricuaf5502" target="_blank"
+                        class="bg-white/10 hover:bg-red-600 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+
                 </div>
 
                 <!-- Quick Links -->
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="<%= ResolveUrl("~/about/Director.aspx") %>">Director Message</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>">Funding Agencies</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>">Approved Supervisors</a></li>
-                        <li><a href="<%= ResolveUrl("~/media/Publications.aspx") %>">Publications</a></li>
-                        <li><a href="<%= ResolveUrl("~/outreach/Internships.aspx") %>">Internships</a></li>
-                        <li><a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>">Technologies</a></li>
+                <div>
+                    <h3 class="text-[15px] font-bold tracking-[0.4px] mb-4 pb-2.5
+                               border-b-2 border-gov-accent inline-block">Quick Links</h3>
+                    <ul class="space-y-1.5">
+                        <li><a href="<%= ResolveUrl("~/about/Director.aspx") %>"                class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Director Message</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>"    class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Funding Agencies</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>" class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Approved Supervisors</a></li>
+                        <li><a href="<%= ResolveUrl("~/media/Publications.aspx") %>"            class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Publications</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Internships.aspx") %>"          class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Internships</a></li>
+                        <li><a href="<%= ResolveUrl("~/commercialization/Technologies.aspx") %>" class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Commercialized Technologies </a></li>
                     </ul>
                 </div>
-
                 <!-- Research -->
-                <div class="footer-col">
-                    <h3>Research</h3>
-                    <ul>
-                        <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>">IBC</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>">BEC</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>">Services</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>">Research Journals</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/IMERP.aspx") %>">IMERP</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>">Professional Trainings</a></li>
+                <div>
+                    <h3 class="text-[15px] font-bold tracking-[0.4px] mb-4 pb-2.5
+                               border-b-2 border-gov-accent inline-block">Research</h3>
+                    <ul class="space-y-1.5">
+                        <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">IBC</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">BEC</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>"                 class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Services</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"        class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Research Journals</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"                    class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">IMERP</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>"   class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Professional Trainings</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                <div>
+                    <h3 class="text-[15px] font-bold tracking-[0.4px] mb-4 pb-2.5
+                               border-b-2 border-gov-accent inline-block">Contact</h3>
+                    <div class="flex gap-2 items-start mb-2 text-[13.5px] text-gray-400">
+                        <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                         </svg>
                         <span>oric@uaf.edu.pk</span>
                     </div>
-                    <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                    <div class="flex gap-2 items-start mb-2 text-[13.5px] text-gray-400">
+                        <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
                         </svg>
                         <span>+92 41 9200161</span>
                     </div>
-                    <div class="contact-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+                    <div class="flex gap-2 items-start text-[13.5px] text-gray-400">
+                        <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                         </svg>
                         <span>UAF Main Campus, Faisalabad, Pakistan</span>
@@ -668,14 +472,14 @@
 
             </div><!-- /footer-grid -->
 
-            <hr class="footer-divider" />
+            <hr class="border-t border-gray-800 my-8" />
 
-            <div class="footer-bottom">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-gray-500 text-center">
                 <span>&copy; <%= DateTime.Now.Year %> ORIC &mdash; University of Agriculture Faisalabad. All rights reserved.</span>
-                <div style="display:flex;gap:20px;">
-                    <a href="<%= ResolveUrl("~/privacy.aspx") %>">Privacy Policy</a>
-                    <a href="<%= ResolveUrl("~/disclaimer.aspx") %>">Disclaimer</a>
-                    <a href="<%= ResolveUrl("~/sitemap.aspx") %>">Sitemap</a>
+                <div class="flex gap-5">
+                    <a href="<%= ResolveUrl("~/privacy.aspx") %>"    class="hover:text-gov-gold transition-colors">Privacy Policy</a>
+                    <a href="<%= ResolveUrl("~/disclaimer.aspx") %>" class="hover:text-gov-gold transition-colors">Disclaimer</a>
+                    <a href="<%= ResolveUrl("~/sitemap.aspx") %>"    class="hover:text-gov-gold transition-colors">Sitemap</a>
                 </div>
             </div>
 
@@ -684,19 +488,19 @@
 
 </form><!-- /form1 -->
 
-<!-- ══ SCRIPTS ════════════════════════════════════════════ -->
+<!-- ══ SCRIPTS ══════════════════════════════════════════════ -->
 <script src="<%= ResolveUrl("~/assets/js/carousel.js") %>"></script>
 
 <script>
-    // ── Mobile menu toggle ─────────────────────────────────
+    /* ── Mobile menu toggle ─────────────────────────────── */
     function toggleMobileMenu() {
-        var nav  = document.getElementById('mobileNav');
+        var nav    = document.getElementById('mobileNav');
         var isOpen = nav.classList.contains('open');
         nav.classList.toggle('open');
         nav.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
     }
 
-    // ── Mobile sub-menu accordion ──────────────────────────
+    /* ── Mobile sub-menu accordion ──────────────────────── */
     function toggleMobileSub(id, btn) {
         var sub    = document.getElementById(id);
         var isOpen = sub.classList.contains('open');
@@ -719,18 +523,18 @@
         }
     }
 
-    // ── Close mobile menu on resize to desktop ─────────────
+    /* ── Close mobile menu on resize to desktop ─────────── */
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 1024) {
+        if (window.innerWidth >= 1024) {
             var nav = document.getElementById('mobileNav');
             nav.classList.remove('open');
             nav.setAttribute('aria-hidden', 'true');
         }
     });
 
-    // ── Close dropdowns when clicking outside ──────────────
+    /* ── Close mobile menu when clicking outside nav ────── */
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.main-nav') && !e.target.closest('.mobile-nav')) {
+        if (!e.target.closest('nav') && !e.target.closest('#mobileNav')) {
             var nav = document.getElementById('mobileNav');
             if (nav.classList.contains('open')) {
                 nav.classList.remove('open');
@@ -739,26 +543,28 @@
         }
     });
 
-    // ── Mark active nav link based on current URL ──────────
+    /* ── Mark active nav link based on current URL ──────── */
     (function() {
         var path = window.location.pathname.toLowerCase();
-        document.querySelectorAll('.desktop-nav .nav-link').forEach(function(link) {
-            link.classList.remove('active');
+
+        document.querySelectorAll('.desktop-nav .nav-link, .hidden.lg\\:flex a').forEach(function(link) {
+            link.classList.remove('bg-gov-accent');
         });
-        // Home
+
+        // Home active
         if (path === '/' || path.indexOf('default.aspx') !== -1) {
-            var homeLink = document.querySelector('.desktop-nav a[href*="Default.aspx"], .desktop-nav a[href*="default.aspx"]');
-            if (homeLink) homeLink.classList.add('active');
+            var homeLink = document.querySelector('a[href*="Default.aspx"], a[href*="default.aspx"]');
+            if (homeLink) homeLink.classList.add('bg-gov-accent');
             return;
         }
-        // Match section
-        var sections = ['about','research','outreach','commercialization','media','hi-tech','bic'];
+
+        // Section active
+        var sections = ['about','research','outreach','commercialization','media','hi-tech'];
         sections.forEach(function(sec) {
             if (path.indexOf('/' + sec + '/') !== -1 || path.indexOf(sec + '.aspx') !== -1) {
-                document.querySelectorAll('.desktop-nav .nav-item').forEach(function(item) {
-                    var btn = item.querySelector('.nav-link');
-                    if (btn && btn.textContent.trim().toLowerCase().replace(/\s+/g,'') === sec.replace('-','')) {
-                        btn.classList.add('active');
+                document.querySelectorAll('.nav-btn').forEach(function(btn) {
+                    if (btn.textContent.trim().toLowerCase().replace(/[\s&]+/g,'').indexOf(sec.replace('-','')) !== -1) {
+                        btn.classList.add('bg-white/20');
                     }
                 });
             }

@@ -7,51 +7,47 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  
 <style>
+  /* ── Horizontal main tab bar ── */
+  #mainTabNav {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #mainTabNav::-webkit-scrollbar { display: none; }
+
   .tab-btn {
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
     background-color: transparent;
-    color: #4a5568;
+    color: #64748b;
+    border-bottom: 3px solid transparent;
   }
-
   .tab-btn:hover {
-    transform: translateX(4px);
-    background-color: #3674B5;
-    color: white;
+    color: #1a4d7c;
+    background-color: #f0f7ff;
   }
-
   .tab-btn.active {
-    background-color: #3674B5;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #1a4d7c;
+    border-bottom-color: #3674B5;
+    background-color: #f0f7ff;
   }
 
   .section-content {
     display: none;
     animation: fadeIn 0.4s ease-in;
   }
-
-  .section-content.active {
-    display: block;
-  }
+  .section-content.active { display: block; }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
+  /* ── Scroll hint arrow visible only on small screens ── */
+  .tab-scroll-hint { display: none; }
   @media (max-width: 768px) {
-    .sticky-sidebar {
-      position: relative !important;
-      top: 0 !important;
-    }
+    .tab-scroll-hint { display: flex; }
   }
 
   /* Table Styling */
@@ -64,40 +60,28 @@
     border-radius: 0.5rem;
     overflow: hidden;
   }
-
   .collaboration-table thead {
     background: linear-gradient(135deg, #3674B5 0%, #578FCA 100%);
     color: white;
   }
-
   .collaboration-table th {
     padding: 1rem;
     text-align: left;
     font-weight: 600;
     font-size: 0.875rem;
   }
-
   .collaboration-table td {
     padding: 0.875rem 1rem;
     border-bottom: 1px solid #e2e8f0;
     font-size: 0.875rem;
     color: #4a5568;
   }
-
-  .collaboration-table tbody tr:hover {
-    background-color: #f7fafc;
-  }
-
-  .collaboration-table tbody tr:last-child td {
-    border-bottom: none;
-  }
+  .collaboration-table tbody tr:hover { background-color: #f7fafc; }
+  .collaboration-table tbody tr:last-child td { border-bottom: none; }
 
   /* Responsive Table */
   @media (max-width: 768px) {
-    .collaboration-table thead {
-      display: none;
-    }
-
+    .collaboration-table thead { display: none; }
     .collaboration-table tr {
       display: block;
       margin-bottom: 1rem;
@@ -106,14 +90,12 @@
       padding: 0.5rem;
       background-color: white;
     }
-
     .collaboration-table td {
       display: block;
       text-align: right;
       padding: 0.5rem;
       border: none;
     }
-
     .collaboration-table td:before {
       content: attr(data-label);
       float: left;
@@ -122,9 +104,7 @@
     }
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 </style>
 
 <main class="container mx-auto px-4 py-8 md:py-12">
@@ -156,69 +136,55 @@
       </p>
     </div> -->
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      <!-- Sidebar -->
-      <aside class="lg:col-span-1">
-        <div class="sticky-sidebar sticky top-20">
-          <h2 class="text-xl font-semibold text-[#1a4d7c] mb-4">Faculties</h2>
-          <nav class="bg-gray-300 rounded-xl shadow-lg p-3">
-            <ul class="space-y-2">
-              <li>
-                <button data-target="introduction"
-                  class="tab-btn active w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-info-circle mr-2"></i>Introduction
-                </button>
-              </li>
-              <li>
-                <button data-target="agriculture"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-seedling mr-2"></i>Agriculture
-                </button>
-              </li>
-              <li>
-                <button data-target="engineering"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-cogs mr-2"></i>Engineering & Tech
-                </button>
-              </li>
-              <li>
-                <button data-target="sciences" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-flask mr-2"></i>Sciences
-                </button>
-              </li>
-              <li>
-                <button data-target="animal" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-paw mr-2"></i>Animal Husbandry
-                </button>
-              </li>
-              <li>
-                <button data-target="veterinary" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-stethoscope mr-2"></i>Veterinary
-                </button>
-              </li>
-              <li>
-                <button data-target="social" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-users mr-2"></i>Social Sciences
-                </button>
-              </li>
-              <li>
-                <button data-target="nifsat" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-apple-alt mr-2"></i>NIFSAT
-                </button>
-              </li>
-              <li>
-                <button data-target="pbi" class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-leaf mr-2"></i>BioEnergy
-                </button>
-              </li>
-            </ul>
-          </nav>
+    <!-- ── Horizontal Tab Navigation ── -->
+    <div class="mb-6 relative">
+      <div class="tab-scroll-hint absolute right-0 top-0 bottom-0 items-center pr-2 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent w-10 z-10">
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+      </div>
+      <nav class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="flex overflow-x-auto" id="mainTabNav">
+          <button type="button" data-target="introduction"
+            class="tab-btn active flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-info-circle"></i><span>Introduction</span>
+          </button>
+          <button type="button" data-target="agriculture"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-seedling"></i><span>Agriculture</span>
+          </button>
+          <button type="button" data-target="engineering"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-cogs"></i><span>Engineering &amp; Tech</span>
+          </button>
+          <button type="button" data-target="sciences"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-flask"></i><span>Sciences</span>
+          </button>
+          <button type="button" data-target="animal"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-paw"></i><span>Animal Husbandry</span>
+          </button>
+          <button type="button" data-target="veterinary"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-stethoscope"></i><span>Veterinary</span>
+          </button>
+          <button type="button" data-target="social"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-users"></i><span>Social Sciences</span>
+          </button>
+          <button type="button" data-target="nifsat"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-apple-alt"></i><span>NIFSAT</span>
+          </button>
+          <button type="button" data-target="pbi"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-leaf"></i><span>BioEnergy</span>
+          </button>
         </div>
-      </aside>
+      </nav>
+    </div>
 
-      <!-- Content Area -->
-      <section class="lg:col-span-3">
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
+    <!-- ── Content Area (full width) ── -->
+    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
 
           <!-- Introduction Section -->
           <div id="introduction" class="section-content active">
@@ -1022,40 +988,29 @@
             </div>
           </div>
 
-        </div>
-      </section>
     </div>
   </div>
 </main>
 
 <script>
+  function activate(targetId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('active'));
+    const btn = document.querySelector('[data-target="' + targetId + '"]');
+    if (btn) btn.classList.add('active');
+    const panel = document.getElementById(targetId);
+    if (panel) {
+      panel.style.animation = 'none';
+      panel.offsetHeight;
+      panel.style.animation = '';
+      panel.classList.add('active');
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.section-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        const targetId = this.getAttribute('data-target');
-
-        // Remove active class from all buttons
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-
-        // Add active class to clicked button
-        this.classList.add('active');
-
-        // Hide all content sections
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        // Show target content section
-        const targetContent = document.getElementById(targetId);
-        if (targetContent) {
-          targetContent.classList.add('active');
-
-          // Smooth scroll on mobile
-          if (window.innerWidth < 1024) {
-            targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        activate(this.getAttribute('data-target'));
       });
     });
   });

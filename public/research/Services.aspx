@@ -6,72 +6,74 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <style>
+  /* ── Horizontal main tab bar ── */
+  #mainTabNav {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #mainTabNav::-webkit-scrollbar { display: none; }
+
   .tab-btn {
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
     background-color: transparent;
-    color: #4a5568;
+    color: #64748b;
+    border-bottom: 3px solid transparent;
+    position: relative;
   }
-
   .tab-btn:hover {
-    transform: translateX(4px);
-    background-color: #3674B5;
-    color: white;
+    color: #1a4d7c;
+    background-color: #f0f7ff;
   }
-
   .tab-btn.active {
-    background-color: #3674B5;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #1a4d7c;
+    border-bottom-color: #3674B5;
+    background-color: #f0f7ff;
   }
 
+  /* ── PhD sub-nav pills ── */
   .phd-nav-btn {
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     background-color: white;
     color: #4a5568;
+    border: 1.5px solid #dce8f8;
   }
-
   .phd-nav-btn:hover {
     background-color: #3674B5;
     color: white;
+    border-color: #3674B5;
   }
-
   .phd-nav-btn.active-phd-nav {
     background-color: #3674B5;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #3674B5;
+    box-shadow: 0 4px 10px rgba(54,116,181,.3);
   }
 
-  .tab-content-panel {
-    animation: fadeIn 0.4s ease-in;
-  }
-  .phd-section {
-    animation: fadeIn 0.35s ease-in;
-  }
+  /* ── Animations ── */
+  .tab-content-panel { animation: fadeIn 0.4s ease-in; }
+  .phd-section       { animation: fadeIn 0.35s ease-in; }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
+  /* ── Images ── */
   .service-img {
     max-width: 100%;
     height: auto;
     border-radius: 0.5rem;
   }
 
+  /* ── Scroll hint arrow visible only on small screens ── */
+  .tab-scroll-hint {
+    display: none;
+  }
   @media (max-width: 768px) {
-    .sticky-sidebar {
-      position: relative !important;
-      top: 0 !important;
-    }
+    .tab-scroll-hint { display: flex; }
   }
 </style>
 
@@ -83,51 +85,40 @@
       <p class="text-gray-600">Comprehensive support for postgraduate research and academic excellence</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      <!-- Sidebar -->
-      <aside class="lg:col-span-1">
-        <div class="sticky-sidebar sticky top-20">
-          <h2 class="text-xl font-semibold text-[#1a4d7c] mb-4">Student Services</h2>
-          <nav class="bg-gray-300 rounded-xl shadow-lg p-3">
-            <ul class="space-y-2">
-              <li>
-                <button data-target="fa"
-                  class="tab-btn active w-full h-12 text-left px-4 py-3 rounded-lg transition-all duration-200 font-medium">
-                  <i class="fas fa-hand-holding-usd mr-2"></i>Financial Assistance
-                </button>
-              </li>
-              <li>
-                <button data-target="phd"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-graduation-cap mr-2"></i>PhD Indigenous Scholarships
-                </button>
-              </li>
-              <li>
-                <button data-target="sops"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-clipboard-list mr-2"></i>SOPs for Research Execution
-                </button>
-              </li>
-              <li>
-                <button data-target="bridge"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-bridge mr-2"></i>Bridge Financing
-                </button>
-              </li>
-              <li>
-                <button data-target="partial"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-hands-helping mr-2"></i>Partial Support
-                </button>
-              </li>
-            </ul>
-          </nav>
+    <!-- ── Horizontal Tab Navigation ── -->
+    <div class="mb-6 relative">
+      <!-- Scroll hint for mobile -->
+      <div class="tab-scroll-hint absolute right-0 top-0 bottom-0 items-center pr-2 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent w-10 z-10">
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+      </div>
+      <nav class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="flex overflow-x-auto" id="mainTabNav">
+          <button type="button" data-target="fa"
+            class="tab-btn active flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-hand-holding-usd"></i><span>Financial Assistance</span>
+          </button>
+          <button type="button" data-target="phd"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-graduation-cap"></i><span>PhD Scholarships</span>
+          </button>
+          <button type="button" data-target="sops"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-clipboard-list"></i><span>SOPs for Research</span>
+          </button>
+          <button type="button" data-target="bridge"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-coins"></i><span>Bridge Financing</span>
+          </button>
+          <button type="button" data-target="partial"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-hands-helping"></i><span>Partial Support</span>
+          </button>
         </div>
-      </aside>
+      </nav>
+    </div>
 
-      <!-- Content Area -->
-      <section class="lg:col-span-3">
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
+    <!-- ── Content Area (full width) ── -->
+    <div class="bg-white rounded-2xl shadow-xl p-5 md:p-8 min-h-[500px]">
 
           <!-- Financial Assistance Tab -->
           <div id="fa" class="tab-content-panel">
@@ -247,8 +238,8 @@
             </h3>
 
             <div class="my-6">
-              <img src="../assets/img/research/indig-intro.jpg" alt="PhD Scholarships"
-                class="service-img w-full mb-6 shadow-lg rounded-lg" />
+              <!-- <img src="../assets/img/research/indig-intro.jpg" alt="PhD Scholarships"
+                class="service-img w-full mb-6 shadow-lg rounded-lg" /> -->
 
               <!-- Sub-navigation for PhD sections -->
               <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg mb-6 border border-blue-200">
@@ -256,30 +247,30 @@
                   <i class="fas fa-list-ul mr-2"></i>Quick Navigation:
                 </h4>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
-                  <button onclick="showPhdSection('intro',this)"
+                  <button type="button" onclick="showPhdSection('intro',this)"
                     class="phd-nav-btn active-phd-nav px-3 py-2 text-sm rounded-lg border transition">Introduction</button>
-                  <button onclick="showPhdSection('policies',this)"
+                  <button type="button" onclick="showPhdSection('policies',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Policies</button>
-                  <button onclick="showPhdSection('eligibility',this)"
+                  <button type="button" onclick="showPhdSection('eligibility',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Eligibility</button>
-                  <button onclick="showPhdSection('scholars',this)"
+                  <button type="button" onclick="showPhdSection('scholars',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">For
                     Scholars</button>
-                  <button onclick="showPhdSection('supervisors',this)"
+                  <button type="button" onclick="showPhdSection('supervisors',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">For
                     Supervisors</button>
-                  <button onclick="showPhdSection('sop-university',this)"
+                  <button type="button" onclick="showPhdSection('sop-university',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Change
                     University</button>
-                  <button onclick="showPhdSection('sop-supervisor',this)"
+                  <button type="button" onclick="showPhdSection('sop-supervisor',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Change
                     Supervisor</button>
-                  <button onclick="showPhdSection('students',this)"
+                  <button type="button" onclick="showPhdSection('students',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Students
                     List</button>
-                  <button onclick="showPhdSection('downloads',this)"
+                  <button type="button" onclick="showPhdSection('downloads',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Downloads</button>
-                  <button onclick="showPhdSection('call',this)"
+                  <button type="button" onclick="showPhdSection('call',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Call</button>
                 </div>
               </div>
@@ -3131,8 +3122,6 @@
             </div>
           </div>
 
-        </div>
-      </section>
     </div>
   </div>
 </main>

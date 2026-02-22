@@ -7,60 +7,51 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <style>
-  .tab-btn {
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+  /* ── Horizontal main tab bar ── */
+  #mainTabNav {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-
-  .tab-btn:hover {
-    transform: translateX(4px);
-  }
+  #mainTabNav::-webkit-scrollbar { display: none; }
 
   .tab-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
     background-color: transparent;
-    color: #4a5568;
+    color: #64748b;
+    border-bottom: 3px solid transparent;
   }
-
   .tab-btn:hover {
-    background-color: #f0f9ff;
-    color: #2d3748;
+    color: #1a4d7c;
+    background-color: #f0f7ff;
   }
-
   .tab-btn.active {
-    background-color: #3674B5;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #1a4d7c;
+    border-bottom-color: #3674B5;
+    background-color: #f0f7ff;
   }
 
-  .tab-content-panel {
-    animation: fadeIn 0.4s ease-in;
-  }
+  /* ── Animations ── */
+  .tab-content-panel { animation: fadeIn 0.4s ease-in; }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .section-content {
-    display: none;
-  }
+  .section-content { display: none; }
+  .section-content.active { display: block; }
 
-  .section-content.active {
-    display: block;
+  /* ── Scroll hint arrow visible only on small screens ── */
+  .tab-scroll-hint { display: none; }
+  @media (max-width: 768px) {
+    .tab-scroll-hint { display: flex; }
   }
 
   /* Stats Cards */
-  .stat-card {
-    transition: all 0.3s ease;
-  }
-
+  .stat-card { transition: all 0.3s ease; }
   .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -72,7 +63,6 @@
     border-collapse: collapse;
     margin-top: 1.5rem;
   }
-
   .training-table th {
     background: linear-gradient(135deg, #3674B5 0%, #578FCA 100%);
     color: white;
@@ -81,17 +71,12 @@
     font-weight: 600;
     font-size: 0.9rem;
   }
-
   .training-table td {
     padding: 0.875rem 1rem;
     border-bottom: 1px solid #e2e8f0;
     font-size: 0.875rem;
   }
-
-  .training-table tbody tr:hover {
-    background-color: #f7fafc;
-  }
-
+  .training-table tbody tr:hover { background-color: #f7fafc; }
   .training-table tbody tr:last-child {
     font-weight: 600;
     background-color: #edf2f7;
@@ -99,24 +84,9 @@
 
   /* Responsive Table */
   @media (max-width: 768px) {
-    .sticky-sidebar {
-      position: relative !important;
-      top: 0 !important;
-    }
-
-    .training-table {
-      font-size: 0.75rem;
-    }
-
-    .training-table th,
-    .training-table td {
-      padding: 0.5rem;
-    }
-
-    .training-table thead {
-      display: none;
-    }
-
+    .training-table { font-size: 0.75rem; }
+    .training-table th, .training-table td { padding: 0.5rem; }
+    .training-table thead { display: none; }
     .training-table tr {
       display: block;
       margin-bottom: 1rem;
@@ -124,14 +94,12 @@
       border-radius: 0.5rem;
       padding: 0.5rem;
     }
-
     .training-table td {
       display: block;
       text-align: right;
       padding: 0.5rem;
       border: none;
     }
-
     .training-table td:before {
       content: attr(data-label);
       float: left;
@@ -140,9 +108,7 @@
     }
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 </style>
 
 <main class="container mx-auto px-4 py-8 md:py-12">
@@ -153,51 +119,39 @@
       <p class="text-gray-600">Capacity Building & Professional Development Programs</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-      <!-- Sidebar -->
-      <aside class="lg:col-span-1">
-        <div class="sticky-sidebar sticky top-20">
-          <h2 class="text-xl font-semibold text-[#1a4d7c] mb-4">Quick Navigation</h2>
-          <nav class="bg-gray-300 rounded-xl shadow-lg p-3">
-            <ul class="space-y-2">
-              <li>
-                <button data-target="introduction"
-                  class="tab-btn active w-full h-12 text-left px-4 py-3  rounded-lg font-medium">
-                  <i class="fas fa-info-circle mr-2"></i>Introduction
-                </button>
-              </li>
-              <li>
-                <button data-target="overview"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-chart-bar mr-2"></i>Program Overview
-                </button>
-              </li>
-              <li>
-                <button data-target="objectives"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-bullseye mr-2"></i>Objectives
-                </button>
-              </li>
-              <li>
-                <button data-target="training-details"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-table mr-2"></i>Training Details
-                </button>
-              </li>
-              <li>
-                <button data-target="impact"
-                  class="tab-btn w-full h-12 text-left px-4 py-3 rounded-lg font-medium">
-                  <i class="fas fa-trophy mr-2"></i>Impact & Achievements
-                </button>
-              </li>
-            </ul>
-          </nav>
+    <!-- ── Horizontal Tab Navigation ── -->
+    <div class="mb-6 relative">
+      <div class="tab-scroll-hint absolute right-0 top-0 bottom-0 items-center pr-2 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent w-10 z-10">
+        <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+      </div>
+      <nav class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="flex overflow-x-auto" id="mainTabNav">
+          <button type="button" data-target="introduction"
+            class="tab-btn active flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-info-circle"></i><span>Introduction</span>
+          </button>
+          <button type="button" data-target="overview"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-chart-bar"></i><span>Program Overview</span>
+          </button>
+          <button type="button" data-target="objectives"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-bullseye"></i><span>Objectives</span>
+          </button>
+          <button type="button" data-target="training-details"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-table"></i><span>Training Details</span>
+          </button>
+          <button type="button" data-target="impact"
+            class="tab-btn flex-shrink-0 flex items-center gap-2 px-5 md:px-6 py-4 whitespace-nowrap">
+            <i class="fas fa-trophy"></i><span>Impact &amp; Achievements</span>
+          </button>
         </div>
-      </aside>
+      </nav>
+    </div>
 
-      <!-- Content Area -->
-      <section class="lg:col-span-3">
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
+    <!-- ── Content Area (full width) ── -->
+    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
 
           <!-- Introduction Section -->
           <div id="introduction" class="section-content active tab-content-panel">
@@ -696,40 +650,29 @@
             </div>
           </div>
 
-        </div>
-      </section>
     </div>
   </div>
 </main>
 
 <script>
+  function activate(targetId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('active'));
+    const btn = document.querySelector('[data-target="' + targetId + '"]');
+    if (btn) btn.classList.add('active');
+    const panel = document.getElementById(targetId);
+    if (panel) {
+      panel.style.animation = 'none';
+      panel.offsetHeight;
+      panel.style.animation = '';
+      panel.classList.add('active');
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.section-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        const targetId = this.getAttribute('data-target');
-
-        // Remove active class from all buttons
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-
-        // Add active class to clicked button
-        this.classList.add('active');
-
-        // Hide all content sections
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        // Show target content section
-        const targetContent = document.getElementById(targetId);
-        if (targetContent) {
-          targetContent.classList.add('active');
-
-          // Smooth scroll on mobile
-          if (window.innerWidth < 1024) {
-            targetContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        activate(this.getAttribute('data-target'));
       });
     });
   });

@@ -488,15 +488,10 @@
 
             </div><!-- /footer-grid -->
 
-            <hr class="border-t border-gray-800 my-8" />
+            <hr class="border-t border-gray-800 my-2" />
 
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-gray-500 text-center">
+            <div class="flex flex-col sm:flex-row justify-center item-center text-[13px] text-gray-500 text-center">
                 <span>&copy; <%= DateTime.Now.Year %> ORIC &mdash; University of Agriculture Faisalabad. All rights reserved.</span>
-                <div class="flex gap-5">
-                    <a href="<%= ResolveUrl("~/privacy.aspx") %>"    class="hover:text-gov-gold transition-colors">Privacy Policy</a>
-                    <a href="<%= ResolveUrl("~/disclaimer.aspx") %>" class="hover:text-gov-gold transition-colors">Disclaimer</a>
-                    <a href="<%= ResolveUrl("~/sitemap.aspx") %>"    class="hover:text-gov-gold transition-colors">Sitemap</a>
-                </div>
             </div>
 
         </div>

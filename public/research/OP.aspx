@@ -362,8 +362,8 @@
       
       <!-- Publication 1 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/01.jpg', 'Proceedings World Food Day (Biodiversity for Food Security)')">
-          <img src="assets/img/research/Oric_Publications/01.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/01.jpg', 'Proceedings World Food Day (Biodiversity for Food Security)')">
+          <img src="../assets/img/research/Oric_Publications/01.jpg" 
                alt="Proceedings World Food Day" 
                class="publication-image"
                loading="lazy">
@@ -378,8 +378,8 @@
 
       <!-- Publication 2 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/02.jpg', 'Farmer Friendly Technologies (1961-2005)')">
-          <img src="assets/img/research/Oric_Publications/02.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/02.jpg', 'Farmer Friendly Technologies (1961-2005)')">
+          <img src="../assets/img/research/Oric_Publications/02.jpg" 
                alt="Farmer Friendly Technologies" 
                class="publication-image"
                loading="lazy">
@@ -394,8 +394,8 @@
 
       <!-- Publication 3 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/03.jpg', 'Priority Areas of Research')">
-          <img src="assets/img/research/Oric_Publications/03.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/03.jpg', 'Priority Areas of Research')">
+          <img src="../assets/img/research/Oric_Publications/03.jpg" 
                alt="Priority Areas of Research" 
                class="publication-image"
                loading="lazy">
@@ -410,8 +410,8 @@
 
       <!-- Publication 4 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/04.jpg', 'Bibliography of Scientific Research (1961-2005)')">
-          <img src="assets/img/research/Oric_Publications/04.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/04.jpg', 'Bibliography of Scientific Research (1961-2005)')">
+          <img src="../assets/img/research/Oric_Publications/04.jpg" 
                alt="Bibliography of Scientific Research" 
                class="publication-image"
                loading="lazy">
@@ -426,8 +426,8 @@
 
       <!-- Publication 5 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/05.jpg', 'Post-Graduate Research (Glimpses)')">
-          <img src="assets/img/research/Oric_Publications/05.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/05.jpg', 'Post-Graduate Research (Glimpses)')">
+          <img src="../assets/img/research/Oric_Publications/05.jpg" 
                alt="Post-Graduate Research" 
                class="publication-image"
                loading="lazy">
@@ -442,8 +442,8 @@
 
       <!-- Publication 6 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/06.jpg', '100 Years of Excellence in Education & Research (Vol.1)')">
-          <img src="assets/img/research/Oric_Publications/06.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/06.jpg', '100 Years of Excellence in Education & Research (Vol.1)')">
+          <img src="../assets/img/research/Oric_Publications/06.jpg" 
                alt="100 Years of Excellence Vol.1" 
                class="publication-image"
                loading="lazy">
@@ -459,8 +459,8 @@
 
       <!-- Publication 7 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/07.jpg', '100 Years of Excellence in Education & Research (Vol.2)')">
-          <img src="assets/img/research/Oric_Publications/07.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/07.jpg', '100 Years of Excellence in Education & Research (Vol.2)')">
+          <img src="../assets/img/research/Oric_Publications/07.jpg" 
                alt="100 Years of Excellence Vol.2" 
                class="publication-image"
                loading="lazy">
@@ -476,8 +476,8 @@
 
       <!-- Publication 8 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/08.jpg', 'Promotion of Research University of Agri. Faisalabad')">
-          <img src="assets/img/research/Oric_Publications/08.jpg" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/08.jpg', 'Promotion of Research University of Agri. Faisalabad')">
+          <img src="../assets/img/research/Oric_Publications/08.jpg" 
                alt="Promotion of Research UAF" 
                class="publication-image"
                loading="lazy">
@@ -492,8 +492,8 @@
 
       <!-- Publication 9 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/09.png', '101 Innovations Catalogue')">
-          <img src="assets/img/research/Oric_Publications/09.png" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/09.png', '101 Innovations Catalogue')">
+          <img src="../assets/img/research/Oric_Publications/09.png" 
                alt="101 Innovations Catalogue" 
                class="publication-image"
                loading="lazy">
@@ -509,8 +509,8 @@
 
       <!-- Publication 10 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/10.png', 'Convener/Editor ORIC News')">
-          <img src="assets/img/research/Oric_Publications/10.png" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/10.png', 'Convener/Editor ORIC News')">
+          <img src="../assets/img/research/Oric_Publications/10.png" 
                alt="ORIC News" 
                class="publication-image"
                loading="lazy">
@@ -525,8 +525,8 @@
 
       <!-- Publication 11 -->
       <div class="publication-card fade-in-up">
-        <div class="publication-image-wrapper" onclick="openLightbox('assets/img/research/Oric_Publications/11.png', 'Editor: ORIC News Platinum Number (75th Vol.)')">
-          <img src="assets/img/research/Oric_Publications/11.png" 
+        <div class="publication-image-wrapper" onclick="openLightbox('../assets/img/research/Oric_Publications/11.png', 'Editor: ORIC News Platinum Number (75th Vol.)')">
+          <img src="../assets/img/research/Oric_Publications/11.png" 
                alt="ORIC News Platinum Number" 
                class="publication-image"
                loading="lazy">

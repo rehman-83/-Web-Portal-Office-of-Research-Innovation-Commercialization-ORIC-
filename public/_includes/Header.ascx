@@ -15,9 +15,6 @@
                 <div class="relative group">
                     <button type="button" class="nav-link">About &#9662;</button>
                     <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48 z-50">
-                        <a href="<%= ResolveUrl("~/about/Organogram.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Organogram</a>
-                        <a href="<%= ResolveUrl("~/about/Director.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Director Message</a>
-                        <a href="<%= ResolveUrl("~/about/Staff.aspx") %>" class="block px-4 py-2 hover:bg-gray-100">Staff</a>
                     </div>
                 </div>
                 <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>" class="nav-link">Research</a>

@@ -134,7 +134,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-6">
         <!-- Image -->
         <div class="order-2 lg:order-1">
-          <img src="assets/img/research/Reimbursements.jpg" 
+          <img src="../assets/img/research/Reimbursements.jpg" 
                alt="Reimbursement of Printing Charges" 
                class="intro-image">
         </div>

@@ -26,7 +26,7 @@
     <div class="p-6 md:p-8"> -->
   <!-- Introduction Image -->
   <!-- <div class="mb-6 rounded-lg overflow-hidden shadow-lg">
-        <img src="assets/img/COMMERCILIZATION/Final Agritec Park Introduction.jpg" alt="Agri Techpark Introduction"
+        <img src="../assets/img/COMMERCILIZATION/Final Agritec Park Introduction.jpg" alt="Agri Techpark Introduction"
           class="w-full h-auto">
       </div>
       <p class="text-gray-700 leading-relaxed text-justify md:text-lg">
@@ -55,7 +55,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div class="lg:order-2">
 
-          <img src="assets/img/COMMERCILIZATION/Final Agritec Park Introduction.jpg" alt="Agri Techpark Introduction">
+          <img src="../assets/img/COMMERCILIZATION/Final Agritec Park Introduction.jpg" alt="Agri Techpark Introduction">
 
         </div>
         <div class="space-y-0 lg:order-1">
@@ -96,7 +96,7 @@
     <div class="p-6 md:p-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <img src="assets/img/COMMERCILIZATION/about-us-v3.webp" alt="STZA" class="w-full rounded-lg shadow-lg">
+          <img src="../assets/img/COMMERCILIZATION/about-us-v3.webp" alt="STZA" class="w-full rounded-lg shadow-lg">
         </div>
         <div class="space-y-4">
           <p class="text-gray-700 leading-relaxed text-justify">
@@ -428,7 +428,7 @@
     <div class="p-6 md:p-8">
       <!-- Focused Areas Image -->
       <div class="mb-6 rounded-lg overflow-hidden shadow-lg">
-        <img src="assets/img/COMMERCILIZATION/ATP2.png" alt="Focused Areas" class="w-full h-auto">
+        <img src="../assets/img/COMMERCILIZATION/ATP2.png" alt="Focused Areas" class="w-full h-auto">
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

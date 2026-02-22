@@ -396,7 +396,7 @@
           <i class="fas fa-file-pdf text-white text-2xl"></i>
           <h2 class="text-white font-semibold text-lg md:text-xl">Constitution of Institutional Biosafety Committee</h2>
         </div>
-        <a href="assets/files/research/Constitution-of-Institutional-Biosafety-Committee.pdf" target="_blank"
+        <a href="../assets/files/research/Constitution-of-Institutional-Biosafety-Committee.pdf" target="_blank"
           class="bg-white text-[#1a4d7c] px-4 py-2 rounded-lg hover:bg-[#D1F8EF] transition-all duration-300 flex items-center space-x-2 text-sm md:text-base">
           <i class="fas fa-download"></i>
           <span>Download PDF</span>
@@ -404,7 +404,7 @@
       </div>
     </div>
     <div class="p-2 md:p-4">
-      <iframe src="assets/files/research/Constitution-of-Institutional-Biosafety-Committee.pdf"
+      <iframe src="../assets/files/research/Constitution-of-Institutional-Biosafety-Committee.pdf"
         class="w-full h-[500px] md:h-[700px] lg:h-[800px] border-0 rounded-lg"
         title="Constitution of Institutional Biosafety Committee">
       </iframe>

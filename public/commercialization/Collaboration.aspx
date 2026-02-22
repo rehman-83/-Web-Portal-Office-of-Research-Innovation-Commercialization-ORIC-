@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  
 <style>
-  /* ── Horizontal main tab bar ── */
+  /* -- Horizontal main tab bar -- */
   #mainTabNav {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -44,7 +44,7 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Scroll hint arrow visible only on small screens ── */
+  /* -- Scroll hint arrow visible only on small screens -- */
   .tab-scroll-hint { display: none; }
   @media (max-width: 768px) {
     .tab-scroll-hint { display: flex; }
@@ -112,11 +112,11 @@
     <!-- Page Header -->
     <!-- <div class="text-center mb-8">
       <div class="flex justify-center mb-4">
-      <img src="assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg" alt="Academia Industry Linkages" class="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-lg shadow-lg">
+      <img src="../assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg" alt="Academia Industry Linkages" class="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-lg shadow-lg">
       </div>
     </div> -->
 <div class="relative bg-center bg-cover bg-no-repeat"
-     style="background-image:url('assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg');">
+     style="background-image:url('../assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg');">
 
     <!-- CONTENT -->
   <div class="relative text-center mb-5 md:mb-12 py-5 md:py-16">
@@ -136,7 +136,7 @@
       </p>
     </div> -->
 
-    <!-- ── Horizontal Tab Navigation ── -->
+    <!-- -- Horizontal Tab Navigation -- -->
     <div class="mb-6 relative">
       <div class="tab-scroll-hint absolute right-0 top-0 bottom-0 items-center pr-2 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent w-10 z-10">
         <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
@@ -183,7 +183,7 @@
       </nav>
     </div>
 
-    <!-- ── Content Area (full width) ── -->
+    <!-- -- Content Area (full width) -- -->
     <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 min-h-[600px]">
 
           <!-- Introduction Section -->
@@ -570,7 +570,7 @@
                     <td data-label="Sr. #">21</td>
                     <td data-label="Project Investigator">Dr. Muhammad Usman Farid</td>
                     <td data-label="Department">Structures and Environmental Engineering</td>
-                    <td data-label="Industry Partner">Sadaqat Limited Khurrianwala، 2 KM Sahianwala Road, Faisalabad
+                    <td data-label="Industry Partner">Sadaqat Limited Khurrianwala? 2 KM Sahianwala Road, Faisalabad
                     </td>
                   </tr>
                   <tr>

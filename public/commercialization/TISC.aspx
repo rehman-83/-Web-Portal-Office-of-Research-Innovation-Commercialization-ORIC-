@@ -9,7 +9,7 @@
 <main class="container mx-auto px-4 py-8 md:py-12 animate-fade-in-up">
   <!-- image -->
 <div class="mb-6">
-          <img src="assets/img/COMMERCILIZATION/cover1.jpg" alt="Technologies" 
+          <img src="../assets/img/COMMERCILIZATION/cover1.jpg" alt="Technologies" 
                class="w-full rounded-lg shadow-lg" style="max-height: 400px; object-fit: cover;">
         </div>
 
@@ -107,7 +107,7 @@
       <p class="text-gray-700 leading-relaxed text-justify mb-6">
         Intellectual Property (IP) policy provides guidance for staff (academic and general), students, researchers and other related persons on the practices of the University of Agriculture, Faisalabad (UAF) with respect to Intellectual Property (IP). This document describes basis of generating this policy, objectives, coverage, ownership, disclosure, market evaluation, licensing, commercialization and revenue distribution.
       </p>
-      <a href="assets/files/COMMERCILIZATION/IP Policy.pdf" 
+      <a href="../assets/files/COMMERCILIZATION/IP Policy.pdf" 
          download
          class="inline-flex items-center space-x-2 bg-gradient-to-r from-[#3674B5] to-[#578FCA] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all hover:scale-105">
         <i class="fas fa-download"></i>
@@ -132,18 +132,18 @@
         <div class="p-4">
           <div class="pdf-preview-container bg-gray-50 rounded-lg overflow-hidden" style="height: 400px;">
             <iframe 
-              src="assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
+              src="../assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
               class="w-full h-full border-0"
               title="List of Consultancy Agreements">
             </iframe>
           </div>
           <div class="mt-4 flex space-x-2">
-            <a href="assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
+            <a href="../assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
                target="_blank"
                class="flex-1 text-center bg-[#3674B5] text-white px-4 py-2 rounded-lg hover:bg-[#578FCA] transition-colors">
               <i class="fas fa-external-link-alt mr-2"></i>View Full
             </a>
-            <a href="assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
+            <a href="../assets/files/COMMERCILIZATION/List of Consultancy Agreements.pdf" 
                download
                class="flex-1 text-center bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all">
               <i class="fas fa-download mr-2"></i>Download
@@ -160,18 +160,18 @@
         <div class="p-4">
           <div class="pdf-preview-container bg-gray-50 rounded-lg overflow-hidden" style="height: 400px;">
             <iframe 
-              src="assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
+              src="../assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
               class="w-full h-full border-0"
               title="List of License Agreements">
             </iframe>
           </div>
           <div class="mt-4 flex space-x-2">
-            <a href="assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
+            <a href="../assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
                target="_blank"
                class="flex-1 text-center bg-[#3674B5] text-white px-4 py-2 rounded-lg hover:bg-[#578FCA] transition-colors">
               <i class="fas fa-external-link-alt mr-2"></i>View Full
             </a>
-            <a href="assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
+            <a href="../assets/files/COMMERCILIZATION/List of License Agreements.pdf" 
                download
                class="flex-1 text-center bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all">
               <i class="fas fa-download mr-2"></i>Download
@@ -188,18 +188,18 @@
         <div class="p-4">
           <div class="pdf-preview-container bg-gray-50 rounded-lg overflow-hidden" style="height: 400px;">
             <iframe 
-              src="assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
+              src="../assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
               class="w-full h-full border-0"
               title="Innovation Catalogue">
             </iframe>
           </div>
           <div class="mt-4 flex space-x-2">
-            <a href="assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
+            <a href="../assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
                target="_blank"
                class="flex-1 text-center bg-[#3674B5] text-white px-4 py-2 rounded-lg hover:bg-[#578FCA] transition-colors">
               <i class="fas fa-external-link-alt mr-2"></i>View Full
             </a>
-            <a href="assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
+            <a href="../assets/files/COMMERCILIZATION/Innovation Catalogue 22-23 (2nd Edition).pdf" 
                download
                class="flex-1 text-center bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all">
               <i class="fas fa-download mr-2"></i>Download
@@ -365,12 +365,12 @@
               <h3 class="text-white font-semibold text-lg md:text-xl">Patent in Process</h3>
             </div>
             <div class="flex space-x-2">
-              <a href="assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
+              <a href="../assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
                  target="_blank"
                  class="bg-white text-[#1a4d7c] px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
                 <i class="fas fa-external-link-alt mr-2"></i>Open Full
               </a>
-              <a href="assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
+              <a href="../assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
                  download
                  class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all text-sm font-medium">
                 <i class="fas fa-download mr-2"></i>Download
@@ -381,7 +381,7 @@
         <div class="p-4 bg-gray-50">
           <div class="pdf-preview-full bg-white rounded-lg overflow-hidden shadow-inner">
             <iframe 
-              src="assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
+              src="../assets/files/COMMERCILIZATION/PATENT IN PROCESS.pdf" 
               class="w-full border-0"
               style="height: 600px;"
               title="Patent in Process">
@@ -399,12 +399,12 @@
               <h3 class="text-white font-semibold text-lg md:text-xl">Patent Registered</h3>
             </div>
             <div class="flex space-x-2">
-              <a href="assets/files/COMMERCILIZATION/Patent registered.pdf" 
+              <a href="../assets/files/COMMERCILIZATION/Patent registered.pdf" 
                  target="_blank"
                  class="bg-white text-[#3674B5] px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium">
                 <i class="fas fa-external-link-alt mr-2"></i>Open Full
               </a>
-              <a href="assets/files/COMMERCILIZATION/Patent registered.pdf" 
+              <a href="../assets/files/COMMERCILIZATION/Patent registered.pdf" 
                  download
                  class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-green-700 transition-all text-sm font-medium">
                 <i class="fas fa-download mr-2"></i>Download
@@ -415,7 +415,7 @@
         <div class="p-4 bg-gray-50">
           <div class="pdf-preview-full bg-white rounded-lg overflow-hidden shadow-inner">
             <iframe 
-              src="assets/files/COMMERCILIZATION/Patent registered.pdf" 
+              src="../assets/files/COMMERCILIZATION/Patent registered.pdf" 
               class="w-full border-0"
               style="height: 600px;"
               title="Patent Registered">

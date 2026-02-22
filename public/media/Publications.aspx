@@ -29,7 +29,7 @@ $pageTitle = "ORIC Publications";
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Item -->
-      <a href="assets/files/publication/technologies.pdf" target="_blank"
+      <a href="../assets/files/publication/technologies.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           Technologies Developed for Commercialization
@@ -37,7 +37,7 @@ $pageTitle = "ORIC Publications";
        <button class="btn"><i class="fa fa-download"></i> Download File</button>
       </a>
 
-      <a href="assets/files/publication/bic_operational_manual.pdf" target="_blank"
+      <a href="../assets/files/publication/bic_operational_manual.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           BIC Operational Manual
@@ -45,7 +45,7 @@ $pageTitle = "ORIC Publications";
        <button class="btn"><i class="fa fa-download"></i> Download File</button>
       </a>
 
-      <a href="assets/files/publication/Final Calendar 2018.pdf" target="_blank"
+      <a href="../assets/files/publication/Final Calendar 2018.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           Final Calendar 2018
@@ -55,7 +55,7 @@ $pageTitle = "ORIC Publications";
 
      
 
-      <a href="assets/files/publication/research_policy.pdf" target="_blank"
+      <a href="../assets/files/publication/research_policy.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           Research Policy
@@ -63,7 +63,7 @@ $pageTitle = "ORIC Publications";
        <button class="btn"><i class="fa fa-download"></i> Download File</button>
       </a>
 
-      <a href="assets/files/publication/ssbc_operational_manual.pdf" target="_blank"
+      <a href="../assets/files/publication/ssbc_operational_manual.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           SSBC Operational Manual
@@ -71,7 +71,7 @@ $pageTitle = "ORIC Publications";
        <button class="btn"><i class="fa fa-download"></i> Download File</button>
       </a>
 
-      <a href="assets/files/publication/success_stories.pdf" target="_blank"
+      <a href="../assets/files/publication/success_stories.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-5 border hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           Success Stories
@@ -79,7 +79,7 @@ $pageTitle = "ORIC Publications";
        <button class="btn"><i class="fa fa-download"></i> Download File</button>
       </a>
 
-       <a href="assets/files/publication/Post_Event_Report_DICEAFS-2017_and_Entrepreneurship_Event.pdf" target="_blank"
+       <a href="../assets/files/publication/Post_Event_Report_DICEAFS-2017_and_Entrepreneurship_Event.pdf" target="_blank"
          class="block text-center hover:shadow-xl transition rounded-lg p-6 border  hover:bg-[#3674B5] hover:text-white">
         <h3 class="font-semibold mb-2">
           Post Event Report DICEAFS-2017 & Entrepreneurship Event
@@ -114,19 +114,19 @@ $pageTitle = "ORIC Publications";
           </h3>
           <ul class="space-y-2 text-gray-700">
             <li class="flex items-start">
-              <span class="text-[#3674B5] mr-2 mt-1">•</span>
+              <span class="text-[#3674B5] mr-2 mt-1">�</span>
               <span>101 innovative technologies ready for commercialization</span>
             </li>
             <li class="flex items-start">
-              <span class="text-[#3674B5] mr-2 mt-1">•</span>
+              <span class="text-[#3674B5] mr-2 mt-1">�</span>
               <span>Coverage across 15+ departments and institutes</span>
             </li>
             <li class="flex items-start">
-              <span class="text-[#3674B5] mr-2 mt-1">•</span>
+              <span class="text-[#3674B5] mr-2 mt-1">�</span>
               <span>Solutions for agricultural challenges in Pakistan</span>
             </li>
             <li class="flex items-start">
-              <span class="text-[#3674B5] mr-2 mt-1">•</span>
+              <span class="text-[#3674B5] mr-2 mt-1">�</span>
               <span>Technologies ranging from crop production to food processing</span>
             </li>
           </ul>
@@ -135,27 +135,27 @@ $pageTitle = "ORIC Publications";
         <!-- Featured Categories -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-green-500">
-            <h4 class="font-semibold text-gray-800 mb-2">🌿 Horticulture</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">?? Horticulture</h4>
             <p class="text-sm text-gray-600">Mango genotypes, controlled atmosphere storage, citrus cultivation techniques</p>
           </div>
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-blue-500">
-            <h4 class="font-semibold text-gray-800 mb-2">🌾 Agronomy</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">?? Agronomy</h4>
             <p class="text-sm text-gray-600">Moringa cultivation, quinoa production, direct seeded rice technology</p>
           </div>
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-yellow-500">
-            <h4 class="font-semibold text-gray-800 mb-2">⚡ Engineering</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">? Engineering</h4>
             <p class="text-sm text-gray-600">Solar energy systems, biogas plants, agricultural machinery</p>
           </div>
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-red-500">
-            <h4 class="font-semibold text-gray-800 mb-2">🐄 Animal Sciences</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">?? Animal Sciences</h4>
             <p class="text-sm text-gray-600">Poultry breeding, artificial insemination, feed optimization</p>
           </div>
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-purple-500">
-            <h4 class="font-semibold text-gray-800 mb-2">🍞 Food Sciences</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">?? Food Sciences</h4>
             <p class="text-sm text-gray-600">Value-added products, fortified foods, shelf-life improvement</p>
           </div>
           <div class="bg-white rounded-lg p-5 shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-teal-500">
-            <h4 class="font-semibold text-gray-800 mb-2">🔬 Biotechnology</h4>
+            <h4 class="font-semibold text-gray-800 mb-2">?? Biotechnology</h4>
             <p class="text-sm text-gray-600">Biofertilizers, biopesticides, transgenic crops</p>
           </div>
         </div>

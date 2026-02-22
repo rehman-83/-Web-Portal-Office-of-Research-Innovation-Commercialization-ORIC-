@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <style>
-  /* ── Horizontal main tab bar ── */
+  /* -- Horizontal main tab bar -- */
   #mainTabNav {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -33,7 +33,7 @@
     background-color: #f0f7ff;
   }
 
-  /* ── PhD sub-nav pills ── */
+  /* -- PhD sub-nav pills -- */
   .phd-nav-btn {
     transition: all 0.25s ease;
     background-color: white;
@@ -52,7 +52,7 @@
     box-shadow: 0 4px 10px rgba(54,116,181,.3);
   }
 
-  /* ── Animations ── */
+  /* -- Animations -- */
   .tab-content-panel { animation: fadeIn 0.4s ease-in; }
   .phd-section       { animation: fadeIn 0.35s ease-in; }
 
@@ -61,14 +61,14 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Images ── */
+  /* -- Images -- */
   .service-img {
     max-width: 100%;
     height: auto;
     border-radius: 0.5rem;
   }
 
-  /* ── Scroll hint arrow visible only on small screens ── */
+  /* -- Scroll hint arrow visible only on small screens -- */
   .tab-scroll-hint {
     display: none;
   }
@@ -85,7 +85,7 @@
       <p class="text-gray-600">Comprehensive support for postgraduate research and academic excellence</p>
     </div>
 
-    <!-- ── Horizontal Tab Navigation ── -->
+    <!-- -- Horizontal Tab Navigation -- -->
     <div class="mb-6 relative">
       <!-- Scroll hint for mobile -->
       <div class="tab-scroll-hint absolute right-0 top-0 bottom-0 items-center pr-2 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent w-10 z-10">
@@ -117,7 +117,7 @@
       </nav>
     </div>
 
-    <!-- ── Content Area (full width) ── -->
+    <!-- -- Content Area (full width) -- -->
     <div class="bg-white rounded-2xl shadow-xl p-5 md:p-8 min-h-[500px]">
 
           <!-- Financial Assistance Tab -->
@@ -541,7 +541,7 @@
                     </div>
                     <div class="flex items-start bg-white p-3 rounded">
                       <i class="fas fa-check-circle text-orange-500 mr-3 mt-1.5"></i>
-                      <p>The supervisor is required to inform HEC, in case scholar’s proposed study plan is changed and
+                      <p>The supervisor is required to inform HEC, in case scholar�s proposed study plan is changed and
                         may cause delay in Ph.D. completion period.</p>
                     </div>
                     <div class="flex items-start bg-orange-50 p-3 rounded">
@@ -568,8 +568,8 @@
                     </div>
                     <div class="flex items-start bg-orange-50 p-3 rounded">
                       <i class="fas fa-check-circle text-orange-500 mr-3 mt-1.5"></i>
-                      <p>The supervisor profile at HEC website is pre-requisite for release of scholar’s and
-                        supervisor’s funds, supervisor is required to ensure that same is updated to ensure the timely
+                      <p>The supervisor profile at HEC website is pre-requisite for release of scholar�s and
+                        supervisor�s funds, supervisor is required to ensure that same is updated to ensure the timely
                         release of funds.</p>
                     </div>
                     <div class="flex items-start bg-white p-3 rounded">
@@ -697,8 +697,8 @@
                       <div>
                         <p class="font-semibold mb-1">Present limits for Supervisor:</p>
                         <ul class="ml-4 mt-2 space-y-1 text-sm">
-                          <li>• Maximum five students (HEC+ Non HEC) per Supervisor</li>
-                          <li>• Maximum of eight students (HEC+ Non HEC) per Supervisor under special circumstances (for
+                          <li>� Maximum five students (HEC+ Non HEC) per Supervisor</li>
+                          <li>� Maximum of eight students (HEC+ Non HEC) per Supervisor under special circumstances (for
                             a person with a good track record of research and high impact factor) with the approval of
                             HEC</li>
                         </ul>

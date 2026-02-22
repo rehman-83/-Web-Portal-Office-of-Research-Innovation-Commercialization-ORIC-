@@ -209,7 +209,7 @@
       <div class="mb-8">
         <!-- Hero Image -->
         <div class="mb-6">
-          <img src="assets/img/COMMERCILIZATION/Tech.jpg" alt="Technologies" 
+          <img src="../assets/img/COMMERCILIZATION/Tech.jpg" alt="Technologies" 
                class="w-full rounded-lg shadow-lg" style="max-height: 400px; object-fit: cover;">
         </div>
 
@@ -266,7 +266,7 @@
         <div class="tech-gallery">
           <!-- Technology Card 1 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Adoption of Heat-Tolerant Wheat.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Adoption of Heat-Tolerant Wheat.jpg" 
                  alt="Adoption of Heat-Tolerant Wheat">
             <div class="tech-card-caption">
               Adoption of Heat-Tolerant Wheat
@@ -275,7 +275,7 @@
 
           <!-- Technology Card 2 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/BIO-VERMIFUGE.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/BIO-VERMIFUGE.jpg" 
                  alt="BIO-VERMIFUGE">
             <div class="tech-card-caption">
               BIO-VERMIFUGE
@@ -284,7 +284,7 @@
 
           <!-- Technology Card 3 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/BSP Natural.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/BSP Natural.jpg" 
                  alt="BSP Natural">
             <div class="tech-card-caption">
               BSP Natural
@@ -293,7 +293,7 @@
 
           <!-- Technology Card 4 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/CASBios.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/CASBios.jpg" 
                  alt="CASBios">
             <div class="tech-card-caption">
               CASBios
@@ -302,7 +302,7 @@
 
           <!-- Technology Card 5 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Climate Resilient Transport Fuel (CRTF).jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Climate Resilient Transport Fuel (CRTF).jpg" 
                  alt="Climate Resilient Transport Fuel">
             <div class="tech-card-caption">
               Climate Resilient Transport Fuel (CRTF)
@@ -311,7 +311,7 @@
 
           <!-- Technology Card 6 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/HerbaMix-L.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/HerbaMix-L.jpg" 
                  alt="HerbaMix-L">
             <div class="tech-card-caption">
               HerbaMix-L
@@ -320,7 +320,7 @@
 
           <!-- Technology Card 7 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Hybrid Wheat.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Hybrid Wheat.jpg" 
                  alt="Hybrid Wheat">
             <div class="tech-card-caption">
               Hybrid Wheat
@@ -329,7 +329,7 @@
 
           <!-- Technology Card 8 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Industrial Hemp.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Industrial Hemp.jpg" 
                  alt="Industrial Hemp">
             <div class="tech-card-caption">
               Industrial Hemp
@@ -338,7 +338,7 @@
 
           <!-- Technology Card 9 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Low Gluten Wheat.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Low Gluten Wheat.jpg" 
                  alt="Low Gluten Wheat">
             <div class="tech-card-caption">
               Low Gluten Wheat
@@ -347,7 +347,7 @@
 
           <!-- Technology Card 10 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/OKARA-3A.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/OKARA-3A.jpg" 
                  alt="OKARA-3A">
             <div class="tech-card-caption">
               OKARA-3A
@@ -356,7 +356,7 @@
 
           <!-- Technology Card 11 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/Production of NON-GMO SOYBEAN.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/Production of NON-GMO SOYBEAN.jpg" 
                  alt="Production of NON-GMO SOYBEAN">
             <div class="tech-card-caption">
               Production of NON-GMO SOYBEAN
@@ -365,7 +365,7 @@
 
           <!-- Technology Card 12 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/SOLAR CONTINUOUS ROASTER (SCR).jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/SOLAR CONTINUOUS ROASTER (SCR).jpg" 
                  alt="SOLAR CONTINUOUS ROASTER">
             <div class="tech-card-caption">
               SOLAR CONTINUOUS ROASTER (SCR)
@@ -374,7 +374,7 @@
 
           <!-- Technology Card 13 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/SOLAR HYBRID DEHYDRATOR.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/SOLAR HYBRID DEHYDRATOR.jpg" 
                  alt="SOLAR HYBRID DEHYDRATOR">
             <div class="tech-card-caption">
               SOLAR HYBRID DEHYDRATOR
@@ -383,7 +383,7 @@
 
           <!-- Technology Card 14 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/SOLAR MILK CHILLER.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/SOLAR MILK CHILLER.jpg" 
                  alt="SOLAR MILK CHILLER">
             <div class="tech-card-caption">
               SOLAR MILK CHILLER
@@ -392,7 +392,7 @@
 
           <!-- Technology Card 15 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/SUSTAINTEX FIBERS.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/SUSTAINTEX FIBERS.jpg" 
                  alt="SUSTAINTEX FIBERS">
             <div class="tech-card-caption">
               SUSTAINTEX FIBERS
@@ -401,7 +401,7 @@
 
           <!-- Technology Card 16 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/UAF 11.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/UAF 11.jpg" 
                  alt="UAF 11">
             <div class="tech-card-caption">
               UAF 11
@@ -410,7 +410,7 @@
 
           <!-- Technology Card 17 -->
           <div class="tech-card" onclick="openTechModal(this)">
-            <img src="assets/img/COMMERCILIZATION/uaf_technologies/UAF Gro.jpg" 
+            <img src="../assets/img/COMMERCILIZATION/uaf_technologies/UAF Gro.jpg" 
                  alt="UAF Gro">
             <div class="tech-card-caption">
               UAF Gro

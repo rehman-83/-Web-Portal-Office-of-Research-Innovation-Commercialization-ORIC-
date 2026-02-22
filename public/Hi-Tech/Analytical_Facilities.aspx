@@ -89,7 +89,7 @@
           </tr>
           <tr class="border-b hover:bg-blue-50 transition-colors">
             <td class="px-4 py-3 font-semibold">Sample Digestion</td>
-            <td class="px-4 py-3">â€”</td>
+            <td class="px-4 py-3">—</td>
             <td class="px-4 py-3 text-center text-[#1a4d7c] font-semibold">500</td>
             <td class="px-4 py-3 text-center text-[#1a4d7c] font-semibold">600</td>
             <td class="px-4 py-3 text-center text-[#1a4d7c] font-semibold">700</td>
@@ -230,7 +230,7 @@
       <!-- Card 7: Sample Digestion -->
       <div class="bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 p-4 shadow-sm">
         <h3 class="text-base font-bold text-[#1a4d7c] mb-2">Sample Digestion</h3>
-        <p class="text-xs text-gray-600 mb-3">â€”</p>
+        <p class="text-xs text-gray-600 mb-3">—</p>
         <div class="space-y-2 text-sm">
           <div class="flex justify-between bg-blue-50 p-2 rounded">
             <span class="text-gray-600">UAF Students:</span>
@@ -284,7 +284,7 @@
     <!-- PDF Viewer -->
     <div class="w-full overflow-hidden rounded-lg border border-gray-200 mb-6">
       <iframe 
-        src="assets/files/Hi-Tech/Sample-Analysis-Rate-List-of-CHTL.pdf"
+        src="../assets/files/Hi-Tech/Sample-Analysis-Rate-List-of-CHTL.pdf"
         class="w-full"
         style="height: 500px;"
       ></iframe>
@@ -292,7 +292,7 @@
 
     <!-- Download Button -->
     <div class="text-center">
-      <a href="assets/files/Hi-Tech/Sample-Analysis-Rate-List-of-CHTL.pdf" 
+      <a href="../assets/files/Hi-Tech/Sample-Analysis-Rate-List-of-CHTL.pdf" 
          download
          class="inline-flex items-center justify-center bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,7 +316,7 @@
       <p class="text-base md:text-lg text-white/90 mb-6">
         Download the official Sample Analysis Proforma of Central Hi-Tech Laboratory, UAF.
       </p>
-      <a href="assets/files/Hi-Tech/Sample-Analysis-Proforma.pdf" 
+      <a href="../assets/files/Hi-Tech/Sample-Analysis-Proforma.pdf" 
          download
          class="inline-flex items-center justify-center bg-orange-500 px-8 py-3 rounded-lg font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105">
         <!-- <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

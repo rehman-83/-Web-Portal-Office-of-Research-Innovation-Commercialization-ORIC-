@@ -137,7 +137,7 @@
                         </div>
                         <div class="order-1 lg:order-2">
                             <img 
-                                src="assets/img/outreach/Internships.jpeg" 
+                                src="../assets/img/outreach/Internships.jpeg" 
                                 alt="Student Internship Program" 
                                 class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         </div>
@@ -283,7 +283,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
                         <div>
                             <img 
-                                src="assets/img/outreach/inter-Internships.png" 
+                                src="../assets/img/outreach/inter-Internships.png" 
                                 alt="International Internships" 
                                 class="w-full h-auto rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         </div>

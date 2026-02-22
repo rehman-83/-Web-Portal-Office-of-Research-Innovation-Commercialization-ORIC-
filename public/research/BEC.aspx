@@ -23,7 +23,7 @@
           <i class="fas fa-file-pdf text-white text-2xl"></i>
           <h2 class="text-white font-semibold text-lg md:text-xl">Committee Constitution Document</h2>
         </div>
-        <a href="assets/files/research&outreach/Constitution of Institutional BioEthic Committee.pdf" 
+        <a href="../assets/files/research&outreach/Constitution of Institutional BioEthic Committee.pdf" 
            target="_blank" 
            class="bg-white text-[#1a4d7c] px-4 py-2 rounded-lg hover:bg-[#D1F8EF] transition-all duration-300 flex items-center space-x-2 text-sm md:text-base">
           <i class="fas fa-download"></i>
@@ -33,7 +33,7 @@
     </div>
     <div class="p-2 md:p-4">
       <iframe 
-        src="assets/files/research&outreach/Constitution of Institutional BioEthic Committee.pdf" 
+        src="../assets/files/research/Constitution of Institutional BioEthic Committee.pdf" 
         class="w-full h-[500px] md:h-[700px] lg:h-[800px] border-0 rounded-lg"
         title="Institutional BioEthics Committee Constitution">
       </iframe>

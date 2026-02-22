@@ -49,7 +49,7 @@ $pageTitle = "Downloads";
             <strong class="text-gray-800 text-lg block mb-3">Proformas:</strong>
             <ul class="ml-6 space-y-3">
               <li class="flex items-start">
-                <span class="text-[#3674B5] mr-3 mt-1">â€¢</span>
+                <span class="text-[#3674B5] mr-3 mt-1">•</span>
                 <a href="../assets/files/Proforma/PERFORMA for PARB 25-02-2022.pdf" 
                    class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
                    target="_blank">
@@ -60,7 +60,7 @@ $pageTitle = "Downloads";
                 </a>
               </li>
               <li class="flex items-start">
-                <span class="text-[#3674B5] mr-3 mt-1">â€¢</span>
+                <span class="text-[#3674B5] mr-3 mt-1">•</span>
                 <a href="../assets/files/Proforma/Honorarium Performa revised.pdf" 
                    class="text-[#3674B5] font-semibold hover:text-[#1a4d7c] hover:underline transition-all duration-300 flex items-center group"
                    target="_blank">

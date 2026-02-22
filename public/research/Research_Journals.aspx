@@ -187,7 +187,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-6">
         <!-- Image -->
         <div class="order-2 lg:order-1">
-          <img src="assets/img/research/RPC.jpeg" 
+          <img src="../assets/img/research/RPC.jpeg" 
                alt="Research Publications and Citations" 
                class="intro-image">
         </div>
@@ -250,21 +250,21 @@
       <div class="carousel-container">
         <!-- Slide 1 -->
         <div class="carousel-slide active" data-slide="0">
-          <img src="assets/img/research/Research Publications and Citations (1).PNG" 
+          <img src="../assets/img/research/Research Publications and Citations (1).PNG" 
                alt="Research Publications Statistics 1"
                loading="lazy">
         </div>
 
         <!-- Slide 2 -->
         <div class="carousel-slide" data-slide="1">
-          <img src="assets/img/research/Research Publications and Citations (2).PNG" 
+          <img src="../assets/img/research/Research Publications and Citations (2).PNG" 
                alt="Research Publications Statistics 2"
                loading="lazy">
         </div>
 
         <!-- Slide 3 -->
         <div class="carousel-slide" data-slide="2">
-          <img src="assets/img/research/Research Publications and Citations (3).PNG" 
+          <img src="../assets/img/research/Research Publications and Citations (3).PNG" 
                alt="Research Publications Statistics 3"
                loading="lazy">
         </div>

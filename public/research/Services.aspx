@@ -45,6 +45,9 @@
   .tab-content-panel {
     animation: fadeIn 0.4s ease-in;
   }
+  .phd-section {
+    animation: fadeIn 0.35s ease-in;
+  }
 
   @keyframes fadeIn {
     from {
@@ -133,7 +136,7 @@
             </h3>
 
             <div class="my-6">
-              <img src="assets/img/research/Financial-Assistance-for-Sample-Analysis.jpg" alt="Sample Analysis"
+              <img src="../assets/img/research/Financial-Assistance-for-Sample-Analysis.jpg" alt="Sample Analysis"
                 class="service-img float-right ml-4 mb-4 w-full md:w-96 shadow-lg" />
 
               <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg mb-4 border-l-4 border-blue-500">
@@ -227,7 +230,7 @@
                         class="fas fa-envelope mr-2 text-blue-600"></i>pcsirmemberscience@gmail.com</span>
                     <span class="block"><i class="fas fa-envelope mr-2 text-blue-600"></i>pcsirdrsi@gmail.com</span>
                   </p>
-                  <a href="assets/files/research/1643882745_RequisitionFormDRSI.pdf" target="_blank"
+                  <a href="../assets/files/research/1643882745_RequisitionFormDRSI.pdf" target="_blank"
                     rel="noopener noreferrer"
                     class="inline-block mt-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition">
                     <i class="fas fa-download mr-2"></i>Download PCSIR Registration Form
@@ -244,7 +247,7 @@
             </h3>
 
             <div class="my-6">
-              <img src="assets/img/research/indig-intro.jpg" alt="PhD Scholarships"
+              <img src="../assets/img/research/indig-intro.jpg" alt="PhD Scholarships"
                 class="service-img w-full mb-6 shadow-lg rounded-lg" />
 
               <!-- Sub-navigation for PhD sections -->
@@ -253,30 +256,30 @@
                   <i class="fas fa-list-ul mr-2"></i>Quick Navigation:
                 </h4>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
-                  <button onclick="showPhdSection('intro')"
+                  <button onclick="showPhdSection('intro',this)"
                     class="phd-nav-btn active-phd-nav px-3 py-2 text-sm rounded-lg border transition">Introduction</button>
-                  <button onclick="showPhdSection('policies')"
+                  <button onclick="showPhdSection('policies',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Policies</button>
-                  <button onclick="showPhdSection('eligibility')"
+                  <button onclick="showPhdSection('eligibility',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Eligibility</button>
-                  <button onclick="showPhdSection('scholars')"
+                  <button onclick="showPhdSection('scholars',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">For
                     Scholars</button>
-                  <button onclick="showPhdSection('supervisors')"
+                  <button onclick="showPhdSection('supervisors',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">For
                     Supervisors</button>
-                  <button onclick="showPhdSection('sop-university')"
+                  <button onclick="showPhdSection('sop-university',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Change
                     University</button>
-                  <button onclick="showPhdSection('sop-supervisor')"
+                  <button onclick="showPhdSection('sop-supervisor',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Change
                     Supervisor</button>
-                  <button onclick="showPhdSection('students')"
+                  <button onclick="showPhdSection('students',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Students
                     List</button>
-                  <button onclick="showPhdSection('downloads')"
+                  <button onclick="showPhdSection('downloads',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Downloads</button>
-                  <button onclick="showPhdSection('call')"
+                  <button onclick="showPhdSection('call',this)"
                     class="phd-nav-btn px-3 py-2 text-sm rounded-lg border transition">Call</button>
                 </div>
               </div>
@@ -2789,50 +2792,50 @@
                   <p class="mb-6">Download essential forms and documents for PhD Indigenous Scholarship program:</p>
 
                   <div class="grid md:grid-cols-2 gap-4">
-                    <a href="assets/files/research/Phd/Departmental_proforma.docx"
+                    <a href="../assets/files/research/Phd/Departmental_proforma.docx"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Departmental Proforma</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/Expenditure_statement.docx"
+                    <a href="../assets/files/research/Phd/Expenditure_statement.docx"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Expenditure Statement</span>
                     </a>
 
 
-                    <a href="assets/files/research/Phd/Financial_calculations.docx"
+                    <a href="../assets/files/research/Phd/Financial_calculations.docx"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Financial Calculations</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/INFORMATION_REQUIRED_ON_COMPLETION_ON_PHD.doc"
+                    <a href="../assets/files/research/Phd/INFORMATION_REQUIRED_ON_COMPLETION_ON_PHD.doc"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Info Required on PhD Completion</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/PCD_ProformaNew.pdf" target="_blank"
+                    <a href="../assets/files/research/Phd/PCD_ProformaNew.pdf" target="_blank"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-pdf text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">PCD Proforma New</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/Performa_for_Extension_in_PhD_Duration_New.doc"
+                    <a href="../assets/files/research/Phd/Performa_for_Extension_in_PhD_Duration_New.doc"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Extension in PhD Duration</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/Progress_report.docx"
+                    <a href="../assets/files/research/Phd/Progress_report.docx"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Progress Report</span>
                     </a>
 
-                    <a href="assets/files/research/Phd/Purchase_of_Laptop_for_HEC_Scholars.docx"
+                    <a href="../assets/files/research/Phd/Purchase_of_Laptop_for_HEC_Scholars.docx"
                       class="flex items-center bg-blue-500 text-white p-4 rounded-lg hover:shadow-xl transition group">
                       <i class="fas fa-file-word text-3xl mr-4 group-hover:scale-110 transition"></i>
                       <span class="font-medium">Purchase of Laptop for HEC Scholars</span>
@@ -3017,7 +3020,7 @@
             </h3>
 
             <div class="mb-6">
-              <img src="assets/img/RnD/SOP.Funding/SOP Funding.jpg" alt="Partial Support"
+              <img src="../assets/img/RnD/SOP.Funding/SOP%20Funding.jpg" alt="Partial Support"
                 class="service-img w-full mb-6 shadow-lg rounded-lg" />
 
               <div
@@ -3120,7 +3123,7 @@
                   <li><i class="fas fa-lightbulb mr-2"></i>Impact assessment and research outcomes</li>
                   <li><i class="fas fa-signature mr-2"></i>Supervisor's endorsement</li>
                 </ul>
-                <a href="assets/files/Proforma/Partial Support Proforma.docx"
+                <a href="../assets/files/Proforma/Partial%20Support%20Proforma.docx"
                   class="inline-block mt-4 bg-blue-500 text-white text-black px-6 py-2 rounded-lg font-semibold  transition transform hover:shadow-2xl hover:-translate-y-1 hover:scale-105 group">
                   <i class="fas fa-download mr-2"></i>Download Application Form
                 </a>
@@ -3149,10 +3152,15 @@
         }
       });
 
-      // Update content visibility with smooth transition
+      // Update content visibility with smooth fade-in animation
       contents.forEach(c => {
         if (c.id === targetId) {
           c.classList.remove('hidden');
+          // Re-trigger CSS animation by cloning trick
+          c.style.animation = 'none';
+          // eslint-disable-next-line no-unused-expressions
+          c.offsetHeight; // force reflow
+          c.style.animation = '';
           // Smooth scroll to top of content on mobile
           if (window.innerWidth < 1024) {
             c.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3173,7 +3181,7 @@
   });
 
   // PhD Sub-navigation functions
-  function showPhdSection(sectionId) {
+  function showPhdSection(sectionId, triggerEl) {
     // Hide all PhD sections
     const phdSections = document.querySelectorAll('.phd-section');
     phdSections.forEach(section => {
@@ -3183,6 +3191,10 @@
     // Show selected section
     const selectedSection = document.getElementById('phd-' + sectionId);
     if (selectedSection) {
+      // Re-trigger animation
+      selectedSection.style.animation = 'none';
+      selectedSection.offsetHeight; // force reflow
+      selectedSection.style.animation = '';
       selectedSection.classList.remove('hidden');
 
       // Scroll to section on mobile
@@ -3197,8 +3209,9 @@
       btn.classList.remove('active-phd-nav');
     });
 
-    // Highlight active button
-    event.target.classList.add('active-phd-nav');
+    // Highlight active button (use passed element, fall back to window.event)
+    const btn = triggerEl || (window.event && window.event.target);
+    if (btn) btn.classList.add('active-phd-nav');
   }
 
   // Student table filter function

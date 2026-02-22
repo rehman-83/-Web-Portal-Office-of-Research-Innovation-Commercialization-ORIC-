@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
-    
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -112,7 +111,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
             <!-- Logo -->
             <div class="flex items-center pr-4 flex-shrink-0">
-                <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-9 w-auto" />
+                <a href="<%= ResolveUrl("~/Default.aspx") %>" aria-label="Home" title="Home">
+                    <img src="<%= ResolveUrl("~/assets/img/Logo.png") %>" alt="ORIC Logo" class="h-9 w-auto" />
+                </a>
             </div>
 
             <!-- ── DESKTOP NAV ────────────────────────────────── -->
@@ -163,18 +164,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                         <div class="py-1.5 border-b border-gov-border">
                             <span class="block px-4 pt-1.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-gov-muted">Funding &amp; Committees</span>
                             <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>"    class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Funding Agencies</a>
-                            <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">IBC</a>
-                            <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">BEC</a>
+                            <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Institutional Biosafety Committee</a>
+                            <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                 class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Constitution of Institutional BioEthics Committee</a>
                         </div>
                         <div class="py-1.5">
-                            <span class="block px-4 pt-1.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-gov-muted">Resources</span>
-                            <a href="<%= ResolveUrl("~/research/Services.aspx") %>"            class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Services</a>
+                            <a href="<%= ResolveUrl("~/research/Services.aspx") %>"            class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Services For Students</a>
                             <a href="<%= ResolveUrl("~/research/Internships.aspx") %>"         class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Internships</a>
                             <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Approved Supervisors</a>
                             <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>" class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Professional Trainings</a>
                             <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"               class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">IMERP</a>
                             <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"   class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Research Journals</a>
-                            <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                  class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">OP</a>
+                            <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                  class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">ORIC Publications</a>
                             <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>"      class="dd-link flex items-center gap-2 px-4 py-2 text-[13.5px] text-gov-text hover:bg-gov-light hover:text-gov-blue hover:pl-[22px] transition-all duration-150">Reimbursements</a>
                         </div>
                     </div>
@@ -304,16 +304,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             <div class="m-sub bg-[#0a1f33]" id="mSub-research" aria-hidden="true">
                 <span class="block px-6 pl-9 pt-3 pb-1.5 text-[10px] uppercase tracking-widest text-gov-gold font-bold">Funding &amp; Committees</span>
                 <a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>"      class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Funding Agencies</a>
-                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">IBC</a>
-                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">BEC</a>
-                <span class="block px-6 pl-9 pt-3 pb-1.5 text-[10px] uppercase tracking-widest text-gov-gold font-bold">Resources</span>
-                <a href="<%= ResolveUrl("~/research/Services.aspx") %>"              class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Services</a>
+                <a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Institutional Biosafety Committee</a>
+                <a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                   class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Constitution of Institutional BioEthics Committee</a>
+                <a href="<%= ResolveUrl("~/research/Services.aspx") %>"              class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Services For Students</a>
                 <a href="<%= ResolveUrl("~/research/Internships.aspx") %>"           class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Internships</a>
                 <a href="<%= ResolveUrl("~/research/Approved_Supervisors.aspx") %>"  class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Approved Supervisors</a>
                 <a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>" class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Professional Trainings</a>
                 <a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"                 class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">IMERP</a>
                 <a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"     class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Research Journals</a>
-                <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                    class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">OP</a>
+                <a href="<%= ResolveUrl("~/research/OP.aspx") %>"                    class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">ORIC Publications</a>
                 <a href="<%= ResolveUrl("~/research/Reimbursements.aspx") %>"        class="block px-6 pl-9 py-2.5 text-[13px] text-blue-200 border-b border-blue-900/30 hover:text-white hover:bg-gov-blue/40 hover:border-l-2 hover:border-l-gov-gold hover:pl-[34px] transition-all duration-150">Reimbursements</a>
             </div>
 
@@ -437,9 +436,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
                     <h3 class="text-[15px] font-bold tracking-[0.4px] mb-4 pb-2.5
                                border-b-2 border-gov-accent inline-block">Research</h3>
                     <ul class="space-y-1.5">
-                        <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">IBC</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">BEC</a></li>
-                        <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>"                 class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Services</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/IBC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Institutional Biosafety Committee</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/BEC.aspx") %>"                      class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Constitution of Institutional BioEthics Committee</a></li>
+                        <li><a href="<%= ResolveUrl("~/research/Services.aspx") %>"                 class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Services For Students</a></li>
                         <li><a href="<%= ResolveUrl("~/research/Research_Journals.aspx") %>"        class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Research Journals</a></li>
                         <li><a href="<%= ResolveUrl("~/research/IMERP.aspx") %>"                    class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">IMERP</a></li>
                         <li><a href="<%= ResolveUrl("~/research/Professional_Trainings.aspx") %>"   class="text-[13.5px] text-gray-400 hover:text-gov-gold transition-colors">Professional Trainings</a></li>

@@ -5,9 +5,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <?php
-$pageTitle = "Institutional Biosafety Committee";
-?>
 
 <main class="container mx-auto px-4 py-8 md:py-12">
   <!-- Page Header -->

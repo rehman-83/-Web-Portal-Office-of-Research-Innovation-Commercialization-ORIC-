@@ -8,10 +8,10 @@
 
 <main class="container mx-auto px-4 py-8 md:py-12 animate-fade-in-up">
   <!-- image -->
-<div class="mb-6">
+<!-- <div class="mb-6">
           <img src="../assets/img/COMMERCILIZATION/cover1.jpg" alt="Technologies" 
                class="w-full rounded-lg shadow-lg" style="max-height: 400px; object-fit: cover;">
-        </div>
+        </div> -->
 
 
 <!-- Page Header -->

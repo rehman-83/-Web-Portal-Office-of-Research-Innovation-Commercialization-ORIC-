@@ -353,79 +353,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- ===================== WELCOME MESSAGE ===================== -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
@@ -722,7 +649,7 @@
                     <p class="text-gray-600 leading-relaxed mb-6">This structured framework ensures proper coordination
                         between academia, industry, and regulatory bodies while maintaining financial and operational
                         transparency.</p>
-                    <a href="about/Organogram.aspx" class="btn-primary">View Full Organogram</a>
+                    <a  class="btn-primary">View Full Organogram</a>
                 </div>
             </div>
         </div>
@@ -766,7 +693,7 @@
                             Diagnostic Facilities</li>
                     </ul>
                     <div class="mt-6">
-                        <a href="about/Activities.aspx" class="btn-primary">View All Activities</a>
+                        <a class="btn-primary">View All Activities</a>
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
@@ -820,7 +747,7 @@
                         </div>
                     </div>
                     <div class="mt-6">
-                        <a href="about/Milestones.aspx" class="btn-primary">View All Milestones</a>
+                        <a class="btn-primary">View All Milestones</a>
                     </div>
                 </div>
             </div>
@@ -843,16 +770,15 @@
                     <p class="text-gray-600 text-sm mb-4">Comprehensive support for research projects, grant writing,
                         funding, and ethical approvals.</p>
                     <a href="research/Services.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn
-                        More →</a>
+                        More  </a>
                 </div>
                 <div class="oric-card text-center">
                     <div class="w-16 h-16 bg-[#fde8e8] rounded-2xl flex items-center justify-center mx-auto mb-5">
                         <i class="fas fa-lightbulb text-[#c8102e] text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">Innovation Hub</h3>
-                    <p class="text-gray-600 text-sm mb-4">Fostering innovative ideas and entrepreneurial mindset among
-                        researchers and students.</p>
-                    <a href="BIC.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More →</a>
+                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">ORIC Publications</h3>
+                    <p class="text-gray-600 text-sm mb-4">Explore our comprehensive collection of research publications, innovation catalogues.</p>
+                    <a href="media/Publications.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More  </a>
                 </div>
                 <div class="oric-card text-center">
                     <div class="w-16 h-16 bg-[#e8f0fa] rounded-2xl flex items-center justify-center mx-auto mb-5">
@@ -862,7 +788,7 @@
                     <p class="text-gray-600 text-sm mb-4">Transforming research into marketable products, patents, and
                         technology licensing.</p>
                     <a href="commercialization/Technologies.aspx"
-                        class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More →</a>
+                        class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More  </a>
                 </div>
                 <div class="oric-card text-center">
                     <div class="w-16 h-16 bg-[#fde8e8] rounded-2xl flex items-center justify-center mx-auto mb-5">
@@ -872,27 +798,26 @@
                     <p class="text-gray-600 text-sm mb-4">State-of-the-art diagnostic and analytical facilities for
                         researchers and civil society.</p>
                     <a href="Hi-Tech/Analytical_Facilities.aspx"
-                        class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More →</a>
+                        class="text-[#c8102e] font-semibold hover:underline text-sm">Learn More  </a>
                 </div>
                 <div class="oric-card text-center">
                     <div class="w-16 h-16 bg-[#e8f0fa] rounded-2xl flex items-center justify-center mx-auto mb-5">
                         <i class="fas fa-users text-[#1a3a5c] text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">Outreach &amp; Internships</h3>
+                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">Internships</h3>
                     <p class="text-gray-600 text-sm mb-4">Connecting students, academia, and industry through outreach
                         events and internship programs.</p>
-                    <a href="outreach/Outreach.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn
-                        More →</a>
+                    <a href="research/Internships.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn
+                        More  </a>
                 </div>
                 <div class="oric-card text-center">
                     <div class="w-16 h-16 bg-[#fde8e8] rounded-2xl flex items-center justify-center mx-auto mb-5">
                         <i class="fas fa-chart-line text-[#c8102e] text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">University Rankings</h3>
-                    <p class="text-gray-600 text-sm mb-4">Managing and improving UAF's national and international
-                        ranking through strategic initiatives.</p>
-                    <a href="about/Activities.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn
-                        More →</a>
+                    <h3 class="text-lg font-bold text-[#1a3a5c] mb-2">Professional Trainings</h3>
+                    <p class="text-gray-600 text-sm mb-4">Training programs for professionals in various research and innovation domains.</p>
+                    <a href="research/Professional_Trainings.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Learn
+                        More  </a>
                 </div>
             </div>
         </div>
@@ -901,65 +826,167 @@
     <!-- ===================== LATEST NEWS ===================== -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between mb-10">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
                 <div>
-                    <h2 class="sec-title">Latest News &amp; Updates</h2>
+                    <h2 class="sec-title">Latest ORIC Newsletters</h2>
                     <div class="sec-divider mt-2"></div>
                 </div>
-                <a href="media/News.aspx" class="btn-outline hidden md:inline-block">View All News</a>
+                <a href="media/News.aspx" class="btn-outline">View All Newsletters</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="oric-card p-0 overflow-hidden">
-                    <div class="h-48 bg-[#1a3a5c] flex items-center justify-center">
-                        <i class="fas fa-file-alt text-white/30 text-6xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <span
-                            class="inline-block bg-[#fde8e8] text-[#c8102e] text-xs font-bold px-3 py-1 rounded-full mb-3">Research</span>
-                        <p class="text-xs text-gray-400 mb-2">February 15, 2026</p>
-                        <h3 class="text-base font-bold text-[#1a3a5c] mb-2">New Research Grants Available</h3>
-                        <p class="text-gray-600 text-sm mb-4">Applications are now open for the 2026 research grant
-                            cycle. Deadline March 31, 2026.</p>
-                        <a href="Calls.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Read More
-                            →</a>
-                    </div>
-                </div>
-                <div class="oric-card p-0 overflow-hidden">
-                    <div class="h-48 bg-[#c8102e] flex items-center justify-center">
-                        <i class="fas fa-calendar-check text-white/30 text-6xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <span
-                            class="inline-block bg-[#e8f0fa] text-[#1a3a5c] text-xs font-bold px-3 py-1 rounded-full mb-3">Event</span>
-                        <p class="text-xs text-gray-400 mb-2">February 28, 2026</p>
-                        <h3 class="text-base font-bold text-[#1a3a5c] mb-2">Annual Innovation &amp; Entrepreneurship
-                            Expo</h3>
-                        <p class="text-gray-600 text-sm mb-4">ORIC invites innovators, startups, and industry partners
-                            to the flagship Innovation Expo 2026.</p>
-                        <a href="media/Events.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Read
-                            More →</a>
-                    </div>
-                </div>
-                <div class="oric-card p-0 overflow-hidden">
-                    <div class="h-48 bg-gray-600 flex items-center justify-center">
-                        <i class="fas fa-newspaper text-white/30 text-6xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <span
-                            class="inline-block bg-[#fde8e8] text-[#c8102e] text-xs font-bold px-3 py-1 rounded-full mb-3">Technology</span>
-                        <p class="text-xs text-gray-400 mb-2">February 10, 2026</p>
-                        <h3 class="text-base font-bold text-[#1a3a5c] mb-2">New Technology Successfully Commercialized
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Newsletter 1: January 2026 -->
+                <div class="oric-card p-0 overflow-hidden group">
+                    <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2026/ORIC Newsletter-1 (January 01 to 31, 2026).pdf") %>" 
+                       target="_blank" class="block">
+                        <div class="relative h-56 sm:h-64 bg-gradient-to-br from-[#1a3a5c] to-[#2d5a8c] overflow-hidden">
+                            <!-- PDF Icon Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center transform group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-file-pdf text-white/20 text-7xl sm:text-8xl mb-3"></i>
+                                    <div class="text-white/90 font-bold text-base sm:text-lg px-4">ORIC Newsletter</div>
+                                    <div class="text-white/70 text-xs sm:text-sm mt-1">January 2026</div>
+                                </div>
+                            </div>
+                            <!-- Corner Badge -->
+                            <div class="absolute top-3 right-3 bg-[#c8102e] text-white text-xs font-bold px-3 py-1 rounded-full">
+                                Latest
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-4 sm:p-5">
+                        <span class="inline-block bg-[#e8f0fa] text-[#1a3a5c] text-xs font-bold px-3 py-1 rounded-full mb-3">
+                            Newsletter
+                        </span>
+                        <p class="text-xs text-gray-400 mb-2">
+                            <i class="far fa-calendar-alt mr-1"></i> January 01 - 31, 2026
+                        </p>
+                        <h3 class="text-sm sm:text-base font-bold text-[#1a3a5c] mb-2 line-clamp-2">
+                            ORIC Newsletter - January 2026
                         </h3>
-                        <p class="text-gray-600 text-sm mb-4">ORIC successfully commercialized a groundbreaking
-                            agricultural biotechnology this month.</p>
-                        <a href="media/News.aspx" class="text-[#c8102e] font-semibold hover:underline text-sm">Read More
-                            →</a>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-2">
+                            Explore the latest research updates, innovations, and achievements from ORIC for January 2026.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2026/ORIC Newsletter-1 (January 01 to 31, 2026).pdf") %>" 
+                               target="_blank"
+                               class="text-center bg-[#c8102e] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#a00d24] transition-colors">
+                                <i class="far fa-eye mr-1"></i> View PDF
+                            </a>
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2026/ORIC Newsletter-1 (January 01 to 31, 2026).pdf") %>" 
+                               download
+                               class="text-center bg-[#1a3a5c] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#0f2847] transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-8 md:hidden">
-                <a href="media/News.aspx" class="btn-outline">View All News</a>
+
+                <!-- Newsletter 2: December 2025 -->
+                <div class="oric-card p-0 overflow-hidden group">
+                    <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (December 01 to 31, 2025).pdf") %>" 
+                       target="_blank" class="block">
+                        <div class="relative h-56 sm:h-64 bg-gradient-to-br from-[#c8102e] to-[#e74c3c] overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center transform group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-file-pdf text-white/20 text-7xl sm:text-8xl mb-3"></i>
+                                    <div class="text-white/90 font-bold text-base sm:text-lg px-4">ORIC Newsletter</div>
+                                    <div class="text-white/70 text-xs sm:text-sm mt-1">December 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-4 sm:p-5">
+                        <span class="inline-block bg-[#fde8e8] text-[#c8102e] text-xs font-bold px-3 py-1 rounded-full mb-3">
+                            Newsletter
+                        </span>
+                        <p class="text-xs text-gray-400 mb-2">
+                            <i class="far fa-calendar-alt mr-1"></i> December 01 - 31, 2025
+                        </p>
+                        <h3 class="text-sm sm:text-base font-bold text-[#1a3a5c] mb-2 line-clamp-2">
+                            ORIC Newsletter - December 2025
+                        </h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-2">
+                            Year-end highlights featuring major research breakthroughs and commercialization success stories.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (December 01 to 31, 2025).pdf") %>" 
+                               target="_blank"
+                               class="text-center bg-[#c8102e] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#a00d24] transition-colors">
+                                <i class="far fa-eye mr-1"></i> View PDF
+                            </a>
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (December 01 to 31, 2025).pdf") %>" 
+                               download
+                               class="text-center bg-[#1a3a5c] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#0f2847] transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter 3: November 16-30, 2025 -->
+                <div class="oric-card p-0 overflow-hidden group">
+                    <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (November 16 to 30, 2025).pdf") %>" 
+                       target="_blank" class="block">
+                        <div class="relative h-56 sm:h-64 bg-gradient-to-br from-[#2c3e50] to-[#34495e] overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center transform group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-file-pdf text-white/20 text-7xl sm:text-8xl mb-3"></i>
+                                    <div class="text-white/90 font-bold text-base sm:text-lg px-4">ORIC Newsletter</div>
+                                    <div class="text-white/70 text-xs sm:text-sm mt-1">November 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="p-4 sm:p-5">
+                        <span class="inline-block bg-[#e8f0fa] text-[#1a3a5c] text-xs font-bold px-3 py-1 rounded-full mb-3">
+                            Newsletter
+                        </span>
+                        <p class="text-xs text-gray-400 mb-2">
+                            <i class="far fa-calendar-alt mr-1"></i> November 16 - 30, 2025
+                        </p>
+                        <h3 class="text-sm sm:text-base font-bold text-[#1a3a5c] mb-2 line-clamp-2">
+                            ORIC Newsletter - November 2025
+                        </h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-2">
+                            Discover ongoing projects, industry collaborations, and academic excellence initiatives.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (November 16 to 30, 2025).pdf") %>" 
+                               target="_blank"
+                               class="text-center bg-[#c8102e] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#a00d24] transition-colors">
+                                <i class="far fa-eye mr-1"></i> View PDF
+                            </a>
+                            <a href="<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (November 16 to 30, 2025).pdf") %>" 
+                               download
+                               class="text-center bg-[#1a3a5c] text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#0f2847] transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        /* Line clamp utility for text truncation */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .oric-card {
+                box-shadow: 0 1px 8px rgba(26, 58, 92, .1);
+            }
+        }
+
+        /* Smooth transitions for newsletter cards */
+        .oric-card a:hover {
+            text-decoration: none;
+        }
+    </style>
 </asp:Content>

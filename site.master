@@ -370,7 +370,6 @@
                         </button>
                         <div class="dropdown" role="menu">
                             <a href="<%= ResolveUrl("~/public/media/News.aspx") %>" role="menuitem"><span class="dot"></span>News</a>
-                            <a href="<%= ResolveUrl("~/public/media/Events.aspx") %>" role="menuitem"><span class="dot"></span>Events</a>
                             <a href="<%= ResolveUrl("~/public/media/Publications.aspx") %>" role="menuitem"><span class="dot"></span>Publications</a>
                             <a href="<%= ResolveUrl("~/public/media/Gallery.aspx") %>" role="menuitem"><span class="dot"></span>Gallery</a>
                             <a href="<%= ResolveUrl("~/public/media/Downloads.aspx") %>" role="menuitem"><span class="dot"></span>Downloads</a>
@@ -457,7 +456,6 @@
                 </button>
                 <div class="mobile-submenu" id="mob-media">
                     <a href="<%= ResolveUrl("~/public/media/News.aspx") %>">News</a>
-                    <a href="<%= ResolveUrl("~/public/media/Events.aspx") %>">Events</a>
                     <a href="<%= ResolveUrl("~/public/media/Publications.aspx") %>">Publications</a>
                     <a href="<%= ResolveUrl("~/public/media/Gallery.aspx") %>">Gallery</a>
                     <a href="<%= ResolveUrl("~/public/media/Downloads.aspx") %>">Downloads</a>

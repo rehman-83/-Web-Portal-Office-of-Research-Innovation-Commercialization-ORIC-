@@ -115,7 +115,7 @@
       <img src="../assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg" alt="Academia Industry Linkages" class="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-lg shadow-lg">
       </div>
     </div> -->
-<div class="relative bg-center bg-cover bg-no-repeat"
+<div class="relative bg-center bg-cover bg-no-repeat margin-top-0 rounded-lg shadow-lg pt-0 pb-0"
      style="background-image:url('../assets/img/COMMERCILIZATION/Acedmia Industry Linkages.jpg');">
 
     <!-- CONTENT -->

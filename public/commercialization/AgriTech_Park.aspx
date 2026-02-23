@@ -7,43 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
 <main class="container mx-auto px-4 pb-8 pt-2 md:py-12">
-  <!-- Page Header -->
-  <!-- <div class="text-center mb-8 md:mb-12 animate-fade-in-up">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a4d7c] mb-4">
-      Agri Techpark UAF
-    </h1>
-    <div class="w-24 h-1 bg-gradient-to-r from-[#3674B5] to-[#A1E3F9] mx-auto rounded-full"></div>
-  </div> -->
-
-  <!-- Introduction Section -->
-  <!-- <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 mb-8 animate-slide-in">
-    <div class="bg-gradient-to-r from-[#1a4d7c] to-[#3674B5] px-6 py-4">
-      <div class="flex items-center space-x-3">
-        <i class="fas fa-info-circle text-white text-2xl"></i>
-        <h2 class="text-white font-semibold text-lg md:text-xl">Introduction</h2>
-      </div>
-    </div>
-    <div class="p-6 md:p-8"> -->
-  <!-- Introduction Image -->
-  <!-- <div class="mb-6 rounded-lg overflow-hidden shadow-lg">
-        <img src="../assets/img/COMMERCILIZATION/Final Agritec Park Introduction.jpg" alt="Agri Techpark Introduction"
-          class="w-full h-auto">
-      </div>
-      <p class="text-gray-700 leading-relaxed text-justify md:text-lg">
-        University of Agriculture Faisalabad-Pakistan Special Technology Zones Authority (STZA) is an autonomous body
-        established under the Cabinet Division, Government of Pakistan, with the Honorable Prime Minister of Pakistan as
-        the President of the Board of Governors (BoG) of the Authority. STZA has been mandated to promote the
-        knowledge-based innovation ecosystem through the establishment of Special Technology Zones (STZs) across the
-        country. STZA aims to provide institutional and legislative support for the technology sector by providing
-        fiscal and forex incentives under STZA Act 2021, to attract foreign direct investments, incentivize futuristic
-        entrepreneurship, enable job creation, and commercialize technological knowledge. On August 31, 2022, STZA has
-        notified the University of Agriculture Faisalabad as Pakistan's 1st AgriTech Park.
-      </p>
-    </div>
-  </div> -->
 
 
-  <!-- STZA Section -->
   <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 mb-8 animate-slide-in">
     <div class="bg-gradient-to-r from-[#3674B5] to-[#578FCA] px-6 py-4">
       <div class="flex items-center space-x-3">
@@ -96,7 +61,7 @@
     <div class="p-6 md:p-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <img src="../assets/img/COMMERCILIZATION/about-us-v3.webp" alt="STZA" class="w-full rounded-lg shadow-lg">
+          <img src="../assets/img/COMMERCILIZATION/about-us-v3.jpg" alt="STZA" class="w-full rounded-lg shadow-lg">
         </div>
         <div class="space-y-4">
           <p class="text-gray-700 leading-relaxed text-justify">

@@ -9,7 +9,7 @@
                 
                
 
-                <a href="../assets/files/about/ORIC Steering Committee.pdf" download="ORIC_Steering_Committee.pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 shadow-sm transition">
+                <a href="../assets/files/about/ORIC-Steering-Committee.pdf" download="ORIC_Steering_Committee.pdf" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 shadow-sm transition">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     Download Steering Committee
                 </a>
@@ -31,14 +31,14 @@
                     <h3 class="text-xl font-bold text-blue-900 mb-4">Terms of Reference (TORs)</h3>
                     <p class="text-sm text-blue-800 mb-4">Members are appointed based on their expertise and must sign Conflict of Interest statements. The committee shall:</p>
                     <ul class="space-y-3 text-sm text-blue-900">
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Devise and approve the 5-years strategic plan for the ORIC.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Review and approve recommendations for initiatives from ORIC leadership.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Review periodic monitoring reports on the basis of KPIs.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Provide policy guidance to ORIC leadership.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Ensure coordination with relevant stakeholders inside/outside the HEI.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Bridge the academic-industry gap and promote linkages and commercialization.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Advise the Vice Chancellor on research management challenges.</li>
-                        <li class="flex items-start"><span class="mr-2 font-bold">•</span> Undertake any other relevant tasks.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Devise and approve the 5-years strategic plan for the ORIC.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Review and approve recommendations for initiatives from ORIC leadership.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Review periodic monitoring reports on the basis of KPIs.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Provide policy guidance to ORIC leadership.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Ensure coordination with relevant stakeholders inside/outside the HEI.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Bridge the academic-industry gap and promote linkages and commercialization.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Advise the Vice Chancellor on research management challenges.</li>
+                        <li class="flex items-start"><span class="mr-2 font-bold"></span> Undertake any other relevant tasks.</li>
                     </ul>
                 </div>
             </div>

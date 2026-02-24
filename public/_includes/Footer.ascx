@@ -13,7 +13,8 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-gray-400">
-                    <li><a href="<%= ResolveUrl("~/about/Director.aspx") %>" class="hover:text-white">Director Message</a></li>
+                    <li><a href="<%= ResolveUrl("~/about/OSC.aspx") %>" class="hover:text-white">ORIC Steering Committee
+</a></li>
                     <li><a href="<%= ResolveUrl("~/research/Funding_Agencies.aspx") %>" class="hover:text-white">Funding Agencies</a></li>
                     <li><a href="<%= ResolveUrl("~/media/Publications.aspx") %>" class="hover:text-white">Publications</a></li>
                 </ul>

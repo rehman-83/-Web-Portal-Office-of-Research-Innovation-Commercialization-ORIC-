@@ -39,7 +39,7 @@
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 class="text-2xl font-bold text-[var(--primary)] mb-3">
-            Central Hi-Tech Laboratory — UAF
+            Central Hi-Tech Laboratory ï¿½ UAF
           </h2>
           <p class="text-gray-700 leading-relaxed">
             The Central Hi-Tech Laboratory is the principal analytical laboratory of the University of Agriculture
@@ -223,9 +223,9 @@
           <h3 class="text-lg sm:text-xl font-bold text-[#1a4d7c] mb-2 sm:mb-3">Ultra-Centrifuges</h3>
           <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
             Ultra-centrifuge is used to separate and isolate compounds like proteins, enzymes, nucleic acids,
-            carbohydrates etc. Two ultra-centrifuges 65ß and CP100a has a maximum speed of 65,000 and 100,000,
+            carbohydrates etc. Two ultra-centrifuges 65ï¿½ and CP100a has a maximum speed of 65,000 and 100,000,
             respectively. Lyophilizer/Deep Freezing Apparatus - Variety of biological samples can be crystallized
-            /lyophilized at -60°C under vacuum condition for long term storage.
+            /lyophilized at -60ï¿½C under vacuum condition for long term storage.
           </p>
         </div>
       </div>
@@ -331,7 +331,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
         <!-- Image -->
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
-          <img src="../assets/img/high-tech/Zetasizer.webp" alt="Zetasizer" class="w-full h-auto rounded-lg shadow-lg">
+          <img src="../assets/img/high-tech/Zetasizer.jpg" alt="Zetasizer" class="w-full h-auto rounded-lg shadow-lg">
         </div>
 
         <!-- Content -->
@@ -346,7 +346,7 @@
               and molecular mass are determined by measuring dynamic light scattering (DLS), electrophoretic light
               scattering (ELS), and static light scattering (SLS), while the transmittance is determined by using
               light
-              transmission. The Litesizer™ 500 offers the full suite of measurements and has three detection angles
+              transmission. The Litesizerï¿½ 500 offers the full suite of measurements and has three detection angles
               available, automates the adjustment of the sample's pH directly in the measurement cuvette, enabling
               the
               user to perform pH ramps in a simple and accurate manner.
@@ -362,12 +362,12 @@
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
           <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 border-b border-white/30 pb-2">Particle Sizer</h4>
           <ul class="space-y-1.5 md:space-y-2 text-xs sm:text-sm text-white/90">
-            <li>• Measurement angles: three angles (15, 90, 175)</li>
-            <li>• Measurement angle selection: auto and manual</li>
-            <li>• Size Range: 0.3 nm – 10 µm (diameter)</li>
-            <li>• Min. sample volume: 3 – 12 µL</li>
-            <li>• Sensitivity: 0.1 mg/mL to 1 mg/mL</li>
-            <li>• Accuracy & Repeatability: Better than ± 2 %</li>
+            <li>ï¿½ Measurement angles: three angles (15, 90, 175)</li>
+            <li>ï¿½ Measurement angle selection: auto and manual</li>
+            <li>ï¿½ Size Range: 0.3 nm ï¿½ 10 ï¿½m (diameter)</li>
+            <li>ï¿½ Min. sample volume: 3 ï¿½ 12 ï¿½L</li>
+            <li>ï¿½ Sensitivity: 0.1 mg/mL to 1 mg/mL</li>
+            <li>ï¿½ Accuracy & Repeatability: Better than ï¿½ 2 %</li>
           </ul>
         </div>
 
@@ -375,12 +375,12 @@
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
           <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 border-b border-white/30 pb-2">Zeta Potential</h4>
           <ul class="space-y-1.5 md:space-y-2 text-xs sm:text-sm text-white/90">
-            <li>• Zeta Potential Range: > ± 1000 mV</li>
-            <li>• Measuring Angle: 15°</li>
-            <li>• Minimum sample Volume: 50 µL</li>
-            <li>• Conductivity Accuracy: ± 10 %</li>
-            <li>• Repeatability: ± 3 %</li>
-            <li>• Size range: 3.8 nm – 100 µm (diameter)</li>
+            <li>ï¿½ Zeta Potential Range: > ï¿½ 1000 mV</li>
+            <li>ï¿½ Measuring Angle: 15ï¿½</li>
+            <li>ï¿½ Minimum sample Volume: 50 ï¿½L</li>
+            <li>ï¿½ Conductivity Accuracy: ï¿½ 10 %</li>
+            <li>ï¿½ Repeatability: ï¿½ 3 %</li>
+            <li>ï¿½ Size range: 3.8 nm ï¿½ 100 ï¿½m (diameter)</li>
           </ul>
         </div>
 
@@ -388,11 +388,11 @@
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:bg-white/20 transition-all duration-300">
           <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 border-b border-white/30 pb-2">Molecular Mass</h4>
           <ul class="space-y-1.5 md:space-y-2 text-xs sm:text-sm text-white/90">
-            <li>• Measuring range (particle size): up to 50 nm (diameter)</li>
-            <li>• Measuring range (mass): 980 Da – 20 MDa</li>
-            <li>• Measurement angle: 90º</li>
-            <li>• Repeatability: ± 5 %</li>
-            <li>• Accuracy: ± 10 %</li>
+            <li>ï¿½ Measuring range (particle size): up to 50 nm (diameter)</li>
+            <li>ï¿½ Measuring range (mass): 980 Da ï¿½ 20 MDa</li>
+            <li>ï¿½ Measurement angle: 90ï¿½</li>
+            <li>ï¿½ Repeatability: ï¿½ 5 %</li>
+            <li>ï¿½ Accuracy: ï¿½ 10 %</li>
           </ul>
         </div>
 

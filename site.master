@@ -306,7 +306,7 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                         </button>
                         <div class="dropdown" role="menu">
-                            <a href="<%= ResolveUrl("~/public/about/Director.aspx") %>" role="menuitem"><span class="dot"></span>Director Message</a>
+                            <a href="<%= ResolveUrl("~/public/about/OSC.aspx") %>" role="menuitem"><span class="dot"></span> ORIC Steering Committee</a>
                             <a href="<%= ResolveUrl("~/public/about/Staff.aspx") %>" role="menuitem"><span class="dot"></span>Staff</a>
                             <a href="<%= ResolveUrl("~/public/about/IRAB.aspx") %>" role="menuitem"><span class="dot"></span>IRAB</a>
                             <a href="<%= ResolveUrl("~/public/about/OSC.aspx") %>" role="menuitem"><span class="dot"></span>OSC</a>
@@ -401,7 +401,7 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </button>
                 <div class="mobile-submenu" id="mob-about">
-                    <a href="<%= ResolveUrl("~/public/about/Director.aspx") %>">Director Message</a>
+                    <a href="<%= ResolveUrl("~/public/about/OSC.aspx") %>"> ORIC Steering Committee</a>
                     <a href="<%= ResolveUrl("~/public/about/Staff.aspx") %>">Staff</a>
                     <a href="<%= ResolveUrl("~/public/about/IRAB.aspx") %>">IRAB</a>
                     <a href="<%= ResolveUrl("~/public/about/OSC.aspx") %>">OSC</a>
@@ -484,7 +484,7 @@
                     <div>
                         <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                         <ul class="space-y-2 text-gray-400">
-                            <li><a href="<%= ResolveUrl("~/public/about/Director.aspx") %>" class="hover:text-white">Director Message</a></li>
+                            <li><a href="<%= ResolveUrl("~/public/about/OSC.aspx") %>" class="hover:text-white">ORIC Steering Committee</a></li>
                             <li><a href="<%= ResolveUrl("~/public/research/Funding_Agencies.aspx") %>" class="hover:text-white">Funding Agencies</a></li>
                             <li><a href="<%= ResolveUrl("~/public/media/Publications.aspx") %>" class="hover:text-white">Publications</a></li>
                             <li><a href="<%= ResolveUrl("~/public/Calls.aspx") %>" class="hover:text-white">Calls</a></li>

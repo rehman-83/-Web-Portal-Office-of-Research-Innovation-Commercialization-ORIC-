@@ -231,7 +231,7 @@ AutoEventWireup="true" %>
             <p class="text-sm text-gray-600">Director</p>
           </div>
           <a
-            href=".../assets/files/about/Institutional-Review-Board.pdf"
+            href="../assets/files/about/Institutional-Review-Board.pdf"
             download="Institutional-Review-Board.pdf"
             class="inline-flex items-center px-4 py-2 bg-slate-100 text-slate-700 font-medium rounded-lg hover:bg-slate-200 transition"
           >

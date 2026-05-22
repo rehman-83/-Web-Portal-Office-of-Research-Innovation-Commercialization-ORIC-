@@ -42,7 +42,14 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<PublicationItem>(ConfigureCmsEntity);
         modelBuilder.Entity<DownloadItem>(ConfigureCmsEntity);
         modelBuilder.Entity<GalleryItem>(ConfigureCmsEntity);
-        modelBuilder.Entity<AnnouncementItem>(ConfigureCmsEntity);
+
+        modelBuilder.Entity<AnnouncementItem>(entity =>
+        {
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.Title).HasMaxLength(300).IsRequired();
+            entity.Property(x => x.Content).IsRequired();
+            entity.Property(x => x.LinkUrl).HasMaxLength(500);
+        });
     }
 
     private static void ConfigureCmsEntity<T>(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<T> entity)

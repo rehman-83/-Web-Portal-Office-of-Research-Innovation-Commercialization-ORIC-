@@ -51,15 +51,13 @@ public class AnnouncementsController : ControllerBase
 
     [HttpPost]
     [Authorize(Roles = "Admin")]
-    public async Task<ActionResult<AnnouncementItem>> Create([FromBody] CmsContentCreateUpdateDto dto)
+    public async Task<ActionResult<AnnouncementItem>> Create([FromBody] AnnouncementCreateUpdateDto dto)
     {
         var entity = new AnnouncementItem
         {
             Title = dto.Title.Trim(),
-            Summary = dto.Summary,
             Content = dto.Content,
-            ImageUrl = dto.ImageUrl,
-            FileUrl = dto.FileUrl,
+            LinkUrl = dto.LinkUrl,
             IsPublished = dto.IsPublished,
             PublishDate = dto.PublishDate,
             CreatedAt = DateTime.UtcNow
@@ -73,7 +71,7 @@ public class AnnouncementsController : ControllerBase
 
     [HttpPut("{id:int}")]
     [Authorize(Roles = "Admin")]
-    public async Task<ActionResult<AnnouncementItem>> Update(int id, [FromBody] CmsContentCreateUpdateDto dto)
+    public async Task<ActionResult<AnnouncementItem>> Update(int id, [FromBody] AnnouncementCreateUpdateDto dto)
     {
         var entity = await _dbContext.AnnouncementItems.FindAsync(id);
         if (entity is null)
@@ -82,10 +80,8 @@ public class AnnouncementsController : ControllerBase
         }
 
         entity.Title = dto.Title.Trim();
-        entity.Summary = dto.Summary;
         entity.Content = dto.Content;
-        entity.ImageUrl = dto.ImageUrl;
-        entity.FileUrl = dto.FileUrl;
+        entity.LinkUrl = dto.LinkUrl;
         entity.IsPublished = dto.IsPublished;
         entity.PublishDate = dto.PublishDate;
         entity.UpdatedAt = DateTime.UtcNow;

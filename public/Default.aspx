@@ -462,27 +462,54 @@
         <!-- ===================== ANNOUNCEMENTS TICKER ===================== -->
         <div class="ticker-wrap">
             <span class="ticker-label"><i class="fas fa-bullhorn mr-1"></i> ANNOUNCEMENTS</span>
-            <span class="ticker-content">
-                <a
-                    href='<%= ResolveUrl("~/assets/files/ORIC Newsletter/2026/ORIC Newsletter-1 (January 01 to 31, 2026).pdf") %>'>&#128313;
-                    ORIC Newsletter January 2026</a>
-                <a href='<%= ResolveUrl("~/assets/files/quick_facts/Quick Facts December 2025.pdf") %>'>&#128313; Quick
-                    Facts 2025 - Explore Latest Insights &amp; Updates</a>
-                <a
-                    href='<%= ResolveUrl("~/assets/files/ORIC Newsletter/2025/ORIC Newsletter-1 (December 01 to 31, 2025).pdf") %>'>&#128313;
-                    ORIC Newsletter December 2025</a>
-                <a href="https://www.sbbusba.edu.pk/sbbu-main/research-funding-opportunities.html"
-                    target="_blank">&#128313; Research Funding Opportunities - Applications Open at SBBU</a>
-                <a href="Call_for_Research_Proposals.aspx">&#128313; Call for Research Proposals 2026 - Apply Before
-                    March 31, 2026</a>
-                <a href="Hi-Tech/Analytical_Facilities.aspx">&#128313; Hi-Tech Lab Facilities - New Analytical Equipment
-                    Available</a>
-                <a href="outreach/Internships.aspx">&#128313; ORIC Summer Internship Program 2026 - Applications Now
-                    Open</a>
-                <a href="commercialization/Technologies.aspx">&#128313; New Technologies Ready for Commercialization -
-                    Explore Now</a>
+            <span class="ticker-content" id="announcementsTicker">
+                <a href="#">Loading announcements...</a>
             </span>
         </div>
+
+        <script>
+            // Fetch and display announcements
+            async function loadAnnouncementsTicker() {
+                try {
+                    const API_BASE = localStorage.getItem('oric_api_base_url') || window.location.origin || 'http://localhost:5233';
+                    const response = await fetch(`${API_BASE}/api/announcements`);
+                    const announcements = await response.json();
+                    const ticker = document.getElementById('announcementsTicker');
+
+                    if (announcements.length === 0) {
+                        ticker.innerHTML = '<a href="#">No announcements at this time</a>';
+                        return;
+                    }
+
+                    // Create ticker content with announcements and fallback items
+                    let tickerHTML = '';
+                    
+                    // Add announcements
+                    announcements.forEach(item => {
+                        if (item.linkUrl) {
+                            tickerHTML += `<a href="${item.linkUrl}" target="_blank" rel="noopener noreferrer">📢 ${item.title} - ${item.content}</a>`;
+                        } else {
+                            tickerHTML += `<a href="#">📢 ${item.title} - ${item.content}</a>`;
+                        }
+                    });
+
+                    // Add fallback static items for continuous scrolling
+                    tickerHTML += `
+                        <a href="<%= ResolveUrl("~/media/Downloads.aspx") %>">📄 Download Latest Resources & Documents</a>
+                        <a href="<%= ResolveUrl("~/media/Gallery.aspx") %>">📸 View Gallery & Latest Events</a>
+                        <a href="<%= ResolveUrl("~/research/Services.aspx") %>">🔬 Explore Our Research Services</a>
+                    `;
+
+                    ticker.innerHTML = tickerHTML;
+                } catch (error) {
+                    console.error('Error loading announcements:', error);
+                    document.getElementById('announcementsTicker').innerHTML = '<a href="#">Unable to load announcements</a>';
+                }
+            }
+
+            // Load announcements when page loads
+            document.addEventListener('DOMContentLoaded', loadAnnouncementsTicker);
+        </script>
 
 
 

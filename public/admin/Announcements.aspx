@@ -38,20 +38,6 @@
                     color: white;
                     border-left: 4px solid #c8102e;
                 }
-
-                .drop-zone {
-                    border: 2px dashed #cbd5e1;
-                    border-radius: 8px;
-                    padding: 30px;
-                    text-align: center;
-                    cursor: pointer;
-                    transition: all 0.3s;
-                }
-
-                .drop-zone.drag-over {
-                    background: #f0f9ff;
-                    border-color: #1a3a5c;
-                }
             </style>
         </head>
 
@@ -128,11 +114,11 @@
                         <div class="px-6 py-4 flex items-center justify-between">
                             <div>
                                 <h1 class="text-2xl font-bold">Manage Announcements</h1>
-                                <p class="text-blue-100 text-sm">Create and manage announcements</p>
+                                <p class="text-blue-100 text-sm">Create and manage site announcements</p>
                             </div>
-                            <button onclick="openUploadModal()"
+                            <button onclick="openCreateModal()"
                                 class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition">
-                                <i class="fas fa-plus"></i> Add Announcement
+                                <i class="fas fa-plus"></i> New Announcement
                             </button>
                         </div>
                     </header>
@@ -141,34 +127,14 @@
                     <div class="flex-1 overflow-auto p-6">
                         <div class="bg-white rounded-lg shadow-lg">
                             <div class="p-6">
-                                <div class="flex items-center justify-between mb-4">
-                                    <h2 class="text-lg font-bold text-gray-800">Announcements <span
-                                            class="text-sm text-gray-500" id="totalCount">(Loading...)</span></h2>
-                                    <input type="text" id="searchInput" placeholder="Search announcements..."
-                                        class="px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-600 w-64"
-                                        onkeyup="filterAnnouncements()" />
-                                </div>
+                                <h2 class="text-lg font-bold text-gray-800 mb-4">Announcements</h2>
 
-                                <div class="overflow-x-auto">
-                                    <table class="w-full">
-                                        <thead class="bg-gray-100 border-b-2 border-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-3 text-left font-semibold text-gray-800">Title</th>
-                                                <th class="px-4 py-3 text-left font-semibold text-gray-800">Date</th>
-                                                <th class="px-4 py-3 text-left font-semibold text-gray-800">Status</th>
-                                                <th class="px-4 py-3 text-center font-semibold text-gray-800">Actions
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="announcementsList">
-                                            <tr>
-                                                <td colspan="4" class="px-4 py-8 text-center text-gray-500">
-                                                    <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
-                                                    <p>Loading announcements...</p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div id="announcementsContainer"
+                                    class="space-y-3">
+                                    <div class="text-center py-8 text-gray-500">
+                                        <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                        <p>Loading announcements...</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -176,171 +142,229 @@
                 </main>
             </div>
 
-            <!-- Modal -->
-            <div id="uploadModal"
+            <!-- Create/Edit Modal -->
+            <div id="formModal"
                 class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4">
-                <div class="bg-white rounded-lg max-w-md w-full p-6 max-h-96 overflow-y-auto">
-                    <h2 class="text-xl font-bold text-gray-800 mb-4">Add Announcement</h2>
+                <div class="bg-white rounded-lg max-w-2xl w-full p-6 max-h-[90vh] overflow-y-auto">
+                    <h2 id="modalTitle" class="text-xl font-bold text-gray-800 mb-4">New Announcement</h2>
 
-                    <!-- Form -->
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Announcement Title</label>
-                            <input type="text" id="annTitle"
-                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-600"
-                                placeholder="Enter announcement title" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Summary</label>
-                            <textarea id="annSummary"
-                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-600"
-                                placeholder="Enter summary" rows="2"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Announcement Date</label>
-                            <input type="date" id="annDate"
-                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-600" />
-                        </div>
-                        <label class="flex items-center gap-2">
-                            <input type="checkbox" id="publishAnn" checked />
-                            <span class="text-sm text-gray-700">Publish immediately</span>
-                        </label>
-                    </div>
+                    <form id="announcementForm" onsubmit="submitForm(event)">
+                        <div class="space-y-4">
+                            <!-- Title -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Title *</label>
+                                <input type="text" id="formTitle" placeholder="Announcement title"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required />
+                            </div>
 
-                    <!-- Buttons -->
-                    <div class="flex gap-2 mt-6">
-                        <button type="button" id="uploadBtn" onclick="addAnnouncement()"
-                            class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700">
-                            <i class="fas fa-save"></i> Save
-                        </button>
-                        <button type="button" onclick="closeUploadModal()"
-                            class="flex-1 bg-gray-300 text-gray-800 py-2 rounded-lg font-semibold hover:bg-gray-400">
-                            Cancel
-                        </button>
-                    </div>
+                            <!-- Content -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Content *</label>
+                                <textarea id="formContent" placeholder="Announcement text"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-24"
+                                    required></textarea>
+                            </div>
+
+                            <!-- Link URL (optional) -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Link URL (Optional)</label>
+                                <input type="url" id="formLinkUrl" placeholder="https://example.com"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            </div>
+
+                            <!-- Publish Toggle -->
+                            <div>
+                                <label class="flex items-center gap-3">
+                                    <input type="checkbox" id="formIsPublished" class="w-5 h-5 text-blue-600 rounded" />
+                                    <span class="text-sm font-semibold text-gray-700">Publish immediately</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-2 mt-6">
+                            <button type="submit"
+                                class="flex-1 bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700">
+                                <i class="fas fa-save"></i> <span id="submitBtnText">Create</span>
+                            </button>
+                            <button type="button" onclick="closeFormModal()"
+                                class="flex-1 bg-gray-300 text-gray-800 py-2 rounded-lg font-semibold hover:bg-gray-400">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
             <script>
+                let currentEditId = null;
+
+                // Determine API base URL dynamically
+                const API_BASE = localStorage.getItem('oric_api_base_url') || window.location.origin || 'http://localhost:5233';
+
                 function getAuthHeaders() {
                     const token = localStorage.getItem('authToken');
                     return token ? { 'Authorization': `Bearer ${token}` } : {};
                 }
 
-                function openUploadModal() {
-                    document.getElementById('uploadModal').classList.remove('hidden');
-                    document.getElementById('annDate').valueAsDate = new Date();
-                }
-
-                function closeUploadModal() {
-                    document.getElementById('uploadModal').classList.add('hidden');
-                    document.getElementById('annTitle').value = '';
-                    document.getElementById('annSummary').value = '';
-                    document.getElementById('annDate').value = '';
-                    document.getElementById('publishAnn').checked = true;
-                }
-
-                async function addAnnouncement() {
-                    const title = document.getElementById('annTitle').value.trim();
-                    const summary = document.getElementById('annSummary').value.trim();
-                    const publishDate = document.getElementById('annDate').value;
-
-                    if (!title || !publishDate) {
-                        alert('Please fill in all required fields');
-                        return;
-                    }
-
-                    try {
-                        const response = await fetch('http://localhost:5233/api/announcements', {
-                            method: 'POST',
-                            headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                title: title,
-                                summary: summary,
-                                content: '',
-                                imageUrl: '',
-                                fileUrl: '',
-                                isPublished: document.getElementById('publishAnn').checked,
-                                publishDate: new Date(publishDate).toISOString()
-                            })
-                        });
-
-                        if (response.ok) {
-                            alert('Announcement created successfully!');
-                            closeUploadModal();
-                            loadAnnouncements();
-                        } else {
-                            alert('Error: ' + response.status);
-                        }
-                    } catch (error) {
-                        alert('Save failed: ' + error.message);
-                    }
-                }
-
+                // Load announcements
                 async function loadAnnouncements() {
                     try {
-                        const response = await fetch('http://localhost:5233/api/announcements');
+                        const response = await fetch(`${API_BASE}/api/announcements/admin`, {
+                            headers: getAuthHeaders()
+                        });
                         const announcements = await response.json();
-                        const tbody = document.getElementById('announcementsList');
-
-                        document.getElementById('totalCount').textContent = `(${announcements.length} Total)`;
+                        const container = document.getElementById('announcementsContainer');
 
                         if (announcements.length === 0) {
-                            tbody.innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-gray-500">No announcements found</td></tr>';
+                            container.innerHTML = '<div class="text-center py-8 text-gray-500">No announcements yet. Create your first one!</div>';
                             return;
                         }
 
-                        tbody.innerHTML = announcements.map(item => {
-                            const date = new Date(item.publishDate).toLocaleDateString();
-                            return `
-                        <tr class="border-b border-gray-200 hover:bg-gray-50 announcement-row" data-title="${item.title.toLowerCase()}">
-                            <td class="px-4 py-3 text-gray-800 font-medium">${item.title}</td>
-                            <td class="px-4 py-3 text-gray-600">${date}</td>
-                            <td class="px-4 py-3">
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold ${item.isPublished ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}">
-                                    ${item.isPublished ? 'Published' : 'Draft'}
-                                </span>
-                            </td>
-                            <td class="px-4 py-3 text-center">
-                                <button onclick="deleteAnnouncement(${item.id})" class="text-red-600 hover:text-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    `;
-                        }).join('');
+                        container.innerHTML = announcements.map(item => `
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-800">${item.title}</h3>
+                                <p class="text-sm text-gray-600 mt-1">${item.content}</p>
+                                ${item.linkUrl ? `<a href="${item.linkUrl}" target="_blank" class="text-sm text-blue-600 hover:underline mt-2 inline-block">${item.linkUrl}</a>` : ''}
+                                <p class="text-xs text-gray-500 mt-2">Created: ${new Date(item.createdAt).toLocaleDateString()}</p>
+                            </div>
+                            <span class="px-3 py-1 text-xs rounded font-semibold ${item.isPublished ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}">
+                                ${item.isPublished ? 'Published' : 'Draft'}
+                            </span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 text-sm bg-blue-100 text-blue-600 py-2 rounded hover:bg-blue-200" onclick="editAnnouncement(${item.id})">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="flex-1 text-sm ${item.isPublished ? 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200' : 'bg-green-100 text-green-600 hover:bg-green-200'} py-2 rounded" onclick="togglePublish(${item.id}, ${!item.isPublished})">
+                                <i class="fas ${item.isPublished ? 'fa-eye-slash' : 'fa-eye'}"></i> ${item.isPublished ? 'Unpublish' : 'Publish'}
+                            </button>
+                            <button class="flex-1 text-sm bg-red-100 text-red-600 py-2 rounded hover:bg-red-200" onclick="deleteAnnouncement(${item.id})">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
                     } catch (error) {
                         console.error('Error loading announcements:', error);
-                        document.getElementById('announcementsList').innerHTML = '<tr><td colspan="4" class="px-4 py-8 text-center text-red-500">Error loading announcements</td></tr>';
+                        document.getElementById('announcementsContainer').innerHTML = '<div class="text-center py-8 text-red-500">Error loading announcements</div>';
                     }
                 }
 
-                function filterAnnouncements() {
-                    const query = document.getElementById('searchInput').value.toLowerCase();
-                    document.querySelectorAll('.announcement-row').forEach(row => {
-                        row.style.display = row.dataset.title.includes(query) ? '' : 'none';
-                    });
+                function openCreateModal() {
+                    currentEditId = null;
+                    document.getElementById('modalTitle').textContent = 'New Announcement';
+                    document.getElementById('submitBtnText').textContent = 'Create';
+                    document.getElementById('announcementForm').reset();
+                    document.getElementById('formModal').classList.remove('hidden');
+                }
+
+                function openEditModal(announcement) {
+                    currentEditId = announcement.id;
+                    document.getElementById('modalTitle').textContent = 'Edit Announcement';
+                    document.getElementById('submitBtnText').textContent = 'Update';
+                    document.getElementById('formTitle').value = announcement.title;
+                    document.getElementById('formContent').value = announcement.content || '';
+                    document.getElementById('formLinkUrl').value = announcement.linkUrl || '';
+                    document.getElementById('formIsPublished').checked = announcement.isPublished;
+                    document.getElementById('formModal').classList.remove('hidden');
+                }
+
+                function closeFormModal() {
+                    document.getElementById('formModal').classList.add('hidden');
+                    currentEditId = null;
+                }
+
+                async function submitForm(event) {
+                    event.preventDefault();
+
+                    const formData = {
+                        title: document.getElementById('formTitle').value,
+                        content: document.getElementById('formContent').value,
+                        linkUrl: document.getElementById('formLinkUrl').value || null,
+                        isPublished: document.getElementById('formIsPublished').checked,
+                        publishDate: new Date().toISOString()
+                    };
+
+                    try {
+                        let response;
+                        if (currentEditId) {
+                            response = await fetch(`${API_BASE}/api/announcements/${currentEditId}`, {
+                                method: 'PUT',
+                                headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
+                                body: JSON.stringify(formData)
+                            });
+                        } else {
+                            response = await fetch(`${API_BASE}/api/announcements`, {
+                                method: 'POST',
+                                headers: { ...getAuthHeaders(), 'Content-Type': 'application/json' },
+                                body: JSON.stringify(formData)
+                            });
+                        }
+
+                        if (response.ok) {
+                            alert(currentEditId ? 'Announcement updated!' : 'Announcement created!');
+                            closeFormModal();
+                            loadAnnouncements();
+                        } else {
+                            const error = await response.json();
+                            alert('Error: ' + (error.message || 'Unknown error'));
+                        }
+                    } catch (error) {
+                        alert('Error: ' + error.message);
+                    }
+                }
+
+                async function editAnnouncement(id) {
+                    try {
+                        const response = await fetch(`${API_BASE}/api/announcements/${id}`);
+                        const announcement = await response.json();
+                        openEditModal(announcement);
+                    } catch (error) {
+                        alert('Error loading announcement: ' + error.message);
+                    }
+                }
+
+                async function togglePublish(id, shouldPublish) {
+                    try {
+                        const endpoint = shouldPublish ? 'publish' : 'unpublish';
+                        const response = await fetch(`${API_BASE}/api/announcements/${id}/${endpoint}`, {
+                            method: 'PATCH',
+                            headers: getAuthHeaders()
+                        });
+                        if (response.ok) {
+                            loadAnnouncements();
+                        } else {
+                            alert('Error updating announcement');
+                        }
+                    } catch (error) {
+                        alert('Error: ' + error.message);
+                    }
                 }
 
                 async function deleteAnnouncement(id) {
                     if (!confirm('Delete this announcement?')) return;
 
                     try {
-                        const response = await fetch(`http://localhost:5233/api/announcements/${id}`, {
+                        const response = await fetch(`${API_BASE}/api/announcements/${id}`, {
                             method: 'DELETE',
                             headers: getAuthHeaders()
                         });
                         if (response.ok) {
-                            alert('Announcement deleted successfully');
+                            alert('Announcement deleted');
                             loadAnnouncements();
                         } else {
-                            alert('Error: ' + response.status);
+                            alert('Error deleting announcement');
                         }
                     } catch (error) {
                         alert('Delete failed: ' + error.message);
                     }
                 }
 
+                // Load on page load
                 loadAnnouncements();
             </script>
         </body>

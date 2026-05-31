@@ -483,7 +483,7 @@
 
                     // Create ticker content with announcements and fallback items
                     let tickerHTML = '';
-                    
+
                     // Add announcements
                     announcements.forEach(item => {
                         if (item.linkUrl) {

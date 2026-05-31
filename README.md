@@ -113,7 +113,7 @@ Edit `ORIC_API/appsettings.json` and update the connection string:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER;Database=ORIC_DB;Trusted_Connection=true;"
+    "DefaultConnection": "Server=MANI\SQLEXPRESS;Database=ORIC_DB;Trusted_Connection=true;"
   }
 }
 ```
